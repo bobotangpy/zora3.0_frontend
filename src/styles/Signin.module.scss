@@ -1,0 +1,81 @@
+@import "./_variables.scss";
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.signin {
+  margin: 0;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("/assets/images/landing/landing_bg.jpg") fixed no-repeat center;
+  position: relative;
+  background-size: cover;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .card {
+    width: 50%;
+    position: absolute;
+    // left: 50%;
+    // top: 40%;
+    // transform: translate(-50%, -50%) !important;
+    height: 500px;
+    margin-top: 100px;
+
+    .tabs {
+      margin-top: 15px;
+
+      .tab {
+        margin: 10px 10px 0;
+        width: 100% !important;
+      }
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 40px;
+
+      .input {
+        width: 60%;
+        margin: 0 0 25px;
+        font-family: $custom-font !important;
+      }
+    }
+  }
+}
+
+.datePicker {
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s linear;
+
+  input {
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #5e5e5e;
+    border-radius: 4px;
+  }
+}

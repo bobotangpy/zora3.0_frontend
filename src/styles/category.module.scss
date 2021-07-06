@@ -1,0 +1,24 @@
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100vh;
+  margin-right: 15px;
+
+  .cardMedia {
+    width: 100%;
+    height: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}

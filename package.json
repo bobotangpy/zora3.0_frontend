@@ -8,8 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "carbox-date-picker": "^0.2.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "next": "10.2.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-day-picker": "^7.4.10",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.4",
+    "react-slick": "^0.28.1",
+    "redux": "^4.1.0",
+    "slick-carousel": "^1.8.1"
   }
 }
