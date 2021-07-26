@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: max-content;
+  margin-right: 15px;
+  padding-bottom: 25px;
+
+  .cardMedia {
+    width: 100%;
+    height: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}

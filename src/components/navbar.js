@@ -1,17 +1,101 @@
-import { useContext, useEffect, useState } from "react";
+// import { useRouter } from "next/router";
+import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import SubMenu from "./subMenu";
 import { AppContext } from "../services/appProvider";
 import styles from "../styles/Navbar.module.scss";
 import Grid from "@material-ui/core/Grid";
+import Badge from "@material-ui/core/Badge";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import ItemList from "./itemList";
+import store from "store-js";
+import React from "react";
 // import MenuIcon from "@material-ui/icons/Menu";
 
+const SignedInNav = ({
+  username,
+  horoscope,
+  openCartPreview,
+  toggleDrawer,
+  // router,
+}) => {
+  return (
+    <div className={styles.signedIn}>
+      <p>
+        Welcome {username}, the beautiful {horoscope}
+      </p>
+      <img
+        alt="icon"
+        src={`/assets/images/icons/${horoscope}.png`}
+        className={styles.icon}
+        width={25}
+        height={25}
+      />
+
+      {/* Cart Icon */}
+      <span className={styles.menu}>
+        <Badge badgeContent={4} onClick={toggleDrawer(true)}>
+          <ShoppingCartOutlinedIcon />
+        </Badge>
+
+        <SwipeableDrawer
+          anchor={"right"}
+          open={openCartPreview}
+          onClose={toggleDrawer(false)}
+          onOpen={toggleDrawer(true)}
+        >
+          <div
+            role="presentation"
+            onClick={toggleDrawer(false)}
+            onKeyDown={toggleDrawer(false)}
+          >
+            {/* <ItemList /> */}Drawer
+          </div>
+        </SwipeableDrawer>
+      </span>
+
+      <p
+        className={styles.signOut}
+        onClick={() => {
+          store.clearAll();
+          window.location.replace("/");
+        }}
+      >
+        Sign Out
+      </p>
+    </div>
+  );
+};
+
 const NavBar = () => {
+  // const router = useRouter();
   const context = useContext(AppContext);
+  const drawerRef = useRef();
   const [anchorEl, setAnchorEl] = useState(null);
   const [hover, setHover] = useState(null);
   const [selected, setSelected] = useState(null);
   const [showSubMenu, setShowSubMenu] = useState(false);
+
+  const [openCartPreview, setOpenCartPreview] = useState(false);
+  const [drawerAnchor, setDrawerAnchor] = useState(null);
+
+  // const [userId, setUserId] = useState(null);
+  const [userName, setUserName] = useState(null);
+  const [horoscope, setHoroscope] = useState(null);
+
+  useEffect(() => {
+    if (!store.get("user_token")) return setUserName(null);
+
+    if (store.get("username")) {
+      setUserName(store.get("username"));
+      context.setUsername(store.get("username"));
+    }
+    if (store.get("horoscope")) {
+      setHoroscope(store.get("horoscope"));
+      context.setUserSign(store.get("horoscope"));
+    }
+  }, []);
 
   useEffect(() => {
     if (selected) {
@@ -19,6 +103,19 @@ const NavBar = () => {
       context.setMainCat(selected);
     }
   }, [selected]);
+
+  const clearContext = () => {
+    context.setMainCat(null);
+    context.setSubCat(null);
+    context.setStyle(null);
+  };
+
+  const toggleDrawer = (open) => (e) => {
+    if (e && e.type === "keydown" && (e.key === "Tab" || e.key === "Shift")) {
+      return;
+    }
+    open ? setOpenCartPreview(true) : setOpenCartPreview(false);
+  };
 
   return (
     <Grid
@@ -33,8 +130,8 @@ const NavBar = () => {
         setHover(null);
       }}
     >
-      <Grid item xs="6" className={styles.menuCol}>
-        <Link href="/category">
+      <Grid item xs={6} className={styles.menuCol}>
+        <Link href="/category" as="horoscope_of_the_month">
           <p
             aria-controls="horoscope-menu"
             aria-haspopup="true"
@@ -44,11 +141,11 @@ const NavBar = () => {
             }
             onClick={() => {
               setSelected("horoscope");
+              context.setStyle(null);
             }}
             onMouseEnter={(e) => {
-              setAnchorEl(e.currentTarget);
-              setShowSubMenu(true);
-              setHover("horoscope");
+              setAnchorEl(null);
+              setShowSubMenu(false);
             }}
           >
             Horoscope of the Month
@@ -88,25 +185,42 @@ const NavBar = () => {
 
       <>
         <Link href="/">
-          <p className={styles.logo}>Zora</p>
+          <p
+            className={styles.logo}
+            onClick={() => {
+              clearContext;
+            }}
+          >
+            Zora
+          </p>
         </Link>
       </>
 
       <Grid
         item
-        xs="6"
+        xs={6}
         style={{
           display: "flex",
           justifyContent: "flex-end",
           paddingRight: "15px",
         }}
       >
-        <Link href="/sign_in">
-          <p className={styles.menu}>Sign in</p>
-        </Link>
+        {userName ? (
+          <SignedInNav
+            username={userName}
+            horoscope={horoscope}
+            openCartPreview={openCartPreview}
+            toggleDrawer={toggleDrawer}
+            // router={router}
+          />
+        ) : (
+          <Link href="/sign_in">
+            <p className={styles.menu}>Sign in</p>
+          </Link>
+        )}
       </Grid>
 
-      <SubMenu show={showSubMenu} />
+      <SubMenu show={showSubMenu} hover={hover} />
     </Grid>
   );
 };

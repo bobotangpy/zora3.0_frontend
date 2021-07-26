@@ -1,7 +1,6 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import calculateHoroscope from "../components/calculateHoroscope";
-import NavBar from "../components/navbar";
-import Footer from "../components/footer";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Tabs from "@material-ui/core/Tabs";
@@ -11,6 +10,26 @@ import styles from "../styles/Signin.module.scss";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 import moment from "moment";
+import API from "../services/api";
+
+import { useDispatch } from "react-redux";
+import { loginUser } from "../redux/authSlice";
+import { store } from "../redux/_index";
+
+const api = new API();
+
+const SignUpSuccessPopup = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
+  }, []);
+  return (
+    <div className={styles.successPopup}>
+      <h3>Sign up successful !</h3>
+    </div>
+  );
+};
 
 const SigninTab = ({ value, index, handleSignin, props }) => {
   return (
@@ -22,19 +41,23 @@ const SigninTab = ({ value, index, handleSignin, props }) => {
     >
       <form className={styles.form}>
         <TextField
-          id="standard-basic"
+          // id="standard-basic"
           label="Email"
           type="email"
           className={styles.input}
           onChange={(e) => props.setSigninEmail(e.currentTarget.value)}
         />
         <TextField
-          id="standard-basic"
+          // id="standard-basic"
           label="Password"
           type="password"
           className={styles.input}
           onChange={(e) => props.setSigninPwd(e.currentTarget.value)}
         />
+
+        {props.errMsg ? (
+          <p style={{ color: "#ff5050", margin: "0" }}>{props.errMsg}</p>
+        ) : null}
 
         <button onClick={handleSignin} style={{ marginTop: "30px" }}>
           Sign In
@@ -54,18 +77,12 @@ const RegisterTab = ({
   showSumbitBtn,
 }) => {
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      //   id={`simple-tabpanel-${index}`}
-      //   aria-labelledby={`simple-tab-${index}`}
-    >
+    <div role="tabpanel" hidden={value !== index}>
       <form
         className={styles.form}
         style={{ display: showDatePicker ? "none" : "flex" }}
       >
         <TextField
-          id="standard-basic"
           label="Name"
           type="text"
           required
@@ -73,7 +90,6 @@ const RegisterTab = ({
           onChange={(e) => props.setRegName(e.currentTarget.value)}
         />
         <TextField
-          id="standard-basic"
           label="Email"
           type="email"
           required
@@ -85,7 +101,6 @@ const RegisterTab = ({
           onChange={(e) => props.setRegEmail(e.currentTarget.value)}
         />
         <TextField
-          id="standard-basic"
           label="Password"
           type="password"
           required
@@ -127,6 +142,8 @@ const RegisterTab = ({
 };
 
 const SignIn = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const [value, setValue] = useState(0);
   const [tab, setTab] = useState("signin");
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -134,16 +151,25 @@ const SignIn = () => {
 
   const [signinEmail, setSigninEmail] = useState(null);
   const [signinPwd, setSigninPwd] = useState(null);
+  const [errMsg, setErrMsg] = useState(null);
 
   const [regName, setRegName] = useState(null);
   const [regEmail, setRegEmail] = useState(null);
   const [regPwd, setRegPwd] = useState(null);
   const [regPwd2, setRegPwd2] = useState(null);
   const [bday, setBday] = useState(null);
+  const [horoscope, setHoroscope] = useState(null);
   const [regEmailErr, setRegEmailErr] = useState(false);
   const [regPwd2err, setRegPwd2err] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const signinProps = { signinEmail, setSigninEmail, signinPwd, setSigninPwd };
+  const signinProps = {
+    signinEmail,
+    setSigninEmail,
+    signinPwd,
+    setSigninPwd,
+    errMsg,
+  };
   const regProps = {
     regName,
     setRegName,
@@ -159,15 +185,6 @@ const SignIn = () => {
   };
 
   useEffect(() => {
-    if (signinEmail) console.log(signinEmail);
-  }, [signinEmail]);
-
-  //   useEffect(() => {
-  //     if (regEmail) setRegEmailErr(true);
-  //     else setRegEmailErr(false);
-  //   }, [regEmail]);
-
-  useEffect(() => {
     if (regPwd && regPwd2) {
       regPwd !== regPwd2 ? setRegPwd2err(true) : setRegPwd2err(false);
     }
@@ -180,9 +197,11 @@ const SignIn = () => {
       let date = moment(bday).format("YYYY-MM-DD");
       let month = Number(date.split("-")[1]);
       let day = Number(date.split("-")[2]);
-      console.log(date);
 
       let sign = calculateHoroscope(month, day);
+      setHoroscope(sign);
+
+      console.log(date);
       console.log(sign);
     } else setShowSubmitBtn(false);
   }, [bday]);
@@ -200,6 +219,28 @@ const SignIn = () => {
 
     if (signinEmail && signinPwd) {
       console.log("sign in", signinEmail, signinPwd);
+
+      dispatch(loginUser(signinEmail, signinPwd)).then(() => {
+        !store.getState().auth.msg
+          ? window.location.replace("/")
+          : setErrMsg(store.getState().auth.msg);
+      });
+
+      // api.login(signinEmail, signinPwd).then((res) => {
+      //   if (res) {
+      //     console.log("res:::", res);
+      //     if (res === "Wrong Email or Password") {
+      //       setErrMsg(res);
+      //     } else if (res.token) {
+      //       setErrMsg(null);
+      //       store.set("user_token", res.token);
+      //       store.set("user_id", res.id);
+      //       store.set("username", res.name);
+      //       store.set("horoscope", res.horoscope);
+      // window.location.replace("/");
+      //     }
+      //   }
+      // });
     } else return;
   };
 
@@ -214,13 +255,20 @@ const SignIn = () => {
 
   const handleCreateUser = (e) => {
     e.preventDefault();
+
+    api.signup(regName, regEmail, regPwd, bday, horoscope).then((res) => {
+      if (res) {
+        console.log("res:::", res);
+        if (res === "Sign up successful!") {
+          setSuccess(true);
+        } else setSuccess(false);
+      }
+    });
   };
 
   return (
-    <>
-      <NavBar />
-
-      <div className={styles.signin}>
+    <div className={styles.signin}>
+      <div className={success ? styles.success : styles.cardWrapper}>
         <Card className={styles.card}>
           <Tabs
             value={value}
@@ -264,8 +312,8 @@ const SignIn = () => {
         </Card>
       </div>
 
-      <Footer />
-    </>
+      {success ? <SignUpSuccessPopup /> : null}
+    </div>
   );
 };
 

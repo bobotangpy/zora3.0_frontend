@@ -38,6 +38,12 @@ button {
   box-sizing: border-box;
 }
 
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 /*** Home Slick Slider ***/
 .slick-slider {
   .slick-dots {
@@ -59,12 +65,16 @@ button {
 }
 
 // Sign In / Create Account
-.PrivateTabIndicator-root-1 {
+.MuiTabs-scroller.MuiTabs-fixed .MuiTabs-indicator {
   height: 1px !important;
-}
-.PrivateTabIndicator-colorSecondary-3 {
   background-color: #272727 !important;
 }
+// .PrivateTabIndicator-root-9 {
+//   height: 1px !important;
+// }
+// .PrivateTabIndicator-colorSecondary-11 {
+//   background-color: #272727 !important;
+// }
 .MuiInputLabel-root,
 .MuiFormHelperText-root {
   font-family: $custom-font !important;
@@ -79,6 +89,14 @@ button {
 .MuiTabs-flexContainer {
   display: flex;
   justify-content: center;
+}
+
+// Item List in category
+.MuiCard-root {
+  min-height: 550px;
+}
+.MuiCardContent-root {
+  padding-bottom: 0px !important;
 }
 
 .DayPicker-wrapper {

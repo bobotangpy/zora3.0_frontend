@@ -10,6 +10,14 @@ export const AppProvider = ({ children }) => {
   const [subCat, setSubCat] = useState(null);
   const [style, setStyle] = useState(null);
 
+  const [username, setUsername] = useState(null);
+  const [userSign, setUserSign] = useState(null);
+
+  const [topsData, setTopsData] = useState(null);
+  const [bottomsData, setBottomsData] = useState(null);
+  const [dressSuitsData, setDressSuitsData] = useState(null);
+  const [shoesData, setShoesData] = useState(null);
+
   useEffect(() => {
     let date = moment().format("YYYY-MM-DD");
     let month = Number(date.split("-")[1]);
@@ -23,9 +31,21 @@ export const AppProvider = ({ children }) => {
     mainCat,
     subCat,
     style,
+    username,
+    userSign,
+    topsData,
+    bottomsData,
+    dressSuitsData,
+    shoesData,
     setMainCat,
     setSubCat,
     setStyle,
+    setUsername,
+    setUserSign,
+    setTopsData,
+    setBottomsData,
+    setDressSuitsData,
+    setShoesData,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

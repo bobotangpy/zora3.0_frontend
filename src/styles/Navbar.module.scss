@@ -3,7 +3,8 @@
   z-index: 999;
 
   .row,
-  .menuCol {
+  .menuCol,
+  .signedIn {
     display: flex;
     flex-direction: row;
   }
@@ -54,6 +55,24 @@
   .menuSelected {
     color: #155399;
     font-weight: 500;
+  }
+}
+
+/*** SignedInNav ***/
+.signedIn {
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    margin: 5px 5px 10px 5px;
+  }
+
+  .signOut {
+    cursor: pointer;
+    margin-left: 15px;
+    &:hover {
+      color: #155399;
+    }
   }
 }
 

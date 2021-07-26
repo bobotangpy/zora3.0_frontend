@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../services/appProvider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import styles from "../styles/categoryMenu.module.scss";
-import { AppContext } from "../services/appProvider";
+import styles from "../styles/CategoryMenu.module.scss";
 
 const CategoryMenu = () => {
   const context = useContext(AppContext);

@@ -1,20 +1,13 @@
-import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import WebHead from "../components/webHead";
-import NavBar from "../components/navbar";
-import Footer from "../components/footer";
-import CategoryMenu from "../components/categoryMenu";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../services/appProvider";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Grid from "@material-ui/core/Grid";
-import GridList from "@material-ui/core/GridList";
-import Link from "@material-ui/core/Link";
+import CategoryMenu from "../components/categoryMenu";
+import ItemList from "../components/itemList";
 import _ from "lodash";
-import styles from "../styles/category.module.scss";
+import styles from "../styles/Category.module.scss";
+import API from "../services/api";
+
+const api = new API();
 
 const Category = ({ data }) => {
   const router = useRouter();
@@ -23,6 +16,7 @@ const Category = ({ data }) => {
   const [subCat, setSubCat] = useState(null);
   const [items, setItems] = useState(null);
   const [filteredItems, setFilteredItems] = useState(null);
+  const [gender, setGender] = useState(null);
 
   useEffect(() => {
     if (context.mainCat) {
@@ -34,35 +28,64 @@ const Category = ({ data }) => {
       let filtered = filterItemsForDisplay(data, context.mainCat);
 
       setItems(_.sortBy(filtered, "gender_id"));
+      console.log("ccccc", context);
     }
   }, []);
 
   useEffect(() => {
-    if (context.mainCat && context.subCat) {
+    if (context.mainCat) {
       let filMain = filterItemsForDisplay(data, context.mainCat);
-      let filSub = filterSubCatItems(filMain, context.subCat);
       setItems(filMain);
-      setFilteredItems(filSub);
+
+      if (!context.subCat && !context.style) {
+        context.setSubCat("tops");
+        context.setStyle("trending");
+      }
+
+      // if (context.subCat && context.style) {
+      //   let filSub = filterSubCatItems(filMain, context.subCat);
+      //   let filStyle = filterStyleItems(filSub, context.style);
+      //   setFilteredItems(filStyle);
+      //   return;
+      // } else if (context.subCat && !context.style) {
+      //   let filSub = filterSubCatItems(filMain, context.subCat);
+      //   setFilteredItems(filSub);
+      //   return;
+      // } else if (context.style && !context.subCat) {
+      //   let filSub = filterSubCatItems(filMain, context.subCat);
+      //   let filStyle = filterStyleItems(filSub, context.style);
+      //   setFilteredItems(filStyle);
+      //   return;
+      // }
+      // console.log(context);
     }
-  }, [context.mainCat, context.subCat]);
+  }, [context.mainCat, context.subCat, context.style]);
 
   useEffect(() => {
-    if (context.subCat && items) {
+    if (items && !context.subCat && context.style) {
+      context.setSubCat("tops");
+    }
+
+    if (items && context.subCat && !context.style) {
       let d = filterSubCatItems(items, context.subCat);
-      setFilteredItems(d);
+      return setFilteredItems(d);
     }
-  }, [context.subCat, items]);
 
-  useEffect(() => {
-    if (items) console.log(items);
+    if (items && context.subCat && context.style) {
+      let d = filterSubCatItems(items, context.subCat);
+      let d2 = filterStyleItems(d, context.style);
+      return setFilteredItems(d2);
+    }
+  }, [context.style, context.subCat, items]);
 
-    if (!filteredItems && mainCat && items) setFilteredItems(items);
-  }, [items, filteredItems, mainCat]);
+  // useEffect(() => {
+  //   if (items) console.log("items", items);
+  //   //   if (!filteredItems && mainCat && items) setFilteredItems(items);
+  // }, [items]);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    router.push("/");
-  };
+  // useEffect(() => {
+  //   if (filteredItems) console.log("filteredItems", filteredItems);
+  // }, [filteredItems]);
 
   const filterItemsForDisplay = (data, category) => {
     let dataArr = [];
@@ -76,11 +99,13 @@ const Category = ({ data }) => {
         });
         break;
       case "women":
+        setGender(1);
         _.map(data, (item) => {
           if (item.gender_id === 1) dataArr.push(item);
         });
         break;
       case "men":
+        setGender(0);
         _.map(data, (item) => {
           if (item.gender_id === 0) dataArr.push(item);
         });
@@ -93,7 +118,7 @@ const Category = ({ data }) => {
       dataArr,
       (elm, i, arr) => arr.findIndex((item) => item.name === elm.name) === i
     );
-    console.log("mainCat", d);
+    // console.log("mainCat", d);
     return d;
   };
 
@@ -105,77 +130,86 @@ const Category = ({ data }) => {
         _.map(data, (item) => {
           if (item.type_id == 0) dataArr.push(item);
         });
+        if (gender && context.userSign) {
+          api.querySuggestions(context.userSign, gender, 0).then((res) => {
+            if (res && Array.isArray(res)) context.setDressSuitsData(res);
+          });
+        }
         break;
       case "shoes":
         _.map(data, (item) => {
           if (item.type_id == 1) dataArr.push(item);
         });
+        if (gender && context.userSign) {
+          api.querySuggestions(context.userSign, gender, 1).then((res) => {
+            if (res && Array.isArray(res)) context.setShoesData(res);
+          });
+        }
         break;
       case "tops":
         _.map(data, (item) => {
           if (item.type_id == 2) dataArr.push(item);
         });
+        if (gender && context.userSign) {
+          api.querySuggestions(context.userSign, gender, 2).then((res) => {
+            if (res && Array.isArray(res)) context.setTopsData(res);
+          });
+        }
         break;
       case "bottoms":
         _.map(data, (item) => {
           if (item.type_id == 3) dataArr.push(item);
         });
+        if (gender && context.userSign) {
+          api.querySuggestions(context.userSign, gender, 3).then((res) => {
+            if (res && Array.isArray(res)) context.setBottomsData(res);
+          });
+        }
         break;
       default:
         break;
     }
+    return dataArr;
+  };
 
+  const filterStyleItems = (data, style) => {
+    console.log(data);
+    let dataArr = [];
+
+    switch (style) {
+      case "trending":
+        _.map(data, (item) => {
+          if (item.style_id == 0) dataArr.push(item);
+        });
+        break;
+      case "casual":
+        _.map(data, (item) => {
+          if (item.style_id == 1) dataArr.push(item);
+        });
+        break;
+      case "formal":
+        _.map(data, (item) => {
+          if (item.style_id == 2) dataArr.push(item);
+        });
+        break;
+      case "goingOut":
+        _.map(data, (item) => {
+          if (item.style_id == 3) dataArr.push(item);
+        });
+        break;
+      default:
+        break;
+    }
+    console.log("style", dataArr);
     return dataArr;
   };
 
   return (
-    <>
-      <WebHead />
-      <NavBar />
+    <div className={styles.mainContent}>
+      <CategoryMenu />
 
-      {/* <Breadcrumbs aria-label="breadcrumb">
-        <Link color="inherit" href="/" onClick={handleClick}>
-          Home
-        </Link>
-        <h4 color="textPrimary">{mainCat}</h4>
-      </Breadcrumbs> */}
-
-      <div className={styles.mainContent}>
-        <CategoryMenu />
-
-        <div className={styles.list}>
-          <GridList cols={4} spacing={12} cellHeight={550}>
-            {filteredItems
-              ? filteredItems.map((item, i) => (
-                  <Grid key={i} item xs={12} sm={4} md={3} lg={3}>
-                    <Card key={i}>
-                      <CardActionArea>
-                        <Link href="#" style={{ color: "#404040" }}>
-                          <CardMedia
-                            className={styles.cardMedia}
-                            component="img"
-                            alt={item.name}
-                            image={item.img}
-                            title={item.name}
-                          />
-                          <CardContent>
-                            <h3>{item.name}</h3>
-                          </CardContent>
-                        </Link>
-                      </CardActionArea>
-                      <CardActions className={styles.actions}>
-                        <button>Add to Cart</button>
-                      </CardActions>
-                    </Card>
-                  </Grid>
-                ))
-              : null}
-          </GridList>
-        </div>
-      </div>
-
-      <Footer />
-    </>
+      {filteredItems ? <ItemList items={filteredItems} /> : null}
+    </div>
   );
 };
 

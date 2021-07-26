@@ -1,0 +1,41 @@
+@import "./variables";
+
+.layout {
+  margin: 15px;
+  // margin: 0;
+  // background: linear-gradient(
+  //     rgba(255, 255, 255, 0.1),
+  //     rgba(255, 255, 255, 0.1)
+  //   ),
+  //   url("/assets/images/backgound/horoscope_bg.jpg") fixed repeat center;
+  // position: relative;
+  // background-size: cover;
+  // min-height: 100vh;
+
+  img {
+    margin: 10px 15px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  .select {
+    min-width: 120px;
+    margin: 5px 15px;
+    border-radius: 4px;
+
+    select {
+      padding: 12px 20px;
+    }
+  }
+
+  .qty {
+    min-width: 120px;
+    padding: 5px;
+    margin: 0 15px;
+    font-size: 16px;
+    border: 1px solid $text-color;
+    border-radius: 2px;
+  }
+}
