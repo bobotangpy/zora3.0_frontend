@@ -6,17 +6,17 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [monthSign, setMonthSign] = useState(null);
-  const [mainCat, setMainCat] = useState(null);
-  const [subCat, setSubCat] = useState(null);
-  const [style, setStyle] = useState(null);
+  // const [mainCat, setMainCat] = useState(null);
+  // const [subCat, setSubCat] = useState(null);
+  // const [style, setStyle] = useState(null);
 
   const [username, setUsername] = useState(null);
   const [userSign, setUserSign] = useState(null);
 
-  const [topsData, setTopsData] = useState(null);
-  const [bottomsData, setBottomsData] = useState(null);
-  const [dressSuitsData, setDressSuitsData] = useState(null);
-  const [shoesData, setShoesData] = useState(null);
+  // const [topsData, setTopsData] = useState(null);
+  // const [bottomsData, setBottomsData] = useState(null);
+  // const [dressSuitsData, setDressSuitsData] = useState(null);
+  // const [shoesData, setShoesData] = useState(null);
 
   useEffect(() => {
     let date = moment().format("YYYY-MM-DD");
@@ -28,24 +28,24 @@ export const AppProvider = ({ children }) => {
 
   const values = {
     monthSign,
-    mainCat,
-    subCat,
-    style,
+    // mainCat,
+    // subCat,
+    // style,
     username,
     userSign,
-    topsData,
-    bottomsData,
-    dressSuitsData,
-    shoesData,
-    setMainCat,
-    setSubCat,
-    setStyle,
+    // topsData,
+    // bottomsData,
+    // dressSuitsData,
+    // shoesData,
+    // setMainCat,
+    // setSubCat,
+    // setStyle,
     setUsername,
     setUserSign,
-    setTopsData,
-    setBottomsData,
-    setDressSuitsData,
-    setShoesData,
+    // setTopsData,
+    // setBottomsData,
+    // setDressSuitsData,
+    // setShoesData,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

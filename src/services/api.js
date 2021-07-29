@@ -25,8 +25,7 @@ export default class API {
     );
 
     const parseData = (res) => {
-      console.log("parseData", res);
-
+      // console.log("parseData", res);
       if (res.status === 200) {
         return res.data;
       } else {
@@ -59,15 +58,11 @@ export default class API {
     return res;
   }
 
-  // queryHighlights(horoscope, style_id) {
-  //   const url = `api/products/highlights/${horoscope}/${style_id}`;
-  //   const res = this.api.get(url);
-  //   return res;
-  // }
-
-  // queryFilteredProducts(horoscope, gender, style_id, type_id) {
-  //   const url = `api/filteredProducts/${horoscope}/${gender}/${style_id}/${type_id}`;
-  // }
+  queryAllProducts() {
+    const url = `api/products`;
+    const res = this.api.get(url);
+    return res;
+  }
 
   queryProductInfo(id) {
     const url = `api/productInfo/${id}`;

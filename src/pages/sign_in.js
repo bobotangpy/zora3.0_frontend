@@ -14,7 +14,7 @@ import API from "../services/api";
 
 import { useDispatch } from "react-redux";
 import { loginUser } from "../redux/authSlice";
-import { store } from "../redux/_index";
+import { reduxStore } from "../redux/_index";
 
 const api = new API();
 
@@ -221,26 +221,10 @@ const SignIn = () => {
       console.log("sign in", signinEmail, signinPwd);
 
       dispatch(loginUser(signinEmail, signinPwd)).then(() => {
-        !store.getState().auth.msg
+        !reduxStore.getState().auth.msg
           ? window.location.replace("/")
-          : setErrMsg(store.getState().auth.msg);
+          : setErrMsg(reduxStore.getState().auth.msg);
       });
-
-      // api.login(signinEmail, signinPwd).then((res) => {
-      //   if (res) {
-      //     console.log("res:::", res);
-      //     if (res === "Wrong Email or Password") {
-      //       setErrMsg(res);
-      //     } else if (res.token) {
-      //       setErrMsg(null);
-      //       store.set("user_token", res.token);
-      //       store.set("user_id", res.id);
-      //       store.set("username", res.name);
-      //       store.set("horoscope", res.horoscope);
-      // window.location.replace("/");
-      //     }
-      //   }
-      // });
     } else return;
   };
 

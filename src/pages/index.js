@@ -1,4 +1,8 @@
 import styles from "../styles/Home.module.scss";
+import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { updateMainCat } from "../redux/mainCatSlice";
+
 // Slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -12,33 +16,48 @@ const sliderSetting = {
   autoplay: true,
   autoplaySpeed: 2500,
   adaptiveHeight: false,
+  swipeToSlide: true,
+  pauseOnHover: true,
 };
 
 export default function Home() {
+  const dispatch = useDispatch();
+
   return (
     <div className={styles.container}>
       <div className={styles.container}>
         <Slider {...sliderSetting}>
           <div>
-            <img
-              src="/assets/images/landing/slide_1.jpg"
-              alt="1"
-              className={styles.img}
-            />
+            <Link href="/category" as="/horoscope">
+              <img
+                src="/assets/images/landing/slide_1.jpg"
+                alt="1"
+                className={styles.img}
+                onClick={() => {
+                  dispatch(updateMainCat("horoscope"));
+                }}
+              />
+            </Link>
           </div>
           <div>
-            <img
-              src="/assets/images/landing/slide_2.jpg"
-              alt="2"
-              className={styles.img}
-            />
+            <Link href="/category" as="/women">
+              <img
+                src="/assets/images/landing/slide_2.jpg"
+                alt="2"
+                className={styles.img}
+                onClick={() => dispatch(updateMainCat("women"))}
+              />
+            </Link>
           </div>
           <div>
-            <img
-              src="/assets/images/landing/slide_3.jpg"
-              alt="3"
-              className={styles.img}
-            />
+            <Link href="/category" as="/men">
+              <img
+                src="/assets/images/landing/slide_3.jpg"
+                alt="3"
+                className={styles.img}
+                onClick={() => dispatch(updateMainCat("men"))}
+              />
+            </Link>
           </div>
         </Slider>
       </div>

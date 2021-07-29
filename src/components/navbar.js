@@ -10,8 +10,13 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import ItemList from "./itemList";
 import store from "store-js";
-import React from "react";
+import { reduxStore } from "../redux/_index";
 // import MenuIcon from "@material-ui/icons/Menu";
+
+import { useDispatch, useSelector } from "react-redux";
+import { updateMainCat, resetMainCat } from "../redux/mainCatSlice";
+import { updateSubCat, resetSubCat } from "../redux/subCatSlice";
+import { updateStyle, resetStyle } from "../redux/styleSlice";
 
 const SignedInNav = ({
   username,
@@ -70,11 +75,14 @@ const SignedInNav = ({
 
 const NavBar = () => {
   // const router = useRouter();
+  const dispatch = useDispatch();
+  const selected = useSelector((state) => state.mainCat.selectedMainCat);
+
   const context = useContext(AppContext);
   const drawerRef = useRef();
   const [anchorEl, setAnchorEl] = useState(null);
   const [hover, setHover] = useState(null);
-  const [selected, setSelected] = useState(null);
+  // const [selected, setSelected] = useState(null);
   const [showSubMenu, setShowSubMenu] = useState(false);
 
   const [openCartPreview, setOpenCartPreview] = useState(false);
@@ -97,17 +105,11 @@ const NavBar = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (selected) {
-      console.log(selected);
-      context.setMainCat(selected);
-    }
-  }, [selected]);
-
-  const clearContext = () => {
-    context.setMainCat(null);
-    context.setSubCat(null);
-    context.setStyle(null);
+  const clearSelections = () => {
+    dispatch(updateMainCat(null));
+    dispatch(updateSubCat(null));
+    dispatch(updateStyle(null));
+    // console.log("clear store", reduxStore.getState());
   };
 
   const toggleDrawer = (open) => (e) => {
@@ -140,8 +142,8 @@ const NavBar = () => {
               selected === "horoscope" ? styles.menuSelected : styles.menu
             }
             onClick={() => {
-              setSelected("horoscope");
-              context.setStyle(null);
+              dispatch(updateMainCat("horoscope"));
+              dispatch(updateStyle(null));
             }}
             onMouseEnter={(e) => {
               setAnchorEl(null);
@@ -156,7 +158,7 @@ const NavBar = () => {
           <p
             aria-controls="women-menu"
             className={selected === "women" ? styles.menuSelected : styles.menu}
-            onClick={() => setSelected("women")}
+            onClick={() => dispatch(updateMainCat("women"))}
             onMouseEnter={(e) => {
               setAnchorEl(e.currentTarget);
               setShowSubMenu(true);
@@ -171,7 +173,7 @@ const NavBar = () => {
           <p
             aria-controls="men-menu"
             className={selected === "men" ? styles.menuSelected : styles.menu}
-            onClick={() => setSelected("men")}
+            onClick={() => dispatch(updateMainCat("men"))}
             onMouseEnter={(e) => {
               setAnchorEl(e.currentTarget);
               setShowSubMenu(true);
@@ -188,7 +190,7 @@ const NavBar = () => {
           <p
             className={styles.logo}
             onClick={() => {
-              clearContext;
+              clearSelections();
             }}
           >
             Zora

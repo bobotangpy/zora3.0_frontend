@@ -1,17 +1,19 @@
-import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../services/appProvider";
+import { useEffect } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import styles from "../styles/CategoryMenu.module.scss";
 
+import { useDispatch, useSelector } from "react-redux";
+import { updateSubCat } from "../redux/subCatSlice";
+
 const CategoryMenu = () => {
-  const context = useContext(AppContext);
-  const [selected, setSelected] = useState(null);
+  const dispatch = useDispatch();
+  const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
+  const selected = useSelector((state) => state.subCat.selectedSubCat);
 
   useEffect(() => {
     if (selected) {
-      // console.log(selected);
-      context.setSubCat(selected);
+      dispatch(updateSubCat(selected));
     }
   }, [selected]);
 
@@ -20,14 +22,14 @@ const CategoryMenu = () => {
       <ListItem
         button
         className={selected === "tops" ? styles.menuSelected : styles.menu}
-        onClick={() => setSelected("tops")}
+        onClick={() => dispatch(updateSubCat("tops"))}
       >
         <p>Tops</p>
       </ListItem>
       <ListItem
         button
         className={selected === "bottoms" ? styles.menuSelected : styles.menu}
-        onClick={() => setSelected("bottoms")}
+        onClick={() => dispatch(updateSubCat("bottoms"))}
       >
         <p>Bottoms</p>
       </ListItem>
@@ -36,11 +38,11 @@ const CategoryMenu = () => {
         className={
           selected === "dressSuits" ? styles.menuSelected : styles.menu
         }
-        onClick={() => setSelected("dressSuits")}
+        onClick={() => dispatch(updateSubCat("dressSuits"))}
       >
-        {context.mainCat === "women" ? (
+        {mainCat === "women" ? (
           <p>Dresses</p>
-        ) : context.mainCat === "men" ? (
+        ) : mainCat === "men" ? (
           <p>Suits</p>
         ) : (
           <p>Dresses | Suits</p>
@@ -49,7 +51,7 @@ const CategoryMenu = () => {
       <ListItem
         button
         className={selected === "shoes" ? styles.menuSelected : styles.menu}
-        onClick={() => setSelected("shoes")}
+        onClick={() => dispatch(updateSubCat("shoes"))}
       >
         <p>Shoes</p>
       </ListItem>

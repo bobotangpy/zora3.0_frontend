@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../services/appProvider";
 import CategoryMenu from "../components/categoryMenu";
@@ -7,85 +6,84 @@ import _ from "lodash";
 import styles from "../styles/Category.module.scss";
 import API from "../services/api";
 
+import { useDispatch, useSelector } from "react-redux";
+import { updateSubCat } from "../redux/subCatSlice";
+import { updateStyle } from "../redux/styleSlice";
+import {
+  updateTopsData,
+  updateBottomsData,
+  updateDressSuitsData,
+  updateShoesData,
+} from "../redux/productsDataSlice";
+import { reduxStore } from "../redux/_index";
+
 const api = new API();
 
 const Category = ({ data }) => {
-  const router = useRouter();
+  const dispatch = useDispatch();
+  const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
+  const subCat = useSelector((state) => state.subCat.selectedSubCat);
+  const style = useSelector((state) => state.style.selectedStyle);
+  const userSign = useSelector((state) => state.auth.userSign);
+
   const context = useContext(AppContext);
-  const [mainCat, setMainCat] = useState(null);
-  const [subCat, setSubCat] = useState(null);
   const [items, setItems] = useState(null);
   const [filteredItems, setFilteredItems] = useState(null);
-  const [gender, setGender] = useState(null);
 
   useEffect(() => {
-    if (context.mainCat) {
-      let name = `${context.mainCat
-        .charAt(0)
-        .toUpperCase()}${context.mainCat.slice(1)}`;
-      setMainCat(name);
-
-      let filtered = filterItemsForDisplay(data, context.mainCat);
-
-      setItems(_.sortBy(filtered, "gender_id"));
-      console.log("ccccc", context);
+    if (mainCat !== "horoscope" && !subCat && !style) {
+      dispatch(updateSubCat("tops"));
+      dispatch(updateStyle("trending"));
+    } else if (mainCat === "horoscope" && !subCat) {
+      dispatch(updateSubCat("tops"));
     }
+    console.log("states in store", reduxStore.getState());
   }, []);
 
   useEffect(() => {
-    if (context.mainCat) {
-      let filMain = filterItemsForDisplay(data, context.mainCat);
-      setItems(filMain);
+    if (mainCat === "horoscope") dispatch(updateStyle(null));
 
-      if (!context.subCat && !context.style) {
-        context.setSubCat("tops");
-        context.setStyle("trending");
-      }
+    if (mainCat && subCat) {
+      let filtered = filterItemsForDisplay(data, mainCat);
+      setItems(_.sortBy(filtered, "gender_id"));
 
-      // if (context.subCat && context.style) {
-      //   let filSub = filterSubCatItems(filMain, context.subCat);
-      //   let filStyle = filterStyleItems(filSub, context.style);
-      //   setFilteredItems(filStyle);
-      //   return;
-      // } else if (context.subCat && !context.style) {
-      //   let filSub = filterSubCatItems(filMain, context.subCat);
-      //   setFilteredItems(filSub);
-      //   return;
-      // } else if (context.style && !context.subCat) {
-      //   let filSub = filterSubCatItems(filMain, context.subCat);
-      //   let filStyle = filterStyleItems(filSub, context.style);
-      //   setFilteredItems(filStyle);
-      //   return;
-      // }
-      // console.log(context);
+      console.log("filter", filtered);
+
+      updateSuggestions(subCat, getGenderId(mainCat));
     }
-  }, [context.mainCat, context.subCat, context.style]);
+  }, [mainCat]);
 
+  /* When user only selected mainCat & style */
   useEffect(() => {
-    if (items && !context.subCat && context.style) {
-      context.setSubCat("tops");
+    if (items && !subCat && style) {
+      dispatch(updateSubCat("tops"));
     }
 
-    if (items && context.subCat && !context.style) {
-      let d = filterSubCatItems(items, context.subCat);
-      return setFilteredItems(d);
+    if (items && subCat && !style) {
+      dispatch(updateStyle("trending"));
+      // let d = filterSubCatItems(items, subCat);
+      // return setFilteredItems(d);
     }
 
-    if (items && context.subCat && context.style) {
-      let d = filterSubCatItems(items, context.subCat);
-      let d2 = filterStyleItems(d, context.style);
+    if (items && subCat && style) {
+      let d = filterSubCatItems(items, subCat);
+      let d2 = filterStyleItems(d, style);
       return setFilteredItems(d2);
     }
-  }, [context.style, context.subCat, items]);
 
-  // useEffect(() => {
-  //   if (items) console.log("items", items);
-  //   //   if (!filteredItems && mainCat && items) setFilteredItems(items);
-  // }, [items]);
+    if (!items && mainCat && style) {
+      let filtered = filterItemsForDisplay(data, mainCat);
+      setItems(filtered);
+    }
+  }, [mainCat, subCat, style, items]);
 
-  // useEffect(() => {
-  //   if (filteredItems) console.log("filteredItems", filteredItems);
-  // }, [filteredItems]);
+  const getGenderId = (gender) => {
+    if (gender === "men") {
+      return 0;
+    } else if (gender === "women") {
+      return 1;
+    }
+  };
 
   const filterItemsForDisplay = (data, category) => {
     let dataArr = [];
@@ -99,13 +97,11 @@ const Category = ({ data }) => {
         });
         break;
       case "women":
-        setGender(1);
         _.map(data, (item) => {
           if (item.gender_id === 1) dataArr.push(item);
         });
         break;
       case "men":
-        setGender(0);
         _.map(data, (item) => {
           if (item.gender_id === 0) dataArr.push(item);
         });
@@ -125,46 +121,28 @@ const Category = ({ data }) => {
   const filterSubCatItems = (data, subCat) => {
     let dataArr = [];
 
+    updateSuggestions(subCat, getGenderId(mainCat));
+
     switch (subCat) {
       case "dressSuits":
         _.map(data, (item) => {
           if (item.type_id == 0) dataArr.push(item);
         });
-        if (gender && context.userSign) {
-          api.querySuggestions(context.userSign, gender, 0).then((res) => {
-            if (res && Array.isArray(res)) context.setDressSuitsData(res);
-          });
-        }
         break;
       case "shoes":
         _.map(data, (item) => {
           if (item.type_id == 1) dataArr.push(item);
         });
-        if (gender && context.userSign) {
-          api.querySuggestions(context.userSign, gender, 1).then((res) => {
-            if (res && Array.isArray(res)) context.setShoesData(res);
-          });
-        }
         break;
       case "tops":
         _.map(data, (item) => {
           if (item.type_id == 2) dataArr.push(item);
         });
-        if (gender && context.userSign) {
-          api.querySuggestions(context.userSign, gender, 2).then((res) => {
-            if (res && Array.isArray(res)) context.setTopsData(res);
-          });
-        }
         break;
       case "bottoms":
         _.map(data, (item) => {
           if (item.type_id == 3) dataArr.push(item);
         });
-        if (gender && context.userSign) {
-          api.querySuggestions(context.userSign, gender, 3).then((res) => {
-            if (res && Array.isArray(res)) context.setBottomsData(res);
-          });
-        }
         break;
       default:
         break;
@@ -173,7 +151,7 @@ const Category = ({ data }) => {
   };
 
   const filterStyleItems = (data, style) => {
-    console.log(data);
+    // console.log(data);
     let dataArr = [];
 
     switch (style) {
@@ -200,8 +178,39 @@ const Category = ({ data }) => {
       default:
         break;
     }
-    console.log("style", dataArr);
+    // console.log("style", dataArr);
     return dataArr;
+  };
+
+  const updateSuggestions = (subCat, genderId) => {
+    let subCat_id;
+
+    subCat === "dressSuits"
+      ? (subCat_id = 0)
+      : subCat === "shoes"
+      ? (subCat_id = 1)
+      : subCat === "tops"
+      ? (subCat_id = 2)
+      : subCat === "bottoms"
+      ? (subCat_id = 3)
+      : "";
+
+    if (genderId !== null && userSign) {
+      console.log(mainCat, genderId, subCat_id);
+      api.querySuggestions(userSign, genderId, subCat_id).then((res) => {
+        if (res && Array.isArray(res)) {
+          subCat_id == 0
+            ? dispatch(updateDressSuitsData(res))
+            : subCat_id == 1
+            ? dispatch(updateShoesData(res))
+            : subCat_id == 2
+            ? dispatch(updateTopsData(res))
+            : subCat_id == 3
+            ? dispatch(updateBottomsData(res))
+            : "";
+        }
+      });
+    }
   };
 
   return (
@@ -216,9 +225,13 @@ const Category = ({ data }) => {
 export default Category;
 
 export const getStaticProps = async () => {
-  const url = "http://localhost:3000/assets/data.json";
-  const getData = await fetch(url);
-  const data = await getData.json();
+  let data;
+
+  await api.queryAllProducts().then((res) => {
+    if (res && Array.isArray(res)) {
+      data = res;
+    } else data = [];
+  });
 
   return { props: { data: data }, revalidate: 30 };
 };

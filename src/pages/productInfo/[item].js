@@ -1,21 +1,29 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Suggestions from "../../components/suggestions";
 import Grid from "@material-ui/core/Grid";
 import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
-import styles from "../../styles/ItemView.module.scss";
+import styles from "../../styles/ProductInfo.module.scss";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import API from "../../services/api";
 import _ from "lodash";
+import store from "store-js";
+import { reduxStore } from "../../redux/_index";
+import { useSelector } from "react-redux";
 
-const ItemView = ({ data }) => {
+const api = new API();
+
+const ProductInfo = ({ data }) => {
+  const router = useRouter();
+  const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
   const [size, setSize] = useState("");
   const [quantity, setQuantity] = useState("");
 
   useEffect(() => {
     if (data) {
-      console.log(data);
-
       setQuantity(1);
+      console.log("states in store", reduxStore.getState());
     }
   }, []);
 
@@ -38,13 +46,19 @@ const ItemView = ({ data }) => {
         <div className={styles.layout}>
           <div
             className="flexRow"
-            onClick={() => {
-              // console.log(context);
-            }}
             style={{ height: "23px", marginLeft: "15px", cursor: "pointer" }}
           >
             <ArrowBackIosIcon />
-            <p style={{ paddingTop: "5px" }}>Back</p>
+            <p
+              style={{ paddingTop: "5px" }}
+              onClick={() =>
+                router.push("/category", `/${mainCat}`, {
+                  shallow: true,
+                })
+              }
+            >
+              Back
+            </p>
           </div>
 
           <Grid container spacing={2}>
@@ -97,22 +111,29 @@ const ItemView = ({ data }) => {
         </div>
       ) : null}
 
-      <Suggestions />
+      {store.get("user_token") ? (
+        <Suggestions displayItem={data.product_id} />
+      ) : null}
     </>
   );
 };
 
-export default ItemView;
+export default ProductInfo;
 
 export const getStaticProps = async ({ params }) => {
-  const url = "http://localhost:3000/assets/data.json";
-  const getData = await fetch(url);
-  const data = await getData.json();
+  let data;
+
+  await api.queryAllProducts().then((res) => {
+    if (res && Array.isArray(res)) {
+      // console.log(res);
+      data = res;
+    } else data = [];
+  });
+
   const details = _.find(
     data,
-    (item) => item.clothes_id.toString() === params.item
+    (item) => item.product_id.toString() === params.item
   );
-  console.log("data,,,", data);
 
   return {
     props: { data: details },
@@ -120,18 +141,19 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const url = "http://localhost:3000/assets/data.json";
-  const getData = await fetch(url);
-  const data = await getData.json();
+  let data;
+
+  await api.queryAllProducts().then((res) => {
+    if (res && Array.isArray(res)) {
+      // console.log(res);
+      data = res;
+    } else data = [];
+  });
 
   const paths = _.map(data, (item) => ({
     //        vvvv Must be SAME name as [<name>].js
-    params: { item: item.clothes_id.toString() },
+    params: { item: item.product_id.toString() },
   }));
-
-  // const paths = data.map((item) => ({
-  //   params: { item: item.clothes_id.toString() },
-  // }));
 
   return {
     paths,
