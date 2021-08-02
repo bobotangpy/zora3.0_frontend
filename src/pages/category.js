@@ -7,6 +7,7 @@ import styles from "../styles/Category.module.scss";
 import API from "../services/api";
 
 import { useDispatch, useSelector } from "react-redux";
+import { updateMainCat } from "../redux/mainCatSlice";
 import { updateSubCat } from "../redux/subCatSlice";
 import { updateStyle } from "../redux/styleSlice";
 import {
@@ -31,6 +32,15 @@ const Category = ({ data }) => {
   const [filteredItems, setFilteredItems] = useState(null);
 
   useEffect(() => {
+    /* mainCat lost after page refresh => updateMainCat */
+    if (!mainCat) {
+      window.location.pathname === "/men"
+        ? dispatch(updateMainCat("men"))
+        : window.location.pathname === "/women"
+        ? dispatch(updateMainCat("women"))
+        : dispatch(updateMainCat("horoscope"));
+    }
+
     if (mainCat !== "horoscope" && !subCat && !style) {
       dispatch(updateSubCat("tops"));
       dispatch(updateStyle("trending"));
@@ -41,28 +51,30 @@ const Category = ({ data }) => {
   }, []);
 
   useEffect(() => {
-    if (mainCat === "horoscope") dispatch(updateStyle(null));
-
     if (mainCat && subCat) {
       let filtered = filterItemsForDisplay(data, mainCat);
-      setItems(_.sortBy(filtered, "gender_id"));
+      setItems(_.reverse(_.sortBy(filtered, "gender_id")));
+      // console.log("filter", filtered);
 
-      console.log("filter", filtered);
-
-      updateSuggestions(subCat, getGenderId(mainCat));
+      mainCat !== "horoscope"
+        ? updateSuggestions(subCat, getGenderId(mainCat))
+        : dispatch(updateStyle(null));
     }
   }, [mainCat]);
 
-  /* When user only selected mainCat & style */
   useEffect(() => {
+    /* When user only selected mainCat & style (Click navbar in homepage) */
     if (items && !subCat && style) {
       dispatch(updateSubCat("tops"));
     }
 
     if (items && subCat && !style) {
-      dispatch(updateStyle("trending"));
-      // let d = filterSubCatItems(items, subCat);
-      // return setFilteredItems(d);
+      if (mainCat !== "horoscope") {
+        dispatch(updateStyle("trending"));
+      } else {
+        let filtered = filterSubCatItems(items, subCat);
+        return setFilteredItems(filtered);
+      }
     }
 
     if (items && subCat && style) {
@@ -121,7 +133,8 @@ const Category = ({ data }) => {
   const filterSubCatItems = (data, subCat) => {
     let dataArr = [];
 
-    updateSuggestions(subCat, getGenderId(mainCat));
+    if (mainCat !== "horoscope")
+      updateSuggestions(subCat, getGenderId(mainCat));
 
     switch (subCat) {
       case "dressSuits":
@@ -178,7 +191,6 @@ const Category = ({ data }) => {
       default:
         break;
     }
-    // console.log("style", dataArr);
     return dataArr;
   };
 

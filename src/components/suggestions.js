@@ -6,6 +6,7 @@ import _ from "lodash";
 import { useSelector } from "react-redux";
 
 const Suggestions = ({ displayItem }) => {
+  const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
   const subCat = useSelector((state) => state.subCat.selectedSubCat);
   const topsData = useSelector((state) => state.productsData.topsData);
   const bottomsData = useSelector((state) => state.productsData.bottomsData);
@@ -20,7 +21,6 @@ const Suggestions = ({ displayItem }) => {
   const [shoes, setShoes] = useState(null);
 
   useEffect(() => {
-    console.log("subcat", subCat);
     console.log("tops::", trimData(topsData));
     console.log("bottoms::", bottomsData);
     console.log("dressSuits::", dressSuitsData);
@@ -38,14 +38,14 @@ const Suggestions = ({ displayItem }) => {
       dataArr,
       (item) => item.product_id !== displayItem
     );
-
+    console.log(uniqueArr);
     if (uniqueArr.length > 4) return uniqueArr.slice(0, 4);
     else return uniqueArr;
   };
 
   return (
     <div style={{ margin: "25px 50px" }}>
-      {tops || bottoms || dressSuits || shoes ? (
+      {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) ? (
         <>
           <h3>Other {context.userSign}s also liked:</h3>
 

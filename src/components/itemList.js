@@ -5,7 +5,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
-import GridList from "@material-ui/core/GridList";
+import ImageList from "@material-ui/core/ImageList";
 import Link from "@material-ui/core/Link";
 import styles from "../styles/ItemList.module.scss";
 
@@ -42,7 +42,7 @@ const ItemList = ({ items, suggestions }) => {
   // console.log(items);
   return (
     <div className={styles.list}>
-      <GridList cols={4} spacing={12} cellHeight={550}>
+      <ImageList cols={4} gap={12} rowHeight={550}>
         {items.map((data, i) => (
           <Grid key={i} item xs={12} sm={4} md={3} lg={3}>
             <Card key={i}>
@@ -64,7 +64,7 @@ const ItemList = ({ items, suggestions }) => {
             </Card>
           </Grid>
         ))}
-      </GridList>
+      </ImageList>
     </div>
   );
 };

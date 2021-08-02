@@ -4,6 +4,7 @@ import mainCatReducer from "./mainCatSlice";
 import subCatReducer from "./subCatSlice";
 import styleReducer from "./styleSlice";
 import productsDataReducer from "./productsDataSlice";
+import cartReducer from "./cartSlice";
 /* Redux-Persist - to persist the data in redux store when the page rehydrates */
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 // import {
@@ -52,5 +53,6 @@ export const reduxStore = configureStore({
     subCat: subCatReducer,
     style: styleReducer,
     productsData: productsDataReducer,
+    cart: cartReducer,
   },
 });

@@ -2,25 +2,27 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import SubMenu from "./subMenu";
+import CartItemList from "./cartItemList";
 import { AppContext } from "../services/appProvider";
 import styles from "../styles/Navbar.module.scss";
 import Grid from "@material-ui/core/Grid";
 import Badge from "@material-ui/core/Badge";
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import ItemList from "./itemList";
 import store from "store-js";
-import { reduxStore } from "../redux/_index";
 // import MenuIcon from "@material-ui/icons/Menu";
 
 import { useDispatch, useSelector } from "react-redux";
-import { updateMainCat, resetMainCat } from "../redux/mainCatSlice";
-import { updateSubCat, resetSubCat } from "../redux/subCatSlice";
-import { updateStyle, resetStyle } from "../redux/styleSlice";
+import { updateMainCat } from "../redux/mainCatSlice";
+import { updateSubCat } from "../redux/subCatSlice";
+import { updateStyle } from "../redux/styleSlice";
+import { updateCart } from "../redux/cartSlice";
 
 const SignedInNav = ({
   username,
   horoscope,
+  badgeNum,
+  cartItems,
   openCartPreview,
   toggleDrawer,
   // router,
@@ -39,9 +41,9 @@ const SignedInNav = ({
       />
 
       {/* Cart Icon */}
-      <span className={styles.menu}>
-        <Badge badgeContent={4} onClick={toggleDrawer(true)}>
-          <ShoppingCartOutlinedIcon />
+      <span className={styles.menu} style={{ paddingBottom: "5px" }}>
+        <Badge badgeContent={badgeNum} onClick={toggleDrawer(true)}>
+          <LocalMallOutlinedIcon />
         </Badge>
 
         <SwipeableDrawer
@@ -55,7 +57,7 @@ const SignedInNav = ({
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
           >
-            {/* <ItemList /> */}Drawer
+            <CartItemList items={cartItems} />
           </div>
         </SwipeableDrawer>
       </span>
@@ -77,20 +79,21 @@ const NavBar = () => {
   // const router = useRouter();
   const dispatch = useDispatch();
   const selected = useSelector((state) => state.mainCat.selectedMainCat);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  // const [cartItems, setCartItems] = useState([]);
 
   const context = useContext(AppContext);
   const drawerRef = useRef();
   const [anchorEl, setAnchorEl] = useState(null);
   const [hover, setHover] = useState(null);
-  // const [selected, setSelected] = useState(null);
   const [showSubMenu, setShowSubMenu] = useState(false);
 
   const [openCartPreview, setOpenCartPreview] = useState(false);
   const [drawerAnchor, setDrawerAnchor] = useState(null);
 
-  // const [userId, setUserId] = useState(null);
   const [userName, setUserName] = useState(null);
   const [horoscope, setHoroscope] = useState(null);
+  const [badgeNum, setbadgeNum] = useState(null);
 
   useEffect(() => {
     if (!store.get("user_token")) return setUserName(null);
@@ -99,17 +102,27 @@ const NavBar = () => {
       setUserName(store.get("username"));
       context.setUsername(store.get("username"));
     }
+
     if (store.get("horoscope")) {
       setHoroscope(store.get("horoscope"));
       context.setUserSign(store.get("horoscope"));
     }
+
+    if (store.get("cartItems")) {
+      dispatch(updateCart(store.get("cartItems")));
+    }
   }, []);
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      setbadgeNum(cartItems.length);
+    } else setbadgeNum(null);
+  }, [cartItems]);
 
   const clearSelections = () => {
     dispatch(updateMainCat(null));
     dispatch(updateSubCat(null));
     dispatch(updateStyle(null));
-    // console.log("clear store", reduxStore.getState());
   };
 
   const toggleDrawer = (open) => (e) => {
@@ -124,7 +137,7 @@ const NavBar = () => {
       container
       className={styles.navbar}
       direction="row"
-      justify="space-between"
+      justifyContent="space-between"
       alignItems="center"
       onMouseLeave={() => {
         setAnchorEl(null);
@@ -204,13 +217,15 @@ const NavBar = () => {
         style={{
           display: "flex",
           justifyContent: "flex-end",
-          paddingRight: "15px",
+          paddingRight: "25px",
         }}
       >
         {userName ? (
           <SignedInNav
             username={userName}
             horoscope={horoscope}
+            badgeNum={badgeNum}
+            cartItems={cartItems}
             openCartPreview={openCartPreview}
             toggleDrawer={toggleDrawer}
             // router={router}
