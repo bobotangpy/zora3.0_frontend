@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { deleteItem } from "../redux/cartSlice";
 import styles from "../styles/CartItemList.module.scss";
@@ -24,10 +25,8 @@ const CartItemList = ({ items }) => {
                   <p>Quantity: {item.qty}</p>
                   <p className={styles.del}>
                     <DeleteForeverOutlinedIcon
-                      onClick={
-                        () =>
-                          dispatch(deleteItem({ id: item.id, size: item.size }))
-                        // deleteItem(item.id, item.size)
+                      onClick={() =>
+                        dispatch(deleteItem({ id: item.id, size: item.size }))
                       }
                     />
                   </p>
@@ -36,15 +35,17 @@ const CartItemList = ({ items }) => {
               <Divider light />
             </div>
           ))}
-          <button
-            style={{
-              margin: "15px 0",
-              backgroundColor: "#000",
-              color: "#fff",
-            }}
-          >
-            Checkout
-          </button>
+          <Link href="/checkout">
+            <button
+              style={{
+                margin: "15px 0",
+                backgroundColor: "#000",
+                color: "#fff",
+              }}
+            >
+              Checkout
+            </button>
+          </Link>
         </>
       ) : (
         <div style={{ marginTop: "50px" }}>

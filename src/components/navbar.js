@@ -1,3 +1,5 @@
+// TODO: REsponsiveness!!!
+
 // import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -80,7 +82,6 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const selected = useSelector((state) => state.mainCat.selectedMainCat);
   const cartItems = useSelector((state) => state.cart.cartItems);
-  // const [cartItems, setCartItems] = useState([]);
 
   const context = useContext(AppContext);
   const drawerRef = useRef();

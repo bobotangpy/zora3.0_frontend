@@ -21,10 +21,10 @@ const Suggestions = ({ displayItem }) => {
   const [shoes, setShoes] = useState(null);
 
   useEffect(() => {
-    console.log("tops::", trimData(topsData));
-    console.log("bottoms::", bottomsData);
-    console.log("dressSuits::", dressSuitsData);
-    console.log("shoes::", shoesData);
+    // console.log("tops::", trimData(topsData));
+    // console.log("bottoms::", bottomsData);
+    // console.log("dressSuits::", dressSuitsData);
+    // console.log("shoes::", shoesData);
 
     if (topsData) setTops(trimData(topsData));
     if (bottomsData) setBottoms(trimData(bottomsData));
@@ -38,7 +38,7 @@ const Suggestions = ({ displayItem }) => {
       dataArr,
       (item) => item.product_id !== displayItem
     );
-    console.log(uniqueArr);
+    // console.log(uniqueArr);
     if (uniqueArr.length > 4) return uniqueArr.slice(0, 4);
     else return uniqueArr;
   };

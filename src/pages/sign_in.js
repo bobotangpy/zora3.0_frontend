@@ -201,8 +201,8 @@ const SignIn = () => {
       let sign = calculateHoroscope(month, day);
       setHoroscope(sign);
 
-      console.log(date);
-      console.log(sign);
+      // console.log(date);
+      // console.log(sign);
     } else setShowSubmitBtn(false);
   }, [bday]);
 

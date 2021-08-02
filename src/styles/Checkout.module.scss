@@ -1,0 +1,72 @@
+@import "./variables";
+
+.checkout {
+  max-width: 1200px;
+  margin: 50px 120px;
+  font-size: 15px !important;
+
+  .title {
+    padding-left: 50px !important;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .MuiTableCell-root.MuiTableCell-head {
+    font-size: 15px !important;
+    font-weight: bold !important;
+  }
+
+  .header {
+    padding-left: 5px !important;
+  }
+
+  th {
+    max-width: 250px !important;
+  }
+
+  td {
+    font-size: 15px !important;
+    max-width: 250px !important;
+  }
+
+  img {
+    width: 50%;
+  }
+
+  .qty {
+    min-width: 120px;
+    padding: 5px;
+    margin: 0 15px;
+    font-size: 16px;
+    border: 1px solid $text-color;
+    border-radius: 2px;
+  }
+
+  .del {
+    color: rgb(255, 96, 96);
+    margin: 0;
+    padding-left: 0;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  .total {
+    margin-right: 20px;
+    text-align: right;
+
+    button {
+      color: #fff;
+      background-color: #000;
+      font-size: 16px;
+      margin-right: -20px;
+    }
+  }
+}
+
+.empty {
+  text-align: center;
+  min-height: 100vh;
+  padding: 100px;
+}

@@ -40,9 +40,9 @@ const ProductInfo = ({ data }) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (size) console.log(size);
-  }, [size]);
+  // useEffect(() => {
+  //   if (size) console.log(size);
+  // }, [size]);
 
   useEffect(() => {
     // if (cartItems && cartItems.length > 0) store.set("cartItems", cartItems);
@@ -80,13 +80,18 @@ const ProductInfo = ({ data }) => {
         if (item.id == productId && item.size === size) {
           duplicate = item;
           let newQty = Number(duplicate.qty) + Number(quantity);
-          // console.log(duplicate);
+          let newPrice = Number(duplicate.price.split("$")[1]) * newQty;
+
           items = _.map(cartItems, (elm) =>
             elm.id === duplicate.id && elm.size === duplicate.size
-              ? (elm = { ...elm, qty: newQty })
+              ? (elm = {
+                  ...elm,
+                  qty: newQty,
+                  price: `HKD$${newPrice.toFixed(2)}`,
+                })
               : elm
           );
-          // console.log(items);
+
           dispatch(updateCart(items));
           // setCartItems(items);
         } else {
@@ -156,7 +161,7 @@ const ProductInfo = ({ data }) => {
                 <input
                   type="number"
                   min={1}
-                  max={100}
+                  max={10}
                   className={styles.qty}
                   value={quantity}
                   onChange={handleChangeQty}
