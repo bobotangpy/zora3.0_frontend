@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Divider from "@material-ui/core/Divider";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -9,15 +10,22 @@ import TableRow from "@material-ui/core/TableRow";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 import styles from "../styles/Checkout.module.scss";
 import _ from "lodash";
+import store from "store-js";
+import API from "../services/api";
 
 import { useSelector, useDispatch } from "react-redux";
 import { deleteItem, updateCart, updateTotal } from "../redux/cartSlice";
 
+const api = new API();
+
 const Checkout = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const total = useSelector((state) => state.cart.total);
   const [rows, setRows] = useState([]);
+  const [qtyErr, setQtyErr] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     if (cartItems) {
@@ -34,7 +42,11 @@ const Checkout = () => {
   }, [cartItems]);
 
   const handleChangeQty = (e, id) => {
-    let newQty = Number(e.target.value);
+    if (Number(e.target.value) > 10) {
+      return setQtyErr(true);
+    } else setQtyErr(false);
+
+    let newQty = Number(e.target.value) || 1;
     let newArr = [];
 
     _.map(rows, (item) => {
@@ -52,12 +64,25 @@ const Checkout = () => {
     dispatch(updateCart(newArr));
   };
 
+  const handlePlaceOrder = () => {
+    setDisabled(true);
+    let id = store.get("user_id");
+
+    api.createOrder(id, cartItems, total).then((res) => {
+      console.log(res);
+      if (res && res[0] === "success") {
+        dispatch(updateCart([]));
+        router.push("orderHistory");
+      } else setDisabled(false);
+    });
+  };
+
   return (
     <>
       {rows && rows.length > 0 ? (
         <div className={styles.checkout}>
           <TableContainer>
-            <Table className="" aria-label="simple table">
+            <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell className={styles.title}>ORDER SUMMARY</TableCell>
@@ -85,6 +110,12 @@ const Checkout = () => {
                         value={row.qty}
                         onChange={(e) => handleChangeQty(e, row.id)}
                       />
+
+                      {qtyErr ? (
+                        <p style={{ color: "#ff5050", margin: "5px 0 0 0" }}>
+                          Maximum quantity is 10.
+                        </p>
+                      ) : null}
                     </TableCell>
                     <TableCell>{`HKD$${Number(row.price.split("$")[1]).toFixed(
                       2
@@ -105,7 +136,12 @@ const Checkout = () => {
           <Divider light />
           <div className={styles.total}>
             <h3>Items Total: HKD${total}</h3>
-            <button>Pay and Place Order</button>
+            <button
+              disabled={qtyErr || disabled}
+              onClick={() => handlePlaceOrder()}
+            >
+              Pay and Place Order
+            </button>
           </div>
         </div>
       ) : (

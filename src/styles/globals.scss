@@ -106,6 +106,12 @@ button {
   height: 20px !important;
 }
 
+// Checkout & Order History
+.MuiTableCell-root {
+  font-family: $custom-font !important;
+}
+
+// Create Account
 .DayPicker-wrapper {
   padding-bottom: 0px !important;
   border-radius: 4px !important;

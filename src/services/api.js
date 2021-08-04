@@ -82,9 +82,15 @@ export default class API {
     return res;
   }
 
-  // Cart store in localstorage ???
-  queryCart() {
-    const url = "api/cart";
+  createOrder(userId, cartItems, total) {
+    const url = `api/orderHistory`;
+    const params = {
+      user_id: userId,
+      cart_items: cartItems,
+      total: total,
+    };
+    const res = this.api.post(url, params);
+    return res;
   }
 
   queryOrderHistory(userId) {
