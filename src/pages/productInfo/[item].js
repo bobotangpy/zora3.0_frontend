@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Suggestions from "../../components/suggestions";
+import SizeQty from "../../components/sizeQty";
 import Grid from "@material-ui/core/Grid";
-import FormControl from "@material-ui/core/FormControl";
-import NativeSelect from "@material-ui/core/NativeSelect";
+// import FormControl from "@material-ui/core/FormControl";
+// import NativeSelect from "@material-ui/core/NativeSelect";
 import styles from "../../styles/ProductInfo.module.scss";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -13,6 +14,7 @@ import store from "store-js";
 import { reduxStore } from "../../redux/_index";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCart } from "../../redux/cartSlice";
+import { addToBag } from "../../utilities/utils";
 
 const api = new API();
 
@@ -31,27 +33,16 @@ const ProductInfo = ({ data }) => {
       setSize("xs");
       setQuantity(1);
       console.log("states in store", reduxStore.getState());
-
-      // if (store.get("cartItems")) {
-      //   setCartItems(store.get("cartItems"));
-      // } else {
-      //   store.set("cartItems", cartItems);
-      // }
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (size) console.log(size);
-  // }, [size]);
-
   useEffect(() => {
-    // if (cartItems && cartItems.length > 0) store.set("cartItems", cartItems);
     setTimeout(() => {
       setLoading(false);
     }, 300);
   }, [cartItems]);
 
-  const handleChange = (e) => {
+  const handleChangeSize = (e) => {
     setSize(e.target.value);
   };
 
@@ -60,9 +51,17 @@ const ProductInfo = ({ data }) => {
     setQuantity(e.target.value);
   };
 
-  const addToBag = (productId, name, img, price, selectedSize, quantity) => {
+  const handleAddToBag = (
+    productId,
+    name,
+    img,
+    price,
+    selectedSize,
+    quantity
+  ) => {
     setLoading(true);
-    let newItem = {
+
+    const newItem = {
       id: productId,
       name: name,
       img: img,
@@ -70,39 +69,10 @@ const ProductInfo = ({ data }) => {
       size: selectedSize,
       qty: quantity,
     };
-    let items = cartItems;
-    let duplicate;
 
-    if (cartItems.length > 0) {
-      /* Check if same product exists in cart */
-      _.find(cartItems, (item) => {
-        /* Check if size is the same => update qty || add to cart as new item */
-        if (item.id == productId && item.size === size) {
-          duplicate = item;
-          let newQty = Number(duplicate.qty) + Number(quantity);
-          let newPrice = Number(duplicate.price.split("$")[1]) * newQty;
+    let newCartItem = addToBag(newItem, cartItems);
 
-          items = _.map(cartItems, (elm) =>
-            elm.id === duplicate.id && elm.size === duplicate.size
-              ? (elm = {
-                  ...elm,
-                  qty: newQty,
-                  price: `HKD$${newPrice.toFixed(2)}`,
-                })
-              : elm
-          );
-
-          dispatch(updateCart(items));
-          // setCartItems(items);
-        } else {
-          // setCartItems([...cartItems, newItem]);
-          dispatch(updateCart([...cartItems, newItem]));
-        }
-      });
-    } else {
-      dispatch(updateCart([newItem]));
-      // setCartItems([newItem]);
-    }
+    dispatch(updateCart(newCartItem));
   };
 
   return (
@@ -134,7 +104,13 @@ const ProductInfo = ({ data }) => {
               <h2>{data.name}</h2>
               <h3>{data.price}</h3>
 
-              <div className="flexRow" style={{ marginBottom: "20px" }}>
+              <SizeQty
+                size={size}
+                quantity={quantity}
+                handleChangeSize={handleChangeSize}
+                handleChangeQty={handleChangeQty}
+              />
+              {/* <div className="flexRow" style={{ marginBottom: "20px" }}>
                 <label htmlFor="outlined-size">Size :</label>
                 <FormControl variant="outlined">
                   <NativeSelect
@@ -146,7 +122,6 @@ const ProductInfo = ({ data }) => {
                     }}
                     className={styles.select}
                   >
-                    {/* <option aria-label="None" value="" /> */}
                     <option value="xs">XS</option>
                     <option value="s">S</option>
                     <option value="m">M</option>
@@ -166,14 +141,14 @@ const ProductInfo = ({ data }) => {
                   value={quantity}
                   onChange={handleChangeQty}
                 />
-              </div>
+              </div> */}
 
               <div style={{ marginTop: "50px" }}>
                 <button
                   style={{ minWidth: "197px" }}
                   disabled={loading}
                   onClick={() =>
-                    addToBag(
+                    handleAddToBag(
                       data.product_id,
                       data.name,
                       data.img,

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import calculateHoroscope from "../components/calculateHoroscope";
+import { calculateHoroscope } from "../utilities/utils";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Tabs from "@material-ui/core/Tabs";

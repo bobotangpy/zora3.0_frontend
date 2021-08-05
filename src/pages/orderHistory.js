@@ -1,8 +1,4 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-// import ListSubheader from "@material-ui/core/ListSubheader";
-// import List from "@material-ui/core/List";
-// import ListItem from "@material-ui/core/ListItem";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -19,7 +15,6 @@ import styles from "../styles/Checkout.module.scss";
 const api = new API();
 
 const OrderHistory = () => {
-  const dispatch = useDispatch();
   const [userId, setUserId] = useState(null);
   const [history, setHistory] = useState([]);
 

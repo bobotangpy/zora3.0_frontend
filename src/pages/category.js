@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../services/appProvider";
 import CategoryMenu from "../components/categoryMenu";
 import ItemList from "../components/itemList";
-import _ from "lodash";
 import styles from "../styles/Category.module.scss";
 import API from "../services/api";
+import _ from "lodash";
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateMainCat } from "../redux/mainCatSlice";
@@ -53,7 +53,8 @@ const Category = ({ data }) => {
   useEffect(() => {
     if (mainCat && subCat) {
       let filtered = filterItemsForDisplay(data, mainCat);
-      setItems(_.reverse(_.sortBy(filtered, "gender_id")));
+      setItems(_.sortBy(filtered, "gender_id"));
+      // setItems(_.reverse(_.sortBy(filtered, "gender_id")));
       // console.log("filter", filtered);
 
       mainCat !== "horoscope"
