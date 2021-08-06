@@ -17,7 +17,7 @@ const SizeQty = ({
       >
         <label
           htmlFor="outlined-size"
-          style={compo ? { marginRight: "8px" } : ""}
+          style={compo ? { marginRight: "8px" } : { marginRight: "initial" }}
         >
           Size :
         </label>

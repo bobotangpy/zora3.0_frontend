@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
+import { addToBag } from "../utilities/utils";
+import { updateCart } from "../redux/cartSlice";
+import SizeQty from "../components/sizeQty";
+import SignIn from "./signIn";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -10,11 +14,10 @@ import Grid from "@material-ui/core/Grid";
 import ImageList from "@material-ui/core/ImageList";
 import Link from "@material-ui/core/Link";
 import Popover from "@material-ui/core/Popover";
+import Modal from "@material-ui/core/Modal";
 import styles from "../styles/ItemList.module.scss";
-import { addToBag } from "../utilities/utils";
-import { updateCart } from "../redux/cartSlice";
-import SizeQty from "../components/sizeQty";
 import _ from "lodash";
+import store from "store-js";
 
 const Content = ({ item }) => {
   const router = useRouter();
@@ -46,6 +49,20 @@ const Content = ({ item }) => {
   );
 };
 
+const SigninModal = ({ openModal, setOpenModal }) => {
+  return (
+    <Modal
+      open={openModal}
+      onClose={() => setOpenModal(false)}
+      aria-labelledby="simple-modal-title"
+      aria-describedby="simple-modal-description"
+      className="signinModal"
+    >
+      <SignIn />
+    </Modal>
+  );
+};
+
 const ItemList = ({ items, suggestions }) => {
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -53,6 +70,7 @@ const ItemList = ({ items, suggestions }) => {
   const [size, setSize] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
@@ -101,10 +119,6 @@ const ItemList = ({ items, suggestions }) => {
             <Card key={i}>
               {!suggestions ? (
                 <>
-                  <CardActionArea>
-                    <Content item={data} />
-                  </CardActionArea>
-                  {/* FIXME: fix popover style */}
                   <Popover
                     id={id}
                     open={open}
@@ -130,8 +144,20 @@ const ItemList = ({ items, suggestions }) => {
                       Add
                     </button>
                   </Popover>
+
+                  <CardActionArea>
+                    <Content item={data} />
+                  </CardActionArea>
+
                   <CardActions className={styles.actions}>
-                    <button id={data.product_id} onClick={handleOpen}>
+                    <button
+                      id={data.product_id}
+                      onClick={(e) =>
+                        store.get("user_id")
+                          ? handleOpen(e)
+                          : setOpenModal(true)
+                      }
+                    >
                       Add to Cart
                     </button>
                   </CardActions>
@@ -145,6 +171,8 @@ const ItemList = ({ items, suggestions }) => {
           </Grid>
         ))}
       </ImageList>
+
+      <SigninModal openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
 };

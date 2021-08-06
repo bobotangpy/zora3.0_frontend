@@ -2,12 +2,14 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Suggestions from "../../components/suggestions";
 import SizeQty from "../../components/sizeQty";
+import SignIn from "../../components/signIn";
 import Grid from "@material-ui/core/Grid";
 // import FormControl from "@material-ui/core/FormControl";
 // import NativeSelect from "@material-ui/core/NativeSelect";
 import styles from "../../styles/ProductInfo.module.scss";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import Modal from "@material-ui/core/Modal";
 import API from "../../services/api";
 import _ from "lodash";
 import store from "store-js";
@@ -18,6 +20,20 @@ import { addToBag } from "../../utilities/utils";
 
 const api = new API();
 
+const SigninModal = ({ openModal, setOpenModal }) => {
+  return (
+    <Modal
+      open={openModal}
+      onClose={() => setOpenModal(false)}
+      aria-labelledby="simple-modal-title"
+      aria-describedby="simple-modal-description"
+      className="signinModal"
+    >
+      <SignIn />
+    </Modal>
+  );
+};
+
 const ProductInfo = ({ data }) => {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -27,6 +43,7 @@ const ProductInfo = ({ data }) => {
   const [size, setSize] = useState("");
   const [quantity, setQuantity] = useState("");
   const [loading, setLoading] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -148,14 +165,16 @@ const ProductInfo = ({ data }) => {
                   style={{ minWidth: "197px" }}
                   disabled={loading}
                   onClick={() =>
-                    handleAddToBag(
-                      data.product_id,
-                      data.name,
-                      data.img,
-                      data.price,
-                      size,
-                      quantity
-                    )
+                    store.get("user_id")
+                      ? handleAddToBag(
+                          data.product_id,
+                          data.name,
+                          data.img,
+                          data.price,
+                          size,
+                          quantity
+                        )
+                      : setOpenModal(true)
                   }
                 >
                   {loading ? <CircularProgress /> : "Add to Bag"}
@@ -169,6 +188,8 @@ const ProductInfo = ({ data }) => {
       {store.get("user_token") ? (
         <Suggestions displayItem={data.product_id} />
       ) : null}
+
+      <SigninModal openModal={openModal} setOpenModal={setOpenModal} />
     </>
   );
 };
