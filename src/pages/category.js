@@ -230,7 +230,7 @@ const Category = ({ data }) => {
     <div className={styles.mainContent}>
       <CategoryMenu />
 
-      {filteredItems ? <ItemList items={filteredItems} /> : null}
+      {filteredItems && <ItemList items={filteredItems} />}
     </div>
   );
 };

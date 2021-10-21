@@ -298,7 +298,7 @@ const SignIn = ({ setSuccessSignup }) => {
         </CardContent>
       </Card>
 
-      {success ? <SignUpSuccessPopup /> : null}
+      {success && <SignUpSuccessPopup />}
     </>
   );
 };

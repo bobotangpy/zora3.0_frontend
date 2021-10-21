@@ -1,4 +1,3 @@
-// import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import authReducer from "./authSlice";
 import mainCatReducer from "./mainCatSlice";
 import subCatReducer from "./subCatSlice";

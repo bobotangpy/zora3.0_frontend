@@ -111,11 +111,11 @@ const Checkout = () => {
                         onChange={(e) => handleChangeQty(e, row.id)}
                       />
 
-                      {qtyErr ? (
+                      {qtyErr && (
                         <p style={{ color: "#ff5050", margin: "5px 0 0 0" }}>
                           Maximum quantity is 10.
                         </p>
-                      ) : null}
+                      )}
                     </TableCell>
                     <TableCell>{`HKD$${Number(row.price.split("$")[1]).toFixed(
                       2

@@ -6,12 +6,12 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [monthSign, setMonthSign] = useState(null);
+  const [username, setUsername] = useState(null);
+  const [userSign, setUserSign] = useState(null);
+
   // const [mainCat, setMainCat] = useState(null);
   // const [subCat, setSubCat] = useState(null);
   // const [style, setStyle] = useState(null);
-
-  const [username, setUsername] = useState(null);
-  const [userSign, setUserSign] = useState(null);
 
   // const [topsData, setTopsData] = useState(null);
   // const [bottomsData, setBottomsData] = useState(null);
@@ -28,11 +28,13 @@ export const AppProvider = ({ children }) => {
 
   const values = {
     monthSign,
+    username,
+    userSign,
+    setUsername,
+    setUserSign,
     // mainCat,
     // subCat,
     // style,
-    username,
-    userSign,
     // topsData,
     // bottomsData,
     // dressSuitsData,
@@ -40,8 +42,6 @@ export const AppProvider = ({ children }) => {
     // setMainCat,
     // setSubCat,
     // setStyle,
-    setUsername,
-    setUserSign,
     // setTopsData,
     // setBottomsData,
     // setDressSuitsData,

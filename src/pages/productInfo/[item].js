@@ -94,7 +94,7 @@ const ProductInfo = ({ data }) => {
 
   return (
     <>
-      {data ? (
+      {data && (
         <div className={styles.layout}>
           <div
             className="flexRow"
@@ -183,11 +183,9 @@ const ProductInfo = ({ data }) => {
             </Grid>
           </Grid>
         </div>
-      ) : null}
+      )}
 
-      {store.get("user_token") ? (
-        <Suggestions displayItem={data.product_id} />
-      ) : null}
+      {store.get("user_token") && <Suggestions displayItem={data.product_id} />}
 
       <SigninModal openModal={openModal} setOpenModal={setOpenModal} />
     </>

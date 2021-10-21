@@ -45,7 +45,7 @@ const Suggestions = ({ displayItem }) => {
 
   return (
     <div style={{ margin: "25px 50px" }}>
-      {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) ? (
+      {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) && (
         <>
           <h3>Other {context.userSign}s also liked:</h3>
 
@@ -64,7 +64,7 @@ const Suggestions = ({ displayItem }) => {
             suggestions={true}
           />
         </>
-      ) : null}
+      )}
     </div>
   );
 };

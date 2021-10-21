@@ -27,7 +27,7 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.container}>
         <Slider {...sliderSetting}>
-          <div>
+          <>
             <Link href="/category" as="/horoscope">
               <img
                 src="/assets/images/landing/slide_1.jpg"
@@ -38,8 +38,8 @@ export default function Home() {
                 }}
               />
             </Link>
-          </div>
-          <div>
+          </>
+          <>
             <Link href="/category" as="/women">
               <img
                 src="/assets/images/landing/slide_2.jpg"
@@ -48,8 +48,8 @@ export default function Home() {
                 onClick={() => dispatch(updateMainCat("women"))}
               />
             </Link>
-          </div>
-          <div>
+          </>
+          <>
             <Link href="/category" as="/men">
               <img
                 src="/assets/images/landing/slide_3.jpg"
@@ -58,7 +58,7 @@ export default function Home() {
                 onClick={() => dispatch(updateMainCat("men"))}
               />
             </Link>
-          </div>
+          </>
         </Slider>
       </div>
     </div>
