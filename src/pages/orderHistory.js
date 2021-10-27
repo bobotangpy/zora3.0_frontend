@@ -12,6 +12,17 @@ import _ from "lodash";
 import moment from "moment";
 import styles from "../styles/Checkout.module.scss";
 
+const wrapperStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "#ffffff",
+};
+
+const blackFont = {
+  color: "#000000",
+};
+
 const api = new API();
 
 const OrderHistory = () => {
@@ -25,7 +36,7 @@ const OrderHistory = () => {
   useEffect(() => {
     if (userId) {
       api.queryOrderHistory(userId).then((res) => {
-        // console.log(res);
+        console.log(res);
         if (res && res.length > 0) {
           setHistory(res);
         } else return;
@@ -34,30 +45,28 @@ const OrderHistory = () => {
   }, [userId]);
 
   return (
-    <div
-      className={styles.checkout}
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
+    <div className={styles.checkout} style={wrapperStyle}>
       <h1 style={{ margin: "0 60px 15px", alignSelf: "baseline" }}>
         Order History
       </h1>
 
       {history && history.length > 0 ? (
-        _.map(history, (order) => (
+        _.map(history, (order, i) => (
           <TableContainer
+            key={i}
             component={Paper}
             style={{ width: "90%", marginBottom: "80px" }}
           >
             <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell className={styles.title}>
+                  <TableCell className={styles.title} style={blackFont}>
                     Order Date: {moment(order.date).format("YYYY MMM DD hh:mm")}
                   </TableCell>
                   <TableCell></TableCell>
-                  <TableCell>Size</TableCell>
-                  <TableCell>Quantity</TableCell>
-                  <TableCell>Total</TableCell>
+                  <TableCell style={blackFont}>Size</TableCell>
+                  <TableCell style={blackFont}>Quantity</TableCell>
+                  <TableCell style={blackFont}>Total</TableCell>
                 </TableRow>
               </TableHead>
 
@@ -68,20 +77,24 @@ const OrderHistory = () => {
                       component="th"
                       scope="row"
                       align="center"
-                      style={{ width: "30%" }}
+                      style={{ width: "30%", color: "#000000" }}
                     >
-                      <img src={item.img} alt={item.name} />
+                      <img src={item.products.img} alt={item.products.name} />
                     </TableCell>
-                    <TableCell>{item.name}</TableCell>
-                    <TableCell>{item.size.toUpperCase()}</TableCell>
-                    <TableCell>{item.quantity}</TableCell>
-                    <TableCell>HKD${item.price}</TableCell>
+                    <TableCell style={blackFont}>
+                      {item.products.name}
+                    </TableCell>
+                    <TableCell style={blackFont}>
+                      {item.size.toUpperCase()}
+                    </TableCell>
+                    <TableCell style={blackFont}>{item.quantity}</TableCell>
+                    <TableCell style={blackFont}>{item.price}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
-            <div className={styles.total}>
-              <h3>Items Total: HKD${order.orderItems[0].totalPrice}</h3>
+            <div className={styles.total} style={blackFont}>
+              <h3>Items Total: HKD${order.orderItems[0].total}</h3>
             </div>
           </TableContainer>
         ))

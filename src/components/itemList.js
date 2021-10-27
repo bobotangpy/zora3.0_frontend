@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { addToBag } from "../utilities/utils";
+import { AppContext } from "../services/appProvider";
 import { updateCart } from "../redux/cartSlice";
 import SizeQty from "../components/sizeQty";
 import SignIn from "./signIn";
@@ -21,6 +22,7 @@ import store from "store-js";
 
 const Content = ({ item }) => {
   const router = useRouter();
+  const context = useContext(AppContext);
 
   return (
     <Link
@@ -28,11 +30,12 @@ const Content = ({ item }) => {
       // href="/productInfo/[item]"
       // as={`/productInfo/${item.product_id}`
       style={{ color: "#404040" }}
-      onClick={() =>
+      onClick={() => {
+        context.setLoading(true);
         router.push(`/productInfo/${item.product_id}`, undefined, {
           // shallow: true,
-        })
-      }
+        });
+      }}
     >
       <CardMedia
         className={styles.cardMedia}
@@ -42,16 +45,17 @@ const Content = ({ item }) => {
         title={item.name}
       />
       <CardContent>
-        <h3>{item.name}</h3>
+        <h3 style={{ lineHeight: "1.3rem" }}>{item.name}</h3>
         <p style={{ fontSize: "14px" }}>{item.price}</p>
       </CardContent>
     </Link>
   );
 };
 
-const SigninModal = ({ openModal, setOpenModal }) => {
+const SigninModal = React.forwardRef(({ openModal, setOpenModal }, ref) => {
   return (
     <Modal
+      ref={ref}
       open={openModal}
       onClose={() => setOpenModal(false)}
       aria-labelledby="simple-modal-title"
@@ -61,7 +65,7 @@ const SigninModal = ({ openModal, setOpenModal }) => {
       <SignIn />
     </Modal>
   );
-};
+});
 
 const ItemList = ({ items, suggestions }) => {
   const dispatch = useDispatch();
@@ -112,11 +116,19 @@ const ItemList = ({ items, suggestions }) => {
   };
 
   return (
-    <div className={styles.list}>
-      <ImageList cols={4} gap={12} rowHeight={550}>
+    <div
+      className={styles.list}
+      style={suggestions ? { height: "500px" } : { height: "initial" }}
+    >
+      <ImageList
+        cols={4}
+        gap={12}
+        rowHeight={550}
+        className={suggestions ? "suggestionImgList" : "imgList"}
+      >
         {items.map((data, i) => (
-          <Grid key={i} item xs={12} sm={4} md={3} lg={3}>
-            <Card key={i}>
+          <Grid key={i} item xs={12} sm={suggestions ? 3 : 4} md={3} lg={3}>
+            <Card key={i} className={suggestions ? "suggestionCards" : "cards"}>
               {!suggestions ? (
                 <>
                   <Popover
@@ -172,7 +184,11 @@ const ItemList = ({ items, suggestions }) => {
         ))}
       </ImageList>
 
-      <SigninModal openModal={openModal} setOpenModal={setOpenModal} />
+      <SigninModal
+        // props={(openModal, setOpenModal)}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      />
     </div>
   );
 };

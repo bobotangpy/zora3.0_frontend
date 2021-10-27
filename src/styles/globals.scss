@@ -52,7 +52,8 @@ button {
 }
 
 /*** Material UI ***/
-.MuiInputBase-root {
+.MuiInputBase-root,
+.MuiMenuItem-root {
   font-family: $custom-font !important;
 }
 
@@ -106,6 +107,14 @@ button {
     0px 8px 10px 1px rgba(0, 0, 0, 0), 0px 3px 4px 2px rgba(0, 0, 0, 0.01) !important;
 }
 
+// Product Info
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42) !important;
+}
+.MuiNativeSelect-icon {
+  color: #ffffff !important;
+}
+
 // Sign In/ Create Acc Modal
 .signinModal {
   position: relative;
@@ -141,4 +150,35 @@ button {
   margin: 0 2px !important;
   border-radius: 50% !important;
   background: $theme-blue !important;
+}
+
+/* iPad Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  button {
+    padding: 12px 30px;
+  }
+
+  .bgWrapper {
+    background-position: left !important;
+  }
+
+  // Product Info Page
+  .MuiCard-root {
+    min-height: 500px !important;
+  }
+  .MuiCard-root.suggestionCards {
+    min-height: 400px !important;
+  }
+  .MuiImageList-root {
+    margin: -6px 10px 35px 10px !important;
+  }
+  .MuiImageList-root.suggestionImgList {
+    margin: 0 !important;
+  }
+  .MuiNativeSelect-iconOutlined {
+    color: #ffffff;
+  }
+  // .MuiInput-underline:after {
+  //   border-bottom: aliceblue !important;
+  // }
 }

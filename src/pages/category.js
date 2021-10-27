@@ -47,6 +47,9 @@ const Category = ({ data }) => {
     } else if (mainCat === "horoscope" && !subCat) {
       dispatch(updateSubCat("tops"));
     }
+
+    context.setLoading(false);
+
     console.log("states in store", reduxStore.getState());
   }, []);
 
@@ -61,7 +64,7 @@ const Category = ({ data }) => {
         ? updateSuggestions(subCat, getGenderId(mainCat))
         : dispatch(updateStyle(null));
     }
-  }, [mainCat]);
+  }, [mainCat, subCat]);
 
   useEffect(() => {
     /* When user only selected mainCat & style (Click navbar in homepage) */

@@ -8,6 +8,8 @@ export const AppProvider = ({ children }) => {
   const [monthSign, setMonthSign] = useState(null);
   const [username, setUsername] = useState(null);
   const [userSign, setUserSign] = useState(null);
+  const [bg, setBg] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // const [mainCat, setMainCat] = useState(null);
   // const [subCat, setSubCat] = useState(null);
@@ -26,26 +28,42 @@ export const AppProvider = ({ children }) => {
     setMonthSign(sign);
   }, []);
 
+  useEffect(() => {
+    userSign
+      ? setBg(
+          {
+            margin: "0px",
+            background: `linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/backgound/${userSign}_bg.png') fixed center`,
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }
+          // `url('/assets/images/backgound/${userSign}_bg.png') fixed no-repeat center`
+        )
+      : setBg(
+          {
+            margin: "0px",
+            background: `linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/landing/landing_bg.jpg') fixed no-repeat center`,
+            minHeight: "calc(100vh - 90px)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            paddingBottom: "50px",
+          }
+          // `url('/assets/images/backgound/landing/landing_bg.jpg') fixed no-repeat center`
+        );
+  }, [userSign]);
+
   const values = {
     monthSign,
     username,
     userSign,
+    bg,
+    loading,
     setUsername,
     setUserSign,
-    // mainCat,
-    // subCat,
-    // style,
-    // topsData,
-    // bottomsData,
-    // dressSuitsData,
-    // shoesData,
-    // setMainCat,
-    // setSubCat,
-    // setStyle,
-    // setTopsData,
-    // setBottomsData,
-    // setDressSuitsData,
-    // setShoesData,
+    setLoading,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

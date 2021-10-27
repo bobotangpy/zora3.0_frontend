@@ -1,16 +1,8 @@
 @import "./variables";
 
 .layout {
-  margin: 15px 15px 100px;
-  // margin: 0;
-  // background: linear-gradient(
-  //     rgba(255, 255, 255, 0.1),
-  //     rgba(255, 255, 255, 0.1)
-  //   ),
-  //   url("/assets/images/backgound/horoscope_bg.jpg") fixed repeat center;
-  // position: relative;
-  // background-size: cover;
-  // min-height: 100vh;
+  margin: 15px 15px 50px;
+  color: #ffffff;
 
   img {
     margin: 10px 15px;
@@ -24,6 +16,7 @@
     min-width: 120px;
     margin: 5px 15px;
     border-radius: 4px;
+    color: #ffffff;
 
     select {
       padding: 12px 20px;
@@ -37,5 +30,26 @@
     font-size: 16px;
     border: 1px solid $text-color;
     border-radius: 2px;
+  }
+}
+
+.suggestions {
+  margin: 25px 50px 80px;
+  color: #ffffff;
+}
+
+/* iPad Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .layout {
+    margin-bottom: 30px !important;
+
+    img {
+      max-width: 80% !important;
+      height: auto !important;
+    }
+  }
+
+  .suggestions {
+    margin-bottom: 0px !important;
   }
 }

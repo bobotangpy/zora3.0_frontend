@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../services/appProvider";
 import ItemList from "./itemList";
+import styles from "../styles/ProductInfo.module.scss";
 import _ from "lodash";
 
 import { useSelector } from "react-redux";
@@ -21,11 +22,6 @@ const Suggestions = ({ displayItem }) => {
   const [shoes, setShoes] = useState(null);
 
   useEffect(() => {
-    // console.log("tops::", trimData(topsData));
-    // console.log("bottoms::", bottomsData);
-    // console.log("dressSuits::", dressSuitsData);
-    // console.log("shoes::", shoesData);
-
     if (topsData) setTops(trimData(topsData));
     if (bottomsData) setBottoms(trimData(bottomsData));
     if (dressSuitsData) setDressSuits(trimData(dressSuitsData));
@@ -44,7 +40,7 @@ const Suggestions = ({ displayItem }) => {
   };
 
   return (
-    <div style={{ margin: "25px 50px" }}>
+    <div className={styles.suggestions}>
       {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) && (
         <>
           <h3>Other {context.userSign}s also liked:</h3>

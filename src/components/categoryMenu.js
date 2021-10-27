@@ -24,14 +24,14 @@ const CategoryMenu = () => {
         className={selected === "tops" ? styles.menuSelected : styles.menu}
         onClick={() => dispatch(updateSubCat("tops"))}
       >
-        <p>Tops</p>
+        <p style={{ paddingLeft: "20px" }}>Tops</p>
       </ListItem>
       <ListItem
         button
         className={selected === "bottoms" ? styles.menuSelected : styles.menu}
         onClick={() => dispatch(updateSubCat("bottoms"))}
       >
-        <p>Bottoms</p>
+        <p style={{ paddingLeft: "20px" }}>Bottoms</p>
       </ListItem>
       <ListItem
         button
@@ -41,11 +41,11 @@ const CategoryMenu = () => {
         onClick={() => dispatch(updateSubCat("dressSuits"))}
       >
         {mainCat === "women" ? (
-          <p>Dresses</p>
+          <p style={{ paddingLeft: "20px" }}>Dresses</p>
         ) : mainCat === "men" ? (
-          <p>Suits</p>
+          <p style={{ paddingLeft: "20px" }}>Suits</p>
         ) : (
-          <p>Dresses | Suits</p>
+          <p style={{ paddingLeft: "20px" }}>Dresses | Suits</p>
         )}
       </ListItem>
       <ListItem
@@ -53,7 +53,7 @@ const CategoryMenu = () => {
         className={selected === "shoes" ? styles.menuSelected : styles.menu}
         onClick={() => dispatch(updateSubCat("shoes"))}
       >
-        <p>Shoes</p>
+        <p style={{ paddingLeft: "20px" }}>Shoes</p>
       </ListItem>
     </List>
   );

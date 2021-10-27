@@ -1,18 +1,19 @@
 // TODO: REsponsiveness!!!
 
-// import { useRouter } from "next/router";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import SubMenu from "./subMenu";
 import CartItemList from "./cartItemList";
+import Loading from "./loading";
 import { AppContext } from "../services/appProvider";
 import styles from "../styles/Navbar.module.scss";
 import Grid from "@material-ui/core/Grid";
 import Badge from "@material-ui/core/Badge";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import store from "store-js";
-// import MenuIcon from "@material-ui/icons/Menu";
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateMainCat } from "../redux/mainCatSlice";
@@ -27,20 +28,57 @@ const SignedInNav = ({
   cartItems,
   openCartPreview,
   toggleDrawer,
-  // router,
+  userMenuAnchor,
+  setUserMenuAnchor,
 }) => {
   return (
     <div className={styles.signedIn}>
-      <p>
-        Welcome {username}, the beautiful {horoscope}
-      </p>
-      <img
-        alt="icon"
-        src={`/assets/images/icons/${horoscope}.png`}
-        className={styles.icon}
-        width={25}
-        height={25}
-      />
+      <div
+        className={styles.userWelcomeMsg}
+        onClick={(e) => setUserMenuAnchor(e.currentTarget)}
+      >
+        <p>
+          Welcome {username}, the beautiful {horoscope}
+        </p>
+        <img
+          alt="icon"
+          src={`/assets/images/icons/${horoscope}.png`}
+          className={styles.icon}
+          width={25}
+          height={25}
+        />
+      </div>
+
+      {/* User Dropdown Menu */}
+      <Menu
+        elevation={1}
+        anchorEl={userMenuAnchor}
+        getContentAnchorEl={null}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        keepMounted
+        open={Boolean(userMenuAnchor)}
+        onClose={() => setUserMenuAnchor(null)}
+        style={{ marginTop: "12px" }}
+      >
+        <MenuItem style={{ minWidth: "95px", paddingLeft: "23px" }}>
+          Profile
+        </MenuItem>
+        <Link href="/orderHistory" as="order_history">
+          <MenuItem
+            style={{ minWidth: "95px", paddingLeft: "23px" }}
+            onClick={() => setUserMenuAnchor(null)}
+          >
+            Orders
+          </MenuItem>
+        </Link>
+      </Menu>
 
       {/* Cart Icon */}
       <span className={styles.menu} style={{ paddingBottom: "5px" }}>
@@ -78,30 +116,35 @@ const SignedInNav = ({
 };
 
 const NavBar = () => {
-  // const router = useRouter();
   const dispatch = useDispatch();
   const selected = useSelector((state) => state.mainCat.selectedMainCat);
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   const context = useContext(AppContext);
-  const drawerRef = useRef();
+  // const drawerRef = useRef();
   const [anchorEl, setAnchorEl] = useState(null);
   const [hover, setHover] = useState(null);
   const [showSubMenu, setShowSubMenu] = useState(false);
 
   const [openCartPreview, setOpenCartPreview] = useState(false);
-  const [drawerAnchor, setDrawerAnchor] = useState(null);
+  // const [drawerAnchor, setDrawerAnchor] = useState(null);
 
   const [userName, setUserName] = useState(null);
   const [horoscope, setHoroscope] = useState(null);
   const [badgeNum, setbadgeNum] = useState(null);
+  const [userMenuAnchor, setUserMenuAnchor] = useState(null);
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!store.get("user_token")) return setUserName(null);
 
     if (store.get("username")) {
-      setUserName(store.get("username"));
-      context.setUsername(store.get("username"));
+      let name = store.get("username");
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      // console.log(name);
+      setUserName(name);
+      context.setUsername(name);
     }
 
     if (store.get("horoscope")) {
@@ -158,6 +201,7 @@ const NavBar = () => {
             onClick={() => {
               dispatch(updateMainCat("horoscope"));
               dispatch(updateStyle(null));
+              context.setLoading(true);
             }}
             onMouseEnter={(e) => {
               setAnchorEl(null);
@@ -229,16 +273,21 @@ const NavBar = () => {
             cartItems={cartItems}
             openCartPreview={openCartPreview}
             toggleDrawer={toggleDrawer}
-            // router={router}
+            userMenuAnchor={userMenuAnchor}
+            setUserMenuAnchor={setUserMenuAnchor}
           />
         ) : (
           <Link href="/sign_in">
-            <p className={styles.menu}>Sign in</p>
+            <p className={styles.menu} onClick={() => context.setLoading(true)}>
+              Sign in
+            </p>
           </Link>
         )}
       </Grid>
 
       <SubMenu show={showSubMenu} hover={hover} />
+
+      {context.loading && <Loading />}
     </Grid>
   );
 };

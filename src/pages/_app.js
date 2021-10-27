@@ -5,6 +5,7 @@ import "../styles/globals.scss";
 import WebHead from "../components/webHead";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
+import { BgWrapper } from "../components/bgWrapper";
 
 // import { PersistGate } from "redux-persist/integration/react";
 // import { persistStore } from "redux-persist";
@@ -17,7 +18,9 @@ function MyApp({ Component, pageProps }) {
       <AppProvider>
         <WebHead />
         <NavBar />
-        <Component {...pageProps} />
+        <BgWrapper>
+          <Component {...pageProps} />
+        </BgWrapper>
         <Footer />
       </AppProvider>
     </Provider>

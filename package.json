@@ -13,6 +13,7 @@
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.1",
     "carbox-date-picker": "^0.2.0",
+    "file-loader": "^6.2.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "next": "10.2.3",
@@ -30,7 +31,9 @@
     "redux-reset": "^0.3.0",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
-    "store-js": "^2.0.4"
+    "store-js": "^2.0.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.60.0"
   },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.9"

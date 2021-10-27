@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../../services/appProvider";
 import Suggestions from "../../components/suggestions";
 import SizeQty from "../../components/sizeQty";
 import SignIn from "../../components/signIn";
@@ -36,6 +37,7 @@ const SigninModal = ({ openModal, setOpenModal }) => {
 
 const ProductInfo = ({ data }) => {
   const router = useRouter();
+  const context = useContext(AppContext);
   const dispatch = useDispatch();
   const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -49,6 +51,7 @@ const ProductInfo = ({ data }) => {
     if (data) {
       setSize("xs");
       setQuantity(1);
+      context.setLoading(false);
       console.log("states in store", reduxStore.getState());
     }
   }, []);
@@ -162,7 +165,7 @@ const ProductInfo = ({ data }) => {
 
               <div style={{ marginTop: "50px" }}>
                 <button
-                  style={{ minWidth: "197px" }}
+                  style={{ minWidth: "197px", background: "#fff" }}
                   disabled={loading}
                   onClick={() =>
                     store.get("user_id")

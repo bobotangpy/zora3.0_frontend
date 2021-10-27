@@ -1,5 +1,6 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+// import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../services/appProvider";
 import { calculateHoroscope } from "../utilities/utils";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -143,7 +144,8 @@ const RegisterTab = ({
 
 const SignIn = ({ setSuccessSignup }) => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const context = useContext(AppContext);
+  // const router = useRouter();
   const [value, setValue] = useState(0);
   const [tab, setTab] = useState("signin");
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -216,6 +218,7 @@ const SignIn = ({ setSuccessSignup }) => {
 
   const handleSignin = (e) => {
     e.preventDefault();
+    context.setLoading(true);
 
     if (signinEmail && signinPwd) {
       console.log("sign in", signinEmail, signinPwd);
@@ -224,8 +227,9 @@ const SignIn = ({ setSuccessSignup }) => {
         !reduxStore.getState().auth.msg
           ? window.location.replace("/")
           : setErrMsg(reduxStore.getState().auth.msg);
+        context.setLoading(false);
       });
-    } else return;
+    } else return context.setLoading(false);
   };
 
   const handleNextStep = (e) => {
@@ -239,16 +243,19 @@ const SignIn = ({ setSuccessSignup }) => {
 
   const handleCreateUser = (e) => {
     e.preventDefault();
-
+    context.setLoading(true);
     api.signup(regName, regEmail, regPwd, bday, horoscope).then((res) => {
       if (res) {
-        console.log("res:::", res);
+        // console.log("res:::", res);
         if (res === "Sign up successful!") {
           setSuccess(true);
           setSuccessSignup(true);
         } else {
           setSuccess(false);
           setSuccessSignup(false);
+          setRegEmailErr(true);
+          setShowDatePicker(false);
+          context.setLoading(false);
         }
       }
     });

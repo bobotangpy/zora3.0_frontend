@@ -7,8 +7,9 @@
 
   .title {
     padding-left: 50px !important;
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: bold;
+    color: #ffffff;
   }
 
   .MuiTableCell-root.MuiTableCell-head {
@@ -22,11 +23,16 @@
 
   th {
     max-width: 250px !important;
+    font-size: 15px !important;
+    font-weight: bold;
+    color: #ffffff;
   }
 
   td {
-    font-size: 15px !important;
     max-width: 250px !important;
+    font-size: 15px !important;
+    font-weight: bold;
+    color: #ffffff;
   }
 
   img {
@@ -55,6 +61,7 @@
   .total {
     margin-right: 20px;
     text-align: right;
+    color: #ffffff;
 
     button {
       color: #fff;

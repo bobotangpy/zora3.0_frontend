@@ -33,39 +33,36 @@ const SubMenu = ({ show, hover }) => {
       className={show ? styles.visibleContainer : styles.invisibleContainer}
       style={{ marginLeft: "25px" }}
     >
-      <Grid item xs={1}>
+      <Grid
+        item
+        // xs={1}
+      >
         {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
-        <p
-          m={{ l: "2rem", r: "1.5rem" }}
-          className={styles.submenu}
-          onClick={() => setSelected("trending")}
-        >
+        <p className={styles.submenu} onClick={() => setSelected("trending")}>
           Trending
         </p>
         {/* </Link> */}
         <div className={selected === "trending" ? styles.dotTrend : ""}></div>
       </Grid>
 
-      <Grid item xs={1}>
+      <Grid
+        item
+        // xs={1}
+      >
         {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
-        <p
-          m={{ l: "2rem", r: "1.5rem" }}
-          className={styles.submenu}
-          onClick={() => setSelected("casual")}
-        >
+        <p className={styles.submenu} onClick={() => setSelected("casual")}>
           Casual
         </p>
         {/* </Link> */}
         <div className={selected === "casual" ? styles.dotCasual : ""}></div>
       </Grid>
 
-      <Grid item xs={1}>
+      <Grid
+        item
+        // xs={1}
+      >
         {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
-        <p
-          m={{ l: "2rem", r: "1.5rem" }}
-          className={styles.submenu}
-          onClick={() => setSelected("formal")}
-        >
+        <p className={styles.submenu} onClick={() => setSelected("formal")}>
           Formal
         </p>
         {/* </Link> */}
@@ -74,11 +71,7 @@ const SubMenu = ({ show, hover }) => {
 
       <Grid item xs={6}>
         {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
-        <p
-          m={{ l: "2rem", r: "1.5rem" }}
-          className={styles.submenu}
-          onClick={() => setSelected("goingOut")}
-        >
+        <p className={styles.submenu} onClick={() => setSelected("goingOut")}>
           Going-out-out
         </p>
         {/* </Link> */}

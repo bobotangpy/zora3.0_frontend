@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -22,6 +23,13 @@ const sliderSetting = {
 
 export default function Home() {
   const dispatch = useDispatch();
+  const [fullWidth, setFullWidth] = useState(true);
+
+  useEffect(() => {
+    typeof window !== "undefined" && window.innerWidth <= 1024
+      ? setFullWidth(false)
+      : setFullWidth(true);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -60,6 +68,38 @@ export default function Home() {
             </Link>
           </>
         </Slider>
+
+        {!fullWidth && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              marginTop: "30px",
+            }}
+          >
+            <>
+              <Link href="/category" as="/women">
+                <img
+                  src="/assets/images/landing/shop_women.jpg"
+                  alt="women"
+                  style={{ width: "48%" }}
+                  onClick={() => dispatch(updateMainCat("women"))}
+                />
+              </Link>
+            </>
+            <>
+              <Link href="/category" as="/men">
+                <img
+                  src="/assets/images/landing/shop_men.jpg"
+                  alt="men"
+                  style={{ width: "48%" }}
+                  onClick={() => dispatch(updateMainCat("men"))}
+                />
+              </Link>
+            </>
+          </div>
+        )}
       </div>
     </div>
   );
