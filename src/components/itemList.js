@@ -125,9 +125,10 @@ const ItemList = ({ items, suggestions }) => {
         gap={12}
         rowHeight={550}
         className={suggestions ? "suggestionImgList" : "imgList"}
+        style={{ flexWrap: suggestions ? "nowrap" : "wrap" }}
       >
         {items.map((data, i) => (
-          <Grid key={i} item xs={12} sm={suggestions ? 3 : 4} md={3} lg={3}>
+          <Grid key={i} item xs={6} sm={suggestions ? 3 : 4} md={3} lg={3}>
             <Card key={i} className={suggestions ? "suggestionCards" : "cards"}>
               {!suggestions ? (
                 <>
@@ -184,11 +185,7 @@ const ItemList = ({ items, suggestions }) => {
         ))}
       </ImageList>
 
-      <SigninModal
-        // props={(openModal, setOpenModal)}
-        openModal={openModal}
-        setOpenModal={setOpenModal}
-      />
+      <SigninModal openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
 };

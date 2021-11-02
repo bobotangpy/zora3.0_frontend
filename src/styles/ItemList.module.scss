@@ -24,9 +24,36 @@
 }
 
 /* iPad Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 1) {
   .list {
     margin-right: 0 !important;
     padding-bottom: 0 !important;
+  }
+
+  .actions {
+    button {
+      padding: 12px 35px !important;
+    }
+  }
+}
+
+/* iPhone Plus Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .actions {
+    button {
+      padding: 12px 35px !important;
+    }
+  }
+
+  .list {
+    flex-wrap: nowrap !important;
+    width: 630px !important;
+    overflow-x: hidden !important;
+    margin-right: 0px !important;
+  }
+
+  .suggestionImgList div {
+    max-width: 50% !important;
+    height: 490px !important;
   }
 }

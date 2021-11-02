@@ -79,6 +79,11 @@
       color: #155399;
     }
   }
+
+  .settings {
+    padding-bottom: 5px;
+    height: 1.8rem !important;
+  }
 }
 
 // FIXME: not working
@@ -93,5 +98,14 @@
   .menu,
   .menuSelected {
     margin: 25px 10px 25px 15px !important;
+  }
+
+  .icon {
+    margin-top: 27px !important;
+  }
+
+  .settings {
+    margin-left: 12px !important;
+    margin-right: 2px !important;
   }
 }

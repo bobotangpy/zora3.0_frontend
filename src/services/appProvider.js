@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import calculateHoroscope from "../components/calculateHoroscope";
+import { calculateHoroscope } from "../utilities/utils";
 import moment from "moment";
 
 export const AppContext = createContext();
@@ -8,8 +8,10 @@ export const AppProvider = ({ children }) => {
   const [monthSign, setMonthSign] = useState(null);
   const [username, setUsername] = useState(null);
   const [userSign, setUserSign] = useState(null);
+  const [userId, setUserId] = useState(null);
   const [bg, setBg] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [fullWidth, setFullWidth] = useState(true);
 
   // const [mainCat, setMainCat] = useState(null);
   // const [subCat, setSubCat] = useState(null);
@@ -26,6 +28,10 @@ export const AppProvider = ({ children }) => {
     let day = Number(date.split("-")[2]);
     let sign = calculateHoroscope(month, day);
     setMonthSign(sign);
+
+    typeof window !== "undefined" && window.innerWidth < 1024
+      ? setFullWidth(false)
+      : setFullWidth(true);
   }, []);
 
   useEffect(() => {
@@ -33,11 +39,12 @@ export const AppProvider = ({ children }) => {
       ? setBg(
           {
             margin: "0px",
-            background: `linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/backgound/${userSign}_bg.png') fixed center`,
+            background: `linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/backgound/${userSign}_bg.png') center left fixed`,
             minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "flex-start",
+            paddingBottom: "50px",
           }
           // `url('/assets/images/backgound/${userSign}_bg.png') fixed no-repeat center`
         )
@@ -48,8 +55,7 @@ export const AppProvider = ({ children }) => {
             minHeight: "calc(100vh - 90px)",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            paddingBottom: "50px",
+            justifyContent: "flex-start",
           }
           // `url('/assets/images/backgound/landing/landing_bg.jpg') fixed no-repeat center`
         );
@@ -59,11 +65,15 @@ export const AppProvider = ({ children }) => {
     monthSign,
     username,
     userSign,
+    userId,
     bg,
     loading,
+    fullWidth,
     setUsername,
     setUserSign,
+    setUserId,
     setLoading,
+    setFullWidth,
   };
 
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;

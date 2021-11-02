@@ -14,7 +14,7 @@ export const BgWrapper = ({ children }) => {
         minHeight: "calc(100vh - 90px)",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         // flexFlow: "column",
         // alignItems: "center",
       };
@@ -28,7 +28,7 @@ export const BgWrapper = ({ children }) => {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         // flexFlow: "column",
         // alignItems: "center",
         paddingBottom: "50px",

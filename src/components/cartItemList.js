@@ -4,12 +4,14 @@ import { deleteItem } from "../redux/cartSlice";
 import styles from "../styles/CartItemList.module.scss";
 import Divider from "@material-ui/core/Divider";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
+import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
 
-const CartItemList = ({ items }) => {
+const CartItemList = ({ items, handleClose }) => {
   const dispatch = useDispatch();
 
   return (
     <div className={styles.content}>
+      <CloseOutlinedIcon className={styles.close} onClick={handleClose} />
       {items.length > 0 ? (
         <>
           {items.map((item, i) => (

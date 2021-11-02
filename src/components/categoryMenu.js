@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { AppContext } from "../services/appProvider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import styles from "../styles/CategoryMenu.module.scss";
@@ -8,6 +9,7 @@ import { updateSubCat } from "../redux/subCatSlice";
 
 const CategoryMenu = () => {
   const dispatch = useDispatch();
+  const context = useContext(AppContext);
   const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
   const selected = useSelector((state) => state.subCat.selectedSubCat);
 
@@ -22,14 +24,20 @@ const CategoryMenu = () => {
       <ListItem
         button
         className={selected === "tops" ? styles.menuSelected : styles.menu}
-        onClick={() => dispatch(updateSubCat("tops"))}
+        onClick={() => {
+          context.setLoading(true);
+          dispatch(updateSubCat("tops"));
+        }}
       >
         <p style={{ paddingLeft: "20px" }}>Tops</p>
       </ListItem>
       <ListItem
         button
         className={selected === "bottoms" ? styles.menuSelected : styles.menu}
-        onClick={() => dispatch(updateSubCat("bottoms"))}
+        onClick={() => {
+          context.setLoading(true);
+          dispatch(updateSubCat("bottoms"));
+        }}
       >
         <p style={{ paddingLeft: "20px" }}>Bottoms</p>
       </ListItem>
@@ -38,7 +46,10 @@ const CategoryMenu = () => {
         className={
           selected === "dressSuits" ? styles.menuSelected : styles.menu
         }
-        onClick={() => dispatch(updateSubCat("dressSuits"))}
+        onClick={() => {
+          context.setLoading(true);
+          dispatch(updateSubCat("dressSuits"));
+        }}
       >
         {mainCat === "women" ? (
           <p style={{ paddingLeft: "20px" }}>Dresses</p>
@@ -51,7 +62,10 @@ const CategoryMenu = () => {
       <ListItem
         button
         className={selected === "shoes" ? styles.menuSelected : styles.menu}
-        onClick={() => dispatch(updateSubCat("shoes"))}
+        onClick={() => {
+          context.setLoading(true);
+          dispatch(updateSubCat("shoes"));
+        }}
       >
         <p style={{ paddingLeft: "20px" }}>Shoes</p>
       </ListItem>

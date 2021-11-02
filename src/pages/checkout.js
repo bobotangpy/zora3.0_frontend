@@ -85,8 +85,9 @@ const Checkout = () => {
             <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell className={styles.title}>ORDER SUMMARY</TableCell>
-                  <TableCell></TableCell>
+                  <TableCell className={styles.title} colSpan={2}>
+                    ORDER SUMMARY
+                  </TableCell>
                   <TableCell>Size</TableCell>
                   <TableCell>Quantity</TableCell>
                   <TableCell>Total</TableCell>
@@ -96,10 +97,16 @@ const Checkout = () => {
               <TableBody>
                 {rows.map((row, i) => (
                   <TableRow key={i}>
-                    <TableCell component="th" scope="row" align="center">
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      align="center"
+                      colSpan={2}
+                    >
                       <img src={row.img} alt={row.name} />
+                      {row.name}
                     </TableCell>
-                    <TableCell>{row.name}</TableCell>
+                    {/* <TableCell>{row.name}</TableCell> */}
                     <TableCell>{row.size.toUpperCase()}</TableCell>
                     <TableCell>
                       <input

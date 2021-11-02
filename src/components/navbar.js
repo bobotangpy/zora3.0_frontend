@@ -1,5 +1,3 @@
-// TODO: REsponsiveness!!!
-
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import SubMenu from "./subMenu";
@@ -10,6 +8,8 @@ import styles from "../styles/Navbar.module.scss";
 import Grid from "@material-ui/core/Grid";
 import Badge from "@material-ui/core/Badge";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
+import SettingsIcon from "@material-ui/icons/Settings";
+import MenuIcon from "@material-ui/icons/Menu";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -22,6 +22,7 @@ import { updateStyle } from "../redux/styleSlice";
 import { updateCart } from "../redux/cartSlice";
 
 const SignedInNav = ({
+  context,
   username,
   horoscope,
   badgeNum,
@@ -33,12 +34,14 @@ const SignedInNav = ({
 }) => {
   return (
     <div className={styles.signedIn}>
-      <div
-        className={styles.userWelcomeMsg}
-        onClick={(e) => setUserMenuAnchor(e.currentTarget)}
-      >
-        <p>
-          Welcome {username}, the beautiful {horoscope}
+      <div className={styles.userWelcomeMsg}>
+        <p
+          style={{
+            display: "flex",
+            flexDirection: context.fullWidth ? "row" : "column",
+          }}
+        >
+          Welcome {username}, <span>the beautiful {horoscope}</span>
         </p>
         <img
           alt="icon"
@@ -48,6 +51,11 @@ const SignedInNav = ({
           height={25}
         />
       </div>
+
+      <SettingsIcon
+        className={`${styles.menu} ${styles.settings}`}
+        onClick={(e) => setUserMenuAnchor(e.currentTarget)}
+      />
 
       {/* User Dropdown Menu */}
       <Menu
@@ -67,9 +75,17 @@ const SignedInNav = ({
         onClose={() => setUserMenuAnchor(null)}
         style={{ marginTop: "12px" }}
       >
-        <MenuItem style={{ minWidth: "95px", paddingLeft: "23px" }}>
-          Profile
-        </MenuItem>
+        <Link href="/profile">
+          <MenuItem
+            style={{ minWidth: "95px", paddingLeft: "23px" }}
+            onClick={() => {
+              context.setLoading(true);
+              setUserMenuAnchor(null);
+            }}
+          >
+            Profile
+          </MenuItem>
+        </Link>
         <Link href="/orderHistory" as="order_history">
           <MenuItem
             style={{ minWidth: "95px", paddingLeft: "23px" }}
@@ -78,10 +94,28 @@ const SignedInNav = ({
             Orders
           </MenuItem>
         </Link>
+        {!context.fullWidth && (
+          <MenuItem
+            style={{ minWidth: "95px", paddingLeft: "23px" }}
+            onClick={() => {
+              setUserMenuAnchor(null);
+              store.clearAll();
+              window.location.replace("/");
+            }}
+          >
+            Sign Out
+          </MenuItem>
+        )}
       </Menu>
 
       {/* Cart Icon */}
-      <span className={styles.menu} style={{ paddingBottom: "5px" }}>
+      <span
+        className={styles.menu}
+        style={{
+          paddingBottom: "5px",
+          marginLeft: !context.fullWidth ? "15px" : "10px",
+        }}
+      >
         <Badge badgeContent={badgeNum} onClick={toggleDrawer(true)}>
           <LocalMallOutlinedIcon />
         </Badge>
@@ -97,20 +131,22 @@ const SignedInNav = ({
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
           >
-            <CartItemList items={cartItems} />
+            <CartItemList items={cartItems} handleClose={toggleDrawer(false)} />
           </div>
         </SwipeableDrawer>
       </span>
 
-      <p
-        className={styles.signOut}
-        onClick={() => {
-          store.clearAll();
-          window.location.replace("/");
-        }}
-      >
-        Sign Out
-      </p>
+      {context.fullWidth && (
+        <p
+          className={styles.signOut}
+          onClick={() => {
+            store.clearAll();
+            window.location.replace("/");
+          }}
+        >
+          Sign Out
+        </p>
+      )}
     </div>
   );
 };
@@ -134,8 +170,6 @@ const NavBar = () => {
   const [badgeNum, setbadgeNum] = useState(null);
   const [userMenuAnchor, setUserMenuAnchor] = useState(null);
 
-  const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     if (!store.get("user_token")) return setUserName(null);
 
@@ -146,6 +180,8 @@ const NavBar = () => {
       setUserName(name);
       context.setUsername(name);
     }
+
+    if (store.get("user_id")) context.setUserId(store.get("user_id"));
 
     if (store.get("horoscope")) {
       setHoroscope(store.get("horoscope"));
@@ -176,6 +212,10 @@ const NavBar = () => {
     open ? setOpenCartPreview(true) : setOpenCartPreview(false);
   };
 
+  const openMobileMenu = () => {
+    console.log("open");
+  };
+
   return (
     <Grid
       container
@@ -189,59 +229,65 @@ const NavBar = () => {
         setHover(null);
       }}
     >
-      <Grid item xs={6} className={styles.menuCol}>
-        <Link href="/category" as="horoscope_of_the_month">
-          <p
-            aria-controls="horoscope-menu"
-            aria-haspopup="true"
-            variant="contained"
-            className={
-              selected === "horoscope" ? styles.menuSelected : styles.menu
-            }
-            onClick={() => {
-              dispatch(updateMainCat("horoscope"));
-              dispatch(updateStyle(null));
-              context.setLoading(true);
-            }}
-            onMouseEnter={(e) => {
-              setAnchorEl(null);
-              setShowSubMenu(false);
-            }}
-          >
-            Horoscope of the Month
-          </p>
-        </Link>
+      {typeof window !== undefined && window.innerWidth > "730px" ? (
+        <Grid item xs={6} className={styles.menuCol}>
+          <Link href="/category" as="horoscope_of_the_month">
+            <p
+              aria-controls="horoscope-menu"
+              aria-haspopup="true"
+              variant="contained"
+              className={
+                selected === "horoscope" ? styles.menuSelected : styles.menu
+              }
+              onClick={() => {
+                dispatch(updateMainCat("horoscope"));
+                dispatch(updateStyle(null));
+                context.setLoading(true);
+              }}
+              onMouseEnter={(e) => {
+                setAnchorEl(null);
+                setShowSubMenu(false);
+              }}
+            >
+              Horoscope of the Month
+            </p>
+          </Link>
 
-        <Link href="/category" as="/women">
-          <p
-            aria-controls="women-menu"
-            className={selected === "women" ? styles.menuSelected : styles.menu}
-            onClick={() => dispatch(updateMainCat("women"))}
-            onMouseEnter={(e) => {
-              setAnchorEl(e.currentTarget);
-              setShowSubMenu(true);
-              setHover("women");
-            }}
-          >
-            Women
-          </p>
-        </Link>
+          <Link href="/category" as="/women">
+            <p
+              aria-controls="women-menu"
+              className={
+                selected === "women" ? styles.menuSelected : styles.menu
+              }
+              onClick={() => dispatch(updateMainCat("women"))}
+              onMouseEnter={(e) => {
+                setAnchorEl(e.currentTarget);
+                setShowSubMenu(true);
+                setHover("women");
+              }}
+            >
+              Women
+            </p>
+          </Link>
 
-        <Link href="/category" as="/men">
-          <p
-            aria-controls="men-menu"
-            className={selected === "men" ? styles.menuSelected : styles.menu}
-            onClick={() => dispatch(updateMainCat("men"))}
-            onMouseEnter={(e) => {
-              setAnchorEl(e.currentTarget);
-              setShowSubMenu(true);
-              setHover("men");
-            }}
-          >
-            Men
-          </p>
-        </Link>
-      </Grid>
+          <Link href="/category" as="/men">
+            <p
+              aria-controls="men-menu"
+              className={selected === "men" ? styles.menuSelected : styles.menu}
+              onClick={() => dispatch(updateMainCat("men"))}
+              onMouseEnter={(e) => {
+                setAnchorEl(e.currentTarget);
+                setShowSubMenu(true);
+                setHover("men");
+              }}
+            >
+              Men
+            </p>
+          </Link>
+        </Grid>
+      ) : (
+        <MenuIcon onClick={openMobileMenu} style={{ marginLeft: "30px" }} />
+      )}
 
       <>
         <Link href="/">
@@ -262,11 +308,13 @@ const NavBar = () => {
         style={{
           display: "flex",
           justifyContent: "flex-end",
-          paddingRight: "25px",
+          paddingRight: context.fullWidth ? "25px" : "10px",
         }}
       >
         {userName ? (
           <SignedInNav
+            context={context}
+            // fullWidth={fullWidth}
             username={userName}
             horoscope={horoscope}
             badgeNum={badgeNum}

@@ -152,19 +152,20 @@ button {
   background: $theme-blue !important;
 }
 
-/* iPad Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  button {
-    padding: 12px 30px;
-  }
+// Profile
+.profile .MuiInputBase-input.Mui-disabled {
+  color: #000 !important;
+}
 
+/* iPad Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .bgWrapper {
     background-position: left !important;
   }
 
   // Product Info Page
   .MuiCard-root {
-    min-height: 500px !important;
+    min-height: 420px !important;
   }
   .MuiCard-root.suggestionCards {
     min-height: 400px !important;
@@ -178,7 +179,25 @@ button {
   .MuiNativeSelect-iconOutlined {
     color: #ffffff;
   }
+  .MuiGrid-grid-sm-3 {
+    height: 460px !important;
+  }
   // .MuiInput-underline:after {
   //   border-bottom: aliceblue !important;
   // }
+}
+
+/* iPhone Plus Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .bgWrapper {
+    padding-bottom: 0px !important;
+  }
+
+  // Product List
+  .MuiCard-root {
+    min-height: 480px !important;
+  }
+  .imgList .MuiGrid-root {
+    height: 510px !important;
+  }
 }

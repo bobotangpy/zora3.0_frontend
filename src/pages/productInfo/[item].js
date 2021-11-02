@@ -106,21 +106,22 @@ const ProductInfo = ({ data }) => {
             <ArrowBackIosIcon />
             <p
               style={{ paddingTop: "5px" }}
-              onClick={() =>
+              onClick={() => {
+                context.setLoading(true);
                 router.push("/category", `/${mainCat}`, {
                   shallow: true,
-                })
-              }
+                });
+              }}
             >
               Back
             </p>
           </div>
 
           <Grid container gap={2}>
-            <Grid item xs={6} style={{ textAlign: "right" }}>
+            <Grid item xs={12} style={{ textAlign: "right" }}>
               <img src={data.img} alt={data.name} height={600} />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} className={styles.details}>
               <h2>{data.name}</h2>
               <h3>{data.price}</h3>
 

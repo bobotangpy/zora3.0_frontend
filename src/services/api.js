@@ -58,6 +58,25 @@ export default class API {
     return res;
   }
 
+  queryUserProfile(userId) {
+    const url = `api/profile/${userId}`;
+    const res = this.api.get(url);
+    return res;
+  }
+
+  updateUserProfile(userId, name, pwd, bday, horoscope) {
+    const url = "api/profile";
+    const params = {
+      userId: userId,
+      name: name,
+      password: pwd,
+      birthday: bday,
+      horoscope: horoscope,
+    };
+    const res = this.api.post(url, params);
+    return res;
+  }
+
   queryAllProducts() {
     const url = `api/products`;
     const res = this.api.get(url);

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../services/appProvider";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -26,6 +27,7 @@ const blackFont = {
 const api = new API();
 
 const OrderHistory = () => {
+  const context = useContext(AppContext);
   const [userId, setUserId] = useState(null);
   const [history, setHistory] = useState([]);
 
@@ -35,17 +37,24 @@ const OrderHistory = () => {
 
   useEffect(() => {
     if (userId) {
-      api.queryOrderHistory(userId).then((res) => {
-        console.log(res);
-        if (res && res.length > 0) {
-          setHistory(res);
-        } else return;
-      });
+      context.setLoading(true);
+      api
+        .queryOrderHistory(userId)
+        .then((res) => {
+          console.log(res);
+          if (res && res.length > 0) {
+            setHistory(res);
+          } else return;
+        })
+        .catch((err) => {
+          console.log("Query order history err:::", err);
+        })
+        .finally(() => context.setLoading(false));
     }
   }, [userId]);
 
   return (
-    <div className={styles.checkout} style={wrapperStyle}>
+    <div className={styles.history} style={wrapperStyle}>
       <h1 style={{ margin: "0 60px 15px", alignSelf: "baseline" }}>
         Order History
       </h1>
@@ -57,13 +66,16 @@ const OrderHistory = () => {
             component={Paper}
             style={{ width: "90%", marginBottom: "80px" }}
           >
-            <Table aria-label="simple table">
+            <Table className={styles.historyTable} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell className={styles.title} style={blackFont}>
+                  <TableCell
+                    className={styles.title}
+                    colSpan={2}
+                    style={blackFont}
+                  >
                     Order Date: {moment(order.date).format("YYYY MMM DD hh:mm")}
                   </TableCell>
-                  <TableCell></TableCell>
                   <TableCell style={blackFont}>Size</TableCell>
                   <TableCell style={blackFont}>Quantity</TableCell>
                   <TableCell style={blackFont}>Total</TableCell>
@@ -100,7 +112,9 @@ const OrderHistory = () => {
         ))
       ) : (
         <div style={{ marginTop: "50px" }}>
-          <p style={{ textAlign: "center" }}>No order history.</p>
+          {!context.loading && (
+            <p style={{ textAlign: "center" }}>No order history.</p>
+          )}
         </div>
       )}
     </div>

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../services/appProvider";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -23,12 +24,13 @@ const sliderSetting = {
 
 export default function Home() {
   const dispatch = useDispatch();
-  const [fullWidth, setFullWidth] = useState(true);
+  const context = useContext(AppContext);
+  // const [fullWidth, setFullWidth] = useState(true);
 
   useEffect(() => {
     typeof window !== "undefined" && window.innerWidth <= 1024
-      ? setFullWidth(false)
-      : setFullWidth(true);
+      ? context.setFullWidth(false)
+      : context.setFullWidth(true);
   }, []);
 
   return (
@@ -42,6 +44,7 @@ export default function Home() {
                 alt="1"
                 className={styles.img}
                 onClick={() => {
+                  context.setLoading(true);
                   dispatch(updateMainCat("horoscope"));
                 }}
               />
@@ -53,7 +56,10 @@ export default function Home() {
                 src="/assets/images/landing/slide_2.jpg"
                 alt="2"
                 className={styles.img}
-                onClick={() => dispatch(updateMainCat("women"))}
+                onClick={() => {
+                  context.setLoading(true);
+                  dispatch(updateMainCat("women"));
+                }}
               />
             </Link>
           </>
@@ -63,13 +69,16 @@ export default function Home() {
                 src="/assets/images/landing/slide_3.jpg"
                 alt="3"
                 className={styles.img}
-                onClick={() => dispatch(updateMainCat("men"))}
+                onClick={() => {
+                  context.setLoading(true);
+                  dispatch(updateMainCat("men"));
+                }}
               />
             </Link>
           </>
         </Slider>
 
-        {!fullWidth && (
+        {!context.fullWidth && (
           <div
             style={{
               display: "flex",
@@ -84,7 +93,10 @@ export default function Home() {
                   src="/assets/images/landing/shop_women.jpg"
                   alt="women"
                   style={{ width: "48%" }}
-                  onClick={() => dispatch(updateMainCat("women"))}
+                  onClick={() => {
+                    context.setLoading(true);
+                    dispatch(updateMainCat("women"));
+                  }}
                 />
               </Link>
             </>
@@ -94,7 +106,10 @@ export default function Home() {
                   src="/assets/images/landing/shop_men.jpg"
                   alt="men"
                   style={{ width: "48%" }}
-                  onClick={() => dispatch(updateMainCat("men"))}
+                  onClick={() => {
+                    context.setLoading(true);
+                    dispatch(updateMainCat("men"));
+                  }}
                 />
               </Link>
             </>
