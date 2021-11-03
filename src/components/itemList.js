@@ -117,7 +117,7 @@ const ItemList = ({ items, suggestions }) => {
 
   return (
     <div
-      className={styles.list}
+      className={suggestions ? styles.suggestList : styles.list}
       style={suggestions ? { height: "500px" } : { height: "initial" }}
     >
       <ImageList

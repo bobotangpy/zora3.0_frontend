@@ -63,6 +63,8 @@ const Category = ({ data }) => {
       mainCat !== "horoscope"
         ? updateSuggestions(subCat, getGenderId(mainCat))
         : dispatch(updateStyle(null));
+
+      context.setLoading(false);
     }
   }, [mainCat, subCat]);
 
@@ -231,7 +233,9 @@ const Category = ({ data }) => {
 
   return (
     <div className={styles.mainContent}>
-      <CategoryMenu />
+      {typeof window !== "undefined" && window.innerWidth > 736 && (
+        <CategoryMenu />
+      )}
 
       {filteredItems && <ItemList items={filteredItems} />}
     </div>

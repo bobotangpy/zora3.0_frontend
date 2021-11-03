@@ -1,6 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import SubMenu from "./subMenu";
+import MobileMenu from "./mobileMenu";
 import CartItemList from "./cartItemList";
 import Loading from "./loading";
 import { AppContext } from "../services/appProvider";
@@ -162,6 +163,8 @@ const NavBar = () => {
   const [hover, setHover] = useState(null);
   const [showSubMenu, setShowSubMenu] = useState(false);
 
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+
   const [openCartPreview, setOpenCartPreview] = useState(false);
   // const [drawerAnchor, setDrawerAnchor] = useState(null);
 
@@ -212,10 +215,6 @@ const NavBar = () => {
     open ? setOpenCartPreview(true) : setOpenCartPreview(false);
   };
 
-  const openMobileMenu = () => {
-    console.log("open");
-  };
-
   return (
     <Grid
       container
@@ -229,7 +228,7 @@ const NavBar = () => {
         setHover(null);
       }}
     >
-      {typeof window !== undefined && window.innerWidth > "730px" ? (
+      {typeof window !== "undefined" && window.innerWidth > "730px" ? (
         <Grid item xs={6} className={styles.menuCol}>
           <Link href="/category" as="horoscope_of_the_month">
             <p
@@ -286,7 +285,16 @@ const NavBar = () => {
           </Link>
         </Grid>
       ) : (
-        <MenuIcon onClick={openMobileMenu} style={{ marginLeft: "30px" }} />
+        <>
+          <MenuIcon
+            onClick={() => setOpenMobileMenu(true)}
+            style={{ marginLeft: "30px" }}
+          />
+          <MobileMenu
+            openMobileMenu={openMobileMenu}
+            setOpenMobileMenu={setOpenMobileMenu}
+          />
+        </>
       )}
 
       <>

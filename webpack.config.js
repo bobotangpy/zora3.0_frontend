@@ -11,12 +11,6 @@ const extractPlugin = new ExtractTextPlugin({
   allChunks: true,
 });
 
-let fontCssRule = config.module.rules.find(
-  (rule) =>
-    rule.test.toString() ===
-    /\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/.toString()
-);
-
 var config = {
   cache: true,
   entry: SRC,
@@ -32,10 +26,6 @@ var config = {
   },
   module: {
     rules: [
-      {
-        test: /\.woff(\?.*$|$)/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff",
-      },
       {
         test: /\.jsx?$/,
         use: [
@@ -101,19 +91,19 @@ var config = {
           },
         ],
       },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        include: SRC,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 1000,
-              mimetype: "application/font-woff",
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      //   include: SRC,
+      //   use: [
+      //     {
+      //       loader: "url-loader",
+      //       options: {
+      //         limit: 1000,
+      //         mimetype: "application/font-woff",
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         include: SRC,

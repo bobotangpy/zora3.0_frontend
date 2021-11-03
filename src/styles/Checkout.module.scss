@@ -92,9 +92,9 @@
 }
 
 /* iPhone Plus Portrait and Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+@media screen and (max-device-width: 736px), screen and (max-width: 736px) {
   // Order History
-  .hitory,
+  .history,
   .checkout {
     margin: 50px 0 !important;
 

@@ -34,7 +34,7 @@
 }
 
 /* iPhone Plus Portrait and Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+@media screen and (max-device-width: 736px), screen and (max-width: 736px) {
   .content {
     width: 370px !important;
     margin-top: 20px !important;
@@ -54,5 +54,11 @@
     .del {
       margin-top: -10px !important;
     }
+  }
+}
+
+@media screen and (max-device-width: 375px), screen and (max-width: 375px) {
+  .content {
+    width: 100% !important;
   }
 }

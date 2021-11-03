@@ -114,6 +114,11 @@ button {
 .MuiNativeSelect-icon {
   color: #ffffff !important;
 }
+// FIXME:::
+.select.MuiInputBase-root.MuiInput-root.MuiInput-underline:before,
+.select.MuiInputBase-root.MuiInput-root.MuiInput-underline:after {
+  border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
+}
 
 // Sign In/ Create Acc Modal
 .signinModal {
@@ -182,15 +187,17 @@ button {
   .MuiGrid-grid-sm-3 {
     height: 460px !important;
   }
-  // .MuiInput-underline:after {
-  //   border-bottom: aliceblue !important;
-  // }
 }
 
 /* iPhone Plus Portrait and Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
   .bgWrapper {
     padding-bottom: 0px !important;
+  }
+
+  // Mobile Menu
+  .MuiAccordion-root:before {
+    display: none !important;
   }
 
   // Product List

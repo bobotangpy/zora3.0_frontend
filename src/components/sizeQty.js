@@ -21,7 +21,7 @@ const SizeQty = ({
         >
           Size :
         </label>
-        <FormControl variant="outlined">
+        <FormControl variant="outlined" className="selectForm">
           <NativeSelect
             value={size}
             onChange={handleChangeSize}
