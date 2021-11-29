@@ -246,6 +246,13 @@ const Category = ({ data }) => {
 
 export default Category;
 
+export const getStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: false,
+  };
+};
+
 export const getStaticProps = async () => {
   let data;
 
