@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../services/appProvider";
-import CategoryMenu from "../components/categoryMenu";
+// import CategoryMenu from "../components/categoryMenu";
 import SubMenu from "../components/subMenu";
 import ItemList from "../components/itemList";
 import styles from "../styles/Category.module.scss";
 import API from "../services/api";
 import _ from "lodash";
+
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateMainCat } from "../redux/mainCatSlice";
@@ -246,21 +249,20 @@ const Category = ({ data }) => {
 
 export default Category;
 
-export const getStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: false,
-  };
-};
-
 export const getStaticProps = async () => {
-  let data;
-
-  await api.queryAllProducts().then((res) => {
-    if (res && Array.isArray(res)) {
-      data = res;
-    } else data = [];
+  const products = await prisma.products.findMany({
+    orderBy: { product_id: "desc" },
   });
 
-  return { props: { data: data }, revalidate: 30 };
+  return { props: { data: products } };
+
+  // let data;
+
+  // await api.queryAllProducts().then((res) => {
+  //   if (res && Array.isArray(res)) {
+  //     data = res;
+  //   } else data = [];
+  // });
+
+  // return { props: { data: data }, revalidate: 30 };
 };

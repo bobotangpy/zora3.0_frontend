@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model cart {
+  cart_id       Int     @id @default(autoincrement())
+  userstable_id Int?
+  clothes_id    Int?
+  price         String? @db.VarChar(255)
+  quantity      Int?
+  size          String? @db.VarChar(255)
+}
+
+model horoscope {
+  id        Int     @id @default(autoincrement())
+  horoscope String? @db.VarChar(255)
+}
+
+model knex_migrations {
+  id             Int       @id @default(autoincrement())
+  name           String?   @db.VarChar(255)
+  batch          Int?
+  migration_time DateTime? @db.Timestamptz(6)
+}
+
+model knex_migrations_lock {
+  index     Int  @id @default(autoincrement())
+  is_locked Int?
+}
+
+model orderhistory {
+  orderhistory_id Int       @id @default(autoincrement())
+  userstable_id   Int?
+  products        products? @relation(fields: [product_id], references: [product_id])
+  product_id      Int?
+  price           String?   @db.VarChar(255)
+  quantity        Int?
+  size            String?   @db.VarChar(255)
+  total           String?   @db.VarChar(255)
+  order_date      DateTime? @db.Timestamptz(6)
+}
+
+model products {
+  product_id   Int            @id(map: "clothes_pkey") @default(autoincrement())
+  name         String?        @db.VarChar
+  style_id     Int?
+  type_id      Int?
+  gender_id    Int?
+  price        String?        @db.VarChar(255)
+  img          String?        @db.VarChar(255)
+  horoscope_id String?        @db.VarChar(255)
+  orderhistory orderhistory[]
+}
+
+model userstable {
+  id        Int     @id @default(autoincrement())
+  name      String? @db.VarChar(255)
+  password  String? @db.VarChar(255)
+  horoscope String? @db.VarChar(255)
+  email     String? @unique(map: "userstable_email_unique") @db.VarChar(255)
+  birthday  String? @db.VarChar
+}
