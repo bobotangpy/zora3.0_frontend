@@ -17,7 +17,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCart } from "../../redux/cartSlice";
 import { addToBag } from "../../utilities/utils";
 
-const api = new API();
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+
+// const api = new API();
 
 const SigninModal = ({ openModal, setOpenModal }) => {
   return (
@@ -173,17 +176,20 @@ const ProductInfo = ({ data }) => {
 export default ProductInfo;
 
 export const getStaticProps = async ({ params }) => {
-  let data;
+  // let data;
+  // await api.queryAllProducts().then((res) => {
+  //   if (res && Array.isArray(res)) {
+  //     // console.log(res);
+  //     data = res;
+  //   } else data = [];
+  // });
 
-  await api.queryAllProducts().then((res) => {
-    if (res && Array.isArray(res)) {
-      // console.log(res);
-      data = res;
-    } else data = [];
+  const products = await prisma.products.findMany({
+    orderBy: { product_id: "desc" },
   });
 
   const details = _.find(
-    data,
+    products,
     (item) => item.product_id.toString() === params.item
   );
 
@@ -193,13 +199,16 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  let data;
+  // let data;
+  // await api.queryAllProducts().then((res) => {
+  //   if (res && Array.isArray(res)) {
+  //     // console.log(res);
+  //     data = res;
+  //   } else data = [];
+  // });
 
-  await api.queryAllProducts().then((res) => {
-    if (res && Array.isArray(res)) {
-      // console.log(res);
-      data = res;
-    } else data = [];
+  const data = await prisma.products.findMany({
+    orderBy: { product_id: "desc" },
   });
 
   const paths = _.map(data, (item) => ({
