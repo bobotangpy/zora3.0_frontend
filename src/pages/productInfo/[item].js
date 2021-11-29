@@ -5,8 +5,6 @@ import Suggestions from "../../components/suggestions";
 import SizeQty from "../../components/sizeQty";
 import SignIn from "../../components/signIn";
 import Grid from "@material-ui/core/Grid";
-// import FormControl from "@material-ui/core/FormControl";
-// import NativeSelect from "@material-ui/core/NativeSelect";
 import styles from "../../styles/ProductInfo.module.scss";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -54,6 +52,10 @@ const ProductInfo = ({ data }) => {
       console.log("states in store", reduxStore.getState());
     }
   }, []);
+
+  useEffect(() => {
+    if (data) context.setLoading(false);
+  }, [data]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -117,7 +119,12 @@ const ProductInfo = ({ data }) => {
           </div>
 
           <Grid container gap={2}>
-            <Grid item xs={12} style={{ textAlign: "right" }}>
+            <Grid
+              item
+              xs={12}
+              className="infoImg"
+              style={{ textAlign: "right" }}
+            >
               <img src={data.img} alt={data.name} height={600} />
             </Grid>
             <Grid item xs={12} className={styles.details}>

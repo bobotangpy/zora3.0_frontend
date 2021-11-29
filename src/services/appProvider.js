@@ -51,7 +51,8 @@ export const AppProvider = ({ children }) => {
       : setBg(
           {
             margin: "0px",
-            background: `linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/landing/landing_bg.jpg') fixed no-repeat center`,
+            background: `linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/landing/landing_bg.jpg') no-repeat center`,
+            backgroundSize: "cover",
             minHeight: "calc(100vh - 90px)",
             display: "flex",
             flexDirection: "column",

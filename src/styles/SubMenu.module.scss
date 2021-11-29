@@ -49,3 +49,24 @@
   transform: translateY(-40%);
   right: 900px;
 }
+
+/* iPhone Plus Portrait and Landscape */
+@media screen and (max-device-width: 736px), screen and (max-width: 736px) {
+  .mobileMenu {
+    margin-left: 15px !important;
+    margin-bottom: 10px !important;
+    width: 90% !important;
+    height: fit-content !important;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ffffff !important;
+    border-radius: 6px !important;
+  }
+}
+
+/* iPhone 5/SE */
+@media screen and (max-device-width: 320px), screen and (max-width: 320px) {
+  .mobileMenu {
+    font-size: 13px !important;
+  }
+}

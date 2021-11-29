@@ -13,13 +13,13 @@ import { updateMainCat } from "../redux/mainCatSlice";
 // import { updateSubCat } from "../redux/subCatSlice";
 import { updateStyle } from "../redux/styleSlice";
 
-const closeStyle = {
-  position: "absolute",
-  right: "7rem",
-  top: "0.5rem",
-  color: "#fff",
-  zIndex: "1400",
-};
+// const closeStyle = {
+//   position: "absolute",
+//   right: "7rem",
+//   top: "0.5rem",
+//   color: "#fff",
+//   zIndex: "1400",
+// };
 
 const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
   const dispatch = useDispatch();
@@ -43,7 +43,13 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
     <>
       {openMobileMenu && (
         <CloseOutlinedIcon
-          style={closeStyle}
+          className="closeIcon"
+          style={{
+            display:
+              window.innerWidth <= 768 && window.innerWidth > 414
+                ? "none"
+                : "initial",
+          }}
           onClick={() => setOpenMobileMenu(false)}
         />
       )}
@@ -59,24 +65,30 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
           // onClick={toggleMenuDrawer(false)}
           // onKeyDown={toggleMenuDrawer(false)}
         >
-          <Accordion style={{ boxShadow: "none" }}>
-            <AccordionSummary>
-              <Link href="/category" as="horoscope_of_the_month">
-                <p
-                  aria-controls="horoscope-menu"
-                  aria-haspopup="true"
-                  variant="contained"
-                  style={{ margin: "12px" }}
-                  onClick={() => {
-                    dispatch(updateMainCat("horoscope"));
-                    dispatch(updateStyle(null));
-                    context.setLoading(true);
-                  }}
-                >
-                  Horoscope of the Month
-                </p>
-              </Link>
-            </AccordionSummary>
+          <Accordion
+            style={{
+              boxShadow: "none",
+              minHeight: "48px",
+              padding: "12px 16px",
+            }}
+          >
+            {/* <AccordionSummary> */}
+            <Link href="/category" as="horoscope_of_the_month">
+              <p
+                aria-controls="horoscope-menu"
+                aria-haspopup="true"
+                variant="contained"
+                style={{ margin: "12px" }}
+                onClick={() => {
+                  dispatch(updateMainCat("horoscope"));
+                  dispatch(updateStyle(null));
+                  context.setLoading(true);
+                }}
+              >
+                Horoscope of the Month
+              </p>
+            </Link>
+            {/* </AccordionSummary> */}
           </Accordion>
 
           <Accordion
@@ -102,7 +114,10 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
             <AccordionDetails
               style={{ display: "flex", flexDirection: "column", padding: "0" }}
             >
-              <CategoryMenu mobile={true} />
+              <CategoryMenu
+                mobile={true}
+                setOpenMobileMenu={setOpenMobileMenu}
+              />
             </AccordionDetails>
           </Accordion>
 
@@ -129,7 +144,10 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
             <AccordionDetails
               style={{ display: "flex", flexDirection: "column" }}
             >
-              <CategoryMenu mobile={true} />
+              <CategoryMenu
+                mobile={true}
+                setOpenMobileMenu={setOpenMobileMenu}
+              />
             </AccordionDetails>
           </Accordion>
         </div>

@@ -65,6 +65,15 @@ button {
   width: 350px !important;
 }
 
+// Mobile Menu
+.closeIcon {
+  position: absolute;
+  right: 7rem;
+  top: 0.5rem;
+  color: #fff;
+  z-index: 1400;
+}
+
 // Sign In / Create Account
 .MuiTabs-scroller.MuiTabs-fixed .MuiTabs-indicator {
   height: 1px !important;
@@ -107,16 +116,15 @@ button {
     0px 8px 10px 1px rgba(0, 0, 0, 0), 0px 3px 4px 2px rgba(0, 0, 0, 0.01) !important;
 }
 
-// Product Info
-.MuiInput-underline:hover:not(.Mui-disabled):before {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.42) !important;
+// Item
+.MuiGrid-grid-xs-12 {
+  flex-basis: unset;
 }
 .MuiNativeSelect-icon {
   color: #ffffff !important;
 }
-// FIXME:::
-.select.MuiInputBase-root.MuiInput-root.MuiInput-underline:before,
-.select.MuiInputBase-root.MuiInput-root.MuiInput-underline:after {
+.selectForm .MuiInputBase-root.MuiInput-root.MuiInput-underline:before,
+.selectForm .MuiInputBase-root.MuiInput-root.MuiInput-underline:after {
   border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
 }
 
@@ -163,7 +171,7 @@ button {
 }
 
 /* iPad Portrait and Landscape */
-@media only screen and (min-device-width: 834px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .bgWrapper {
     background-position: left !important;
   }
@@ -178,6 +186,9 @@ button {
   .MuiImageList-root {
     margin: -6px 10px 35px 10px !important;
   }
+  .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.infoImg {
+    text-align: center !important;
+  }
   .MuiImageList-root.suggestionImgList {
     margin: 0 !important;
   }
@@ -190,7 +201,10 @@ button {
 }
 
 /* iPhone Plus Portrait and Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+@media screen and (max-device-width: 736px), screen and (max-width: 736px) {
+  .closeIcon {
+    right: 5rem !important;
+  }
   .bgWrapper {
     padding-bottom: 0px !important;
   }
@@ -206,5 +220,52 @@ button {
   }
   .imgList .MuiGrid-root {
     height: 510px !important;
+  }
+}
+
+// iPhone 5/SE
+@media screen and (max-device-width: 420px), screen and (max-width: 420px) {
+  .MuiImageList-root.imgList {
+    margin: -6px 10px 35px !important;
+  }
+}
+
+@media screen and (max-device-width: 370px), screen and (max-width: 370px) {
+  .closeIcon {
+    right: 4rem !important;
+  }
+}
+
+@media screen and (max-device-width: 360px), screen and (max-width: 360px) {
+  .closeIcon {
+    right: 3.5rem !important;
+  }
+}
+
+@media screen and (max-device-width: 350px), screen and (max-width: 350px) {
+  .closeIcon {
+    right: 3rem !important;
+  }
+}
+
+// iPhone 5/SE
+@media screen and (max-device-width: 320px), screen and (max-width: 320px) {
+  .closeIcon {
+    right: 1rem !important;
+  }
+
+  // Product Info
+  .imgList {
+    justify-content: center !important;
+  }
+  .imgList .MuiGrid-root {
+    width: 90% !important;
+  }
+  .imgList .MuiGrid-grid-xs-6 {
+    max-width: none !important;
+    flex-basis: initial !important;
+  }
+  .imgList .MuiGrid-root {
+    height: 545px !important;
   }
 }

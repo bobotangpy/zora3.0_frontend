@@ -28,7 +28,8 @@
     padding: 5px;
     margin: 0 15px;
     font-size: 16px;
-    border: 1px solid $text-color;
+    border: none;
+    // border: 1px solid $text-color;
     border-radius: 2px;
   }
 }
@@ -46,6 +47,10 @@
     img {
       max-width: 80% !important;
       height: auto !important;
+    }
+
+    .details {
+      margin-left: 150px !important;
     }
   }
 
@@ -76,5 +81,12 @@
 @media screen and (max-device-width: 400px), screen and (max-width: 400px) {
   .layout img {
     height: 390px !important;
+  }
+}
+
+// iPhone 5/SE
+@media screen and (max-device-width: 320px), screen and (max-width: 320px) {
+  .layout img {
+    height: 340px !important;
   }
 }

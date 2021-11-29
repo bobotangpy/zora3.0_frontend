@@ -8,7 +8,9 @@ export default class API {
     };
 
     let url =
-      process.env.NODE_ENV === "development" ? "http://localhost:8080" : "";
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:8080"
+        : "https://zora3.herokuapp.com/";
     this.api = axios.create({
       baseURL: url,
       timeout: 10000,

@@ -8,7 +8,7 @@ import styles from "../styles/CategoryMenu.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { updateSubCat } from "../redux/subCatSlice";
 
-const CategoryMenu = ({ mobile }) => {
+const CategoryMenu = ({ mobile, setOpenMobileMenu }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const context = useContext(AppContext);
@@ -38,6 +38,7 @@ const CategoryMenu = ({ mobile }) => {
         onClick={() => {
           context.setLoading(true);
           dispatch(updateSubCat("tops"));
+          setOpenMobileMenu(false);
         }}
       >
         <p style={{ paddingLeft: "20px" }}>Tops</p>
@@ -48,6 +49,7 @@ const CategoryMenu = ({ mobile }) => {
         onClick={() => {
           context.setLoading(true);
           dispatch(updateSubCat("bottoms"));
+          setOpenMobileMenu(false);
         }}
       >
         <p style={{ paddingLeft: "20px" }}>Bottoms</p>
@@ -60,6 +62,7 @@ const CategoryMenu = ({ mobile }) => {
         onClick={() => {
           context.setLoading(true);
           dispatch(updateSubCat("dressSuits"));
+          setOpenMobileMenu(false);
         }}
       >
         {mainCat === "women" ? (
@@ -76,6 +79,7 @@ const CategoryMenu = ({ mobile }) => {
         onClick={() => {
           context.setLoading(true);
           dispatch(updateSubCat("shoes"));
+          setOpenMobileMenu(false);
         }}
       >
         <p style={{ paddingLeft: "20px" }}>Shoes</p>

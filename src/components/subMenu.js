@@ -1,6 +1,4 @@
-// import Link from "next/link";
 import { useEffect, useState } from "react";
-// import { AppContext } from "../services/appProvider";
 import styles from "../styles/SubMenu.module.scss";
 import Grid from "@material-ui/core/Grid";
 
@@ -8,12 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateMainCat } from "../redux/mainCatSlice";
 import { updateStyle } from "../redux/styleSlice";
 
-const SubMenu = ({ show, hover }) => {
+const SubMenu = ({ show, hover, mobileMenu }) => {
   const dispatch = useDispatch();
   const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
-  // const subCat = useSelector((state) => state.subCat.selectedSubCat);
-
-  // const context = useContext(AppContext);
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
@@ -30,7 +25,13 @@ const SubMenu = ({ show, hover }) => {
   return (
     <Grid
       container
-      className={show ? styles.visibleContainer : styles.invisibleContainer}
+      className={
+        show
+          ? styles.visibleContainer
+          : mobileMenu
+          ? styles.mobileMenu
+          : styles.invisibleContainer
+      }
       style={{ marginLeft: "25px" }}
     >
       <Grid
@@ -69,7 +70,7 @@ const SubMenu = ({ show, hover }) => {
         <div className={selected === "formal" ? styles.dotFormal : ""}></div>
       </Grid>
 
-      <Grid item xs={6}>
+      <Grid item xs={!mobileMenu ? 6 : "auto"}>
         {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
         <p className={styles.submenu} onClick={() => setSelected("goingOut")}>
           Going-out-out

@@ -1,8 +1,28 @@
 .container {
   margin: 0px;
   overflow: hidden;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
 }
 
 .img {
   width: 100%;
+}
+
+/* iPhone Plus Portrait and Landscape */
+@media screen and (max-device-width: 736px), screen and (max-width: 736px) {
+  .wrapper {
+    flex-direction: column !important;
+    margin-top: 0 !important;
+
+    img {
+      width: 90% !important;
+      margin: 15px 20px 10px !important;
+    }
+  }
 }

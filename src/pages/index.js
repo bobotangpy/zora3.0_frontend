@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../services/appProvider";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
@@ -25,7 +25,6 @@ const sliderSetting = {
 export default function Home() {
   const dispatch = useDispatch();
   const context = useContext(AppContext);
-  // const [fullWidth, setFullWidth] = useState(true);
 
   useEffect(() => {
     typeof window !== "undefined" && window.innerWidth <= 1024
@@ -79,14 +78,7 @@ export default function Home() {
         </Slider>
 
         {!context.fullWidth && (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-around",
-              marginTop: "30px",
-            }}
-          >
+          <div className={styles.wrapper}>
             <>
               <Link href="/category" as="/women">
                 <img

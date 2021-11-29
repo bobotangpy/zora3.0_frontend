@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../services/appProvider";
 import CategoryMenu from "../components/categoryMenu";
+import SubMenu from "../components/subMenu";
 import ItemList from "../components/itemList";
 import styles from "../styles/Category.module.scss";
 import API from "../services/api";
@@ -233,9 +234,10 @@ const Category = ({ data }) => {
 
   return (
     <div className={styles.mainContent}>
-      {typeof window !== "undefined" && window.innerWidth > 736 && (
-        <CategoryMenu />
-      )}
+      {typeof window !== "undefined" &&
+        window.innerWidth < 736 &&
+        mainCat &&
+        mainCat !== "horoscope" && <SubMenu mobileMenu={true} />}
 
       {filteredItems && <ItemList items={filteredItems} />}
     </div>

@@ -66,3 +66,9 @@
     height: 490px !important;
   }
 }
+
+@media screen and (max-device-width: 360px), screen and (max-width: 360px) {
+  .actions button {
+    padding: 12px 30px !important;
+  }
+}
