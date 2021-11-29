@@ -79,11 +79,11 @@ export default class API {
     return res;
   }
 
-  queryAllProducts() {
-    const url = `api/products`;
-    const res = this.api.get(url);
-    return res;
-  }
+  // queryAllProducts() {
+  //   const url = `api/products`;
+  //   const res = this.api.get(url);
+  //   return res;
+  // }
 
   queryProductInfo(id) {
     const url = `api/productInfo/${id}`;

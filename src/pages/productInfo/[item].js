@@ -9,7 +9,7 @@ import styles from "../../styles/ProductInfo.module.scss";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Modal from "@material-ui/core/Modal";
-import API from "../../services/api";
+// import API from "../../services/api";
 import _ from "lodash";
 import store from "store-js";
 import { reduxStore } from "../../redux/_index";
