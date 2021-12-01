@@ -12,7 +12,7 @@ export default class API {
     //     ? "http://localhost:8080/"
     //     : "http://zora3.herokuapp.com/";
     this.api = axios.create({
-      baseURL: "http://localhost:80/",
+      baseURL: "https://zora3.herokuapp.com/",
       timeout: 10000,
     });
 
