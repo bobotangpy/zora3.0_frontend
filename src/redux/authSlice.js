@@ -21,10 +21,10 @@ const authSlice = createSlice({
       state.userName = action.payload.username;
       state.userSign = action.payload.horoscope;
       state.msg = null;
-      store.set("user_token", action.payload.token);
-      store.set("user_id", action.payload.id);
-      store.set("username", action.payload.name);
-      store.set("horoscope", action.payload.horoscope);
+      // store.set("user_token", action.payload.token);
+      // store.set("user_id", action.payload.id);
+      // store.set("username", action.payload.name);
+      // store.set("horoscope", action.payload.horoscope);
     },
     loginFailed: (state) => {
       state.isAuthenticated = false;
@@ -48,9 +48,14 @@ export const loginUser = (email, password) => async (dispatch) => {
     await api.login(email, password).then((res) => {
       if (res) {
         console.log("res:::", res);
+
         if (res === "Wrong Email or Password") {
           dispatch(loginFailed());
         } else if (res.token) {
+          store.set("user_token", res.token);
+          store.set("user_id", res.id);
+          store.set("username", res.name);
+          store.set("horoscope", res.horoscope);
           dispatch(loginSuccess(res));
         }
       }

@@ -230,7 +230,8 @@ const SignIn = ({ setSuccessSignup }) => {
       console.log("sign in", signinEmail, signinPwd);
 
       dispatch(loginUser(signinEmail, signinPwd)).then(() => {
-        !reduxStore.getState().auth.msg
+        console.log(reduxStore.getState().auth.isAuthenticated);
+        reduxStore.getState().auth.isAuthenticated
           ? window.location.replace("/")
           : setErrMsg(reduxStore.getState().auth.msg);
         context.setLoading(false);
