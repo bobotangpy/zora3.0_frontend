@@ -7,6 +7,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
+import styles from "../styles/Navbar.module.scss";
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateMainCat } from "../redux/mainCatSlice";
@@ -41,7 +42,7 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
 
   return (
     <>
-      {openMobileMenu && (
+      {/* {openMobileMenu && (
         <CloseOutlinedIcon
           className="closeIcon"
           style={{
@@ -52,7 +53,7 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
           }}
           onClick={() => setOpenMobileMenu(false)}
         />
-      )}
+      )} */}
 
       <SwipeableDrawer
         anchor={"left"}
@@ -66,32 +67,6 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
           // onKeyDown={toggleMenuDrawer(false)}
         >
           <Accordion
-            style={{
-              boxShadow: "none",
-              minHeight: "48px",
-              padding: "12px 16px",
-            }}
-          >
-            {/* <AccordionSummary> */}
-            <Link href="/category" as="horoscope_of_the_month">
-              <p
-                aria-controls="horoscope-menu"
-                aria-haspopup="true"
-                variant="contained"
-                style={{ margin: "12px" }}
-                onClick={() => {
-                  dispatch(updateMainCat("horoscope"));
-                  dispatch(updateStyle(null));
-                  context.setLoading(true);
-                }}
-              >
-                Horoscope of the Month
-              </p>
-            </Link>
-            {/* </AccordionSummary> */}
-          </Accordion>
-
-          <Accordion
             expanded={expanded === "panel1"}
             onChange={handleExpand("panel1")}
             style={{ boxShadow: "none" }}
@@ -100,16 +75,22 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <p
-                aria-controls="women-menu"
-                style={{ margin: "12px" }}
-                onClick={() => {
-                  dispatch(updateMainCat("women"));
-                  toggleMenuDrawer(false);
-                }}
-              >
-                Women
-              </p>
+              <Link href="/category" as="horoscope_of_the_month">
+                <p
+                  className={styles.menu}
+                  aria-controls="horoscope-menu"
+                  aria-haspopup="true"
+                  variant="contained"
+                  style={{ margin: "12px", cursor: "pointer" }}
+                  onClick={() => {
+                    dispatch(updateMainCat("horoscope"));
+                    dispatch(updateStyle(null));
+                    // context.setLoading(true);
+                  }}
+                >
+                  Horoscope of the Month
+                </p>
+              </Link>
             </AccordionSummary>
             <AccordionDetails
               style={{ display: "flex", flexDirection: "column", padding: "0" }}
@@ -131,6 +112,38 @@ const MobileMenu = ({ openMobileMenu, setOpenMobileMenu }) => {
               id="panel2bh-header"
             >
               <p
+                className={styles.menu}
+                aria-controls="women-menu"
+                style={{ margin: "12px" }}
+                onClick={() => {
+                  dispatch(updateMainCat("women"));
+                  toggleMenuDrawer(false);
+                }}
+              >
+                Women
+              </p>
+            </AccordionSummary>
+            <AccordionDetails
+              style={{ display: "flex", flexDirection: "column", padding: "0" }}
+            >
+              <CategoryMenu
+                mobile={true}
+                setOpenMobileMenu={setOpenMobileMenu}
+              />
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion
+            expanded={expanded === "panel3"}
+            onChange={handleExpand("panel3")}
+            style={{ boxShadow: "none" }}
+          >
+            <AccordionSummary
+              aria-controls="panel3bh-content"
+              id="panel3bh-header"
+            >
+              <p
+                className={styles.menu}
                 aria-controls="men-menu"
                 style={{ margin: "12px" }}
                 onClick={() => {

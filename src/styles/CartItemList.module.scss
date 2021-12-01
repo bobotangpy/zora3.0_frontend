@@ -4,6 +4,14 @@
   align-items: center;
   justify-content: center;
   width: 400px;
+  margin-top: 20px;
+
+  .close {
+    position: absolute !important;
+    top: 5px !important;
+    right: 370px !important;
+    z-index: 9999 !important;
+  }
 }
 
 .itemWrapper {
@@ -59,6 +67,6 @@
 
 @media screen and (max-device-width: 375px), screen and (max-width: 375px) {
   .content {
-    width: 100% !important;
+    width: 375px !important;
   }
 }

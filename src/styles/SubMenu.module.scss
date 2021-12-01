@@ -34,20 +34,22 @@
 }
 
 .visibleContainer {
-  left: 0;
-  opacity: 1;
-  transform: translateY(0%);
-  transition: 0.5s;
+  justify-content: center;
+  align-items: center;
+  // left: 0;
+  // opacity: 1;
+  // transform: translateY(0%);
+  // transition: 0.5s;
 
-  &:hover {
-    opacity: 1;
-  }
+  // &:hover {
+  //   opacity: 1;
+  // }
 }
 
 .invisibleContainer {
-  @include hide();
-  transform: translateY(-40%);
-  right: 900px;
+  // @include hide();
+  // transform: translateY(-40%);
+  // right: 900px;
 }
 
 /* iPhone Plus Portrait and Landscape */

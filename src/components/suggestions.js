@@ -40,28 +40,31 @@ const Suggestions = ({ displayItem }) => {
   };
 
   return (
-    <div className={styles.suggestions}>
-      {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) && (
-        <>
-          <h3>Other {context.userSign}s also liked:</h3>
-
-          <ItemList
-            items={
-              subCat === "tops"
-                ? tops
-                : subCat === "bottoms"
-                ? bottoms
-                : subCat === "dressSuits"
-                ? dressSuits
-                : subCat === "shoes"
-                ? shoes
-                : []
-            }
-            suggestions={true}
-          />
-        </>
-      )}
-    </div>
+    <>
+      <h3 style={{ marginLeft: "50px", marginTop: "80px", color: "#fff" }}>
+        Other {context.userSign}s also liked:
+      </h3>
+      <div className={styles.suggestions}>
+        {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) && (
+          <>
+            <ItemList
+              items={
+                subCat === "tops"
+                  ? tops
+                  : subCat === "bottoms"
+                  ? bottoms
+                  : subCat === "dressSuits"
+                  ? dressSuits
+                  : subCat === "shoes"
+                  ? shoes
+                  : []
+              }
+              suggestions={true}
+            />
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -18,6 +18,10 @@ const wrapperStyle = {
   flexDirection: "column",
   alignItems: "center",
   color: "#ffffff",
+  margin:
+    typeof window !== "undefined" && window.innerWidth == 768
+      ? "50px"
+      : "50px 120px",
 };
 
 const blackFont = {

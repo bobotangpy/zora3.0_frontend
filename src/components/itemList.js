@@ -52,10 +52,9 @@ const Content = ({ item }) => {
   );
 };
 
-const SigninModal = React.forwardRef(({ openModal, setOpenModal }, ref) => {
+const SigninModal = ({ openModal, setOpenModal }) => {
   return (
     <Modal
-      ref={ref}
       open={openModal}
       onClose={() => setOpenModal(false)}
       aria-labelledby="simple-modal-title"
@@ -65,7 +64,7 @@ const SigninModal = React.forwardRef(({ openModal, setOpenModal }, ref) => {
       <SignIn />
     </Modal>
   );
-});
+};
 
 const ItemList = ({ items, suggestions }) => {
   const dispatch = useDispatch();

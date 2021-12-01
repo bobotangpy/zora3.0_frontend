@@ -3,7 +3,7 @@ import styles from "../styles/SubMenu.module.scss";
 import Grid from "@material-ui/core/Grid";
 
 import { useDispatch, useSelector } from "react-redux";
-import { updateMainCat } from "../redux/mainCatSlice";
+// import { updateMainCat } from "../redux/mainCatSlice";
 import { updateStyle } from "../redux/styleSlice";
 
 const SubMenu = ({ show, hover, mobileMenu }) => {
@@ -15,8 +15,8 @@ const SubMenu = ({ show, hover, mobileMenu }) => {
     if (selected) {
       if (mainCat && mainCat !== "horoscope") {
         dispatch(updateStyle(selected));
-      } else if (!mainCat && hover) {
-        dispatch(updateMainCat(hover));
+        // } else if (!mainCat && hover) {
+        //   dispatch(updateMainCat(hover));
         // window.location.replace("/category");
       }
     }
@@ -27,9 +27,9 @@ const SubMenu = ({ show, hover, mobileMenu }) => {
       container
       className={
         show
-          ? styles.visibleContainer
-          : mobileMenu
-          ? styles.mobileMenu
+          ? mobileMenu
+            ? styles.mobileMenu
+            : styles.visibleContainer
           : styles.invisibleContainer
       }
       style={{ marginLeft: "25px" }}
@@ -39,7 +39,11 @@ const SubMenu = ({ show, hover, mobileMenu }) => {
         // xs={1}
       >
         {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
-        <p className={styles.submenu} onClick={() => setSelected("trending")}>
+        <p
+          className={styles.submenu}
+          style={{ marginLeft: "11px" }}
+          onClick={() => setSelected("trending")}
+        >
           Trending
         </p>
         {/* </Link> */}
@@ -70,7 +74,10 @@ const SubMenu = ({ show, hover, mobileMenu }) => {
         <div className={selected === "formal" ? styles.dotFormal : ""}></div>
       </Grid>
 
-      <Grid item xs={!mobileMenu ? 6 : "auto"}>
+      <Grid
+        item
+        // xs={!mobileMenu ? 6 : "auto"}
+      >
         {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
         <p className={styles.submenu} onClick={() => setSelected("goingOut")}>
           Going-out-out

@@ -137,6 +137,12 @@ const Profile = () => {
                   label="Confirm Password"
                   type="password"
                   className={`${styles.input} ${styles.pInput}`}
+                  style={{
+                    marginTop:
+                      typeof window !== "undefined" && window.innerWidth <= 736
+                        ? "35px"
+                        : "10px",
+                  }}
                   onChange={(e) => setConfirmPwd(e.currentTarget.value)}
                 />
                 {pwdErr && (

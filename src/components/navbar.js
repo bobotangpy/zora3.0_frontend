@@ -40,6 +40,7 @@ const SignedInNav = ({
           style={{
             display: "flex",
             flexDirection: context.fullWidth ? "row" : "column",
+            fontSize: context.fullWidth ? "initial" : "15.2px",
           }}
         >
           Welcome {username}, <span>the beautiful {horoscope}</span>
@@ -159,9 +160,9 @@ const NavBar = () => {
 
   const context = useContext(AppContext);
   // const drawerRef = useRef();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [hover, setHover] = useState(null);
-  const [showSubMenu, setShowSubMenu] = useState(false);
+  // const [anchorEl, setAnchorEl] = useState(null);
+  // const [hover, setHover] = useState(null);
+  // const [showSubMenu, setShowSubMenu] = useState(false);
 
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
@@ -222,11 +223,11 @@ const NavBar = () => {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      onMouseLeave={() => {
-        setAnchorEl(null);
-        setShowSubMenu(false);
-        setHover(null);
-      }}
+      // onMouseLeave={() => {
+      //   setAnchorEl(null);
+      //   setShowSubMenu(false);
+      //   setHover(null);
+      // }}
     >
       {typeof window !== "undefined" && window.innerWidth > "730px" ? (
         <Grid item xs={6} className={styles.menuCol}>
@@ -243,10 +244,10 @@ const NavBar = () => {
                 dispatch(updateStyle(null));
                 context.setLoading(true);
               }}
-              onMouseEnter={(e) => {
-                setAnchorEl(null);
-                setShowSubMenu(false);
-              }}
+              // onMouseEnter={(e) => {
+              //   setAnchorEl(null);
+              //   setShowSubMenu(false);
+              // }}
             >
               Horoscope of the Month
             </p>
@@ -259,11 +260,11 @@ const NavBar = () => {
                 selected === "women" ? styles.menuSelected : styles.menu
               }
               onClick={() => dispatch(updateMainCat("women"))}
-              onMouseEnter={(e) => {
-                setAnchorEl(e.currentTarget);
-                setShowSubMenu(true);
-                setHover("women");
-              }}
+              // onMouseEnter={(e) => {
+              //   setAnchorEl(e.currentTarget);
+              //   setShowSubMenu(true);
+              //   setHover("women");
+              // }}
             >
               Women
             </p>
@@ -274,11 +275,11 @@ const NavBar = () => {
               aria-controls="men-menu"
               className={selected === "men" ? styles.menuSelected : styles.menu}
               onClick={() => dispatch(updateMainCat("men"))}
-              onMouseEnter={(e) => {
-                setAnchorEl(e.currentTarget);
-                setShowSubMenu(true);
-                setHover("men");
-              }}
+              // onMouseEnter={(e) => {
+              //   setAnchorEl(e.currentTarget);
+              //   setShowSubMenu(true);
+              //   setHover("men");
+              // }}
             >
               Men
             </p>
@@ -288,7 +289,7 @@ const NavBar = () => {
         <>
           <MenuIcon
             onClick={() => setOpenMobileMenu(true)}
-            style={{ marginLeft: "30px" }}
+            style={{ marginLeft: "30px", cursor: "pointer" }}
           />
           <MobileMenu
             openMobileMenu={openMobileMenu}
@@ -334,14 +335,33 @@ const NavBar = () => {
           />
         ) : (
           <Link href="/sign_in">
-            <p className={styles.menu} onClick={() => context.setLoading(true)}>
+            <p
+              className={styles.menu}
+              onClick={() =>
+                window.location.pathname === "ign_in"
+                  ? location.reload()
+                  : context.setLoading(true)
+              }
+            >
               Sign in
             </p>
           </Link>
         )}
       </Grid>
 
-      <SubMenu show={showSubMenu} hover={hover} />
+      {typeof window !== "undefined" &&
+        window.innerWidth >= 736 &&
+        window.location.pathname !== "/" &&
+        !window.location.pathname.includes("productInfo") &&
+        !window.location.pathname.includes("profile") &&
+        !window.location.pathname.includes("order_history") &&
+        selected &&
+        selected !== "horoscope" && (
+          <SubMenu
+            show={true}
+            // hover={hover}
+          />
+        )}
 
       {context.loading && <Loading />}
     </Grid>

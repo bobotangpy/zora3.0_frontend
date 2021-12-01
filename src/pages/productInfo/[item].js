@@ -125,12 +125,14 @@ const ProductInfo = ({ data }) => {
             <Grid
               item
               xs={12}
+              md={6}
+              lg={6}
               className="infoImg"
               style={{ textAlign: "right" }}
             >
-              <img src={data.img} alt={data.name} height={600} />
+              <img src={data.img} alt={data.name} />
             </Grid>
-            <Grid item xs={12} className={styles.details}>
+            <Grid item xs={12} md={6} lg={6} className={styles.details}>
               <h2>{data.name}</h2>
               <h3>{data.price}</h3>
 

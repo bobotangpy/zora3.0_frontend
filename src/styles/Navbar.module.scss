@@ -30,8 +30,9 @@
     color: #000;
 
     &:hover {
-      color: #155399;
-      font-weight: 500;
+      color: #155399 !important;
+      font-weight: 500 !important;
+      cursor: pointer;
     }
 
     // &::before {
@@ -68,7 +69,7 @@
     justify-content: center;
 
     .icon {
-      margin: 12px 5px 10px 5px;
+      margin: 12px 0px 10px 5px;
     }
   }
 

@@ -29,7 +29,7 @@ export const AppProvider = ({ children }) => {
     let sign = calculateHoroscope(month, day);
     setMonthSign(sign);
 
-    typeof window !== "undefined" && window.innerWidth < 1024
+    typeof window !== "undefined" && window.innerWidth <= 1024
       ? setFullWidth(false)
       : setFullWidth(true);
   }, []);

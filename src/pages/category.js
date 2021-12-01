@@ -58,6 +58,10 @@ const Category = ({ data }) => {
   }, []);
 
   useEffect(() => {
+    if (mainCat) console.log("mainCat in category:::", mainCat);
+  }, [mainCat]);
+
+  useEffect(() => {
     if (mainCat && subCat) {
       let filtered = filterItemsForDisplay(data, mainCat);
       setItems(_.sortBy(filtered, "gender_id"));
@@ -240,7 +244,7 @@ const Category = ({ data }) => {
       {typeof window !== "undefined" &&
         window.innerWidth < 736 &&
         mainCat &&
-        mainCat !== "horoscope" && <SubMenu mobileMenu={true} />}
+        mainCat !== "horoscope" && <SubMenu show={true} mobileMenu={true} />}
 
       {filteredItems && <ItemList items={filteredItems} />}
     </div>

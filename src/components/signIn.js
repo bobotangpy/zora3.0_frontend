@@ -46,6 +46,7 @@ const SigninTab = ({ value, index, handleSignin, props }) => {
           label="Email"
           type="email"
           className={styles.input}
+          placeholder="admin@gmail.com"
           onChange={(e) => props.setSigninEmail(e.currentTarget.value)}
         />
         <TextField
@@ -53,6 +54,7 @@ const SigninTab = ({ value, index, handleSignin, props }) => {
           label="Password"
           type="password"
           className={styles.input}
+          placeholder="admin"
           onChange={(e) => props.setSigninPwd(e.currentTarget.value)}
         />
 
@@ -185,6 +187,10 @@ const SignIn = ({ setSuccessSignup }) => {
     regEmailErr,
     regPwd2err,
   };
+
+  useEffect(() => {
+    context.setLoading(false);
+  }, []);
 
   useEffect(() => {
     if (regPwd && regPwd2) {

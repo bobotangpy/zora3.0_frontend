@@ -105,10 +105,14 @@ var config = {
       //   ],
       // },
       {
-        test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        include: SRC,
-        loader: "file-loader",
+        test: /\.(woff|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+        loader: "url-loader?limit=100000",
       },
+      // {
+      //   test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      //   include: SRC,
+      //   loader: "file-loader",
+      // },
     ],
   },
   plugins: [

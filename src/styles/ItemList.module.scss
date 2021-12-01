@@ -1,3 +1,7 @@
+.list {
+  padding-bottom: 25px;
+}
+
 .list,
 .suggestList {
   display: flex;
@@ -5,7 +9,6 @@
   justify-content: space-around;
   height: max-content;
   margin-right: 15px;
-  padding-bottom: 25px;
 
   .cardMedia {
     width: 100%;

@@ -5,22 +5,17 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { updateMainCat } from "../redux/mainCatSlice";
 
-// Slick
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-const sliderSetting = {
-  dots: true,
-  fade: true,
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2500,
-  adaptiveHeight: false,
-  swipeToSlide: true,
-  pauseOnHover: true,
-};
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/swiper-bundle.min.css";
+import "swiper/components/pagination";
+import "swiper/components/navigation";
+// import Swiper core and required modules
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
+
+// install Swiper modules
+SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -35,9 +30,21 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.container}>
-        <Slider {...sliderSetting}>
-          <>
-            <Link href="/category" as="/horoscope">
+        <Swiper
+          centeredSlides={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            waitForTransition: true,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <Link href="/category" as="/horoscope_of_the_month">
               <img
                 src="/assets/images/landing/slide_1.jpg"
                 alt="1"
@@ -48,8 +55,8 @@ export default function Home() {
                 }}
               />
             </Link>
-          </>
-          <>
+          </SwiperSlide>
+          <SwiperSlide>
             <Link href="/category" as="/women">
               <img
                 src="/assets/images/landing/slide_2.jpg"
@@ -61,8 +68,8 @@ export default function Home() {
                 }}
               />
             </Link>
-          </>
-          <>
+          </SwiperSlide>
+          <SwiperSlide>
             <Link href="/category" as="/men">
               <img
                 src="/assets/images/landing/slide_3.jpg"
@@ -74,8 +81,8 @@ export default function Home() {
                 }}
               />
             </Link>
-          </>
-        </Slider>
+          </SwiperSlide>
+        </Swiper>
 
         {!context.fullWidth && (
           <div className={styles.wrapper}>
