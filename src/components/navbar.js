@@ -39,8 +39,14 @@ const SignedInNav = ({
         <p
           style={{
             display: "flex",
-            flexDirection: context.fullWidth ? "row" : "column",
-            fontSize: context.fullWidth ? "initial" : "15.2px",
+            flexDirection:
+              typeof window !== "undefined" && window.innerWidth <= 1209
+                ? "row"
+                : "column",
+            fontSize:
+              typeof window !== "undefined" && window.innerWidth <= 1209
+                ? "initial"
+                : "15.2px",
           }}
         >
           Welcome {username}, <span>the beautiful {horoscope}</span>
@@ -354,7 +360,8 @@ const NavBar = () => {
         window.location.pathname !== "/" &&
         !window.location.pathname.includes("productInfo") &&
         !window.location.pathname.includes("profile") &&
-        !window.location.pathname.includes("order_history") &&
+        !window.location.pathname.includes("checkout") &&
+        !window.location.pathname.includes("order") &&
         selected &&
         selected !== "horoscope" && (
           <SubMenu

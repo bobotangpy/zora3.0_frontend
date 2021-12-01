@@ -34,36 +34,41 @@ const Suggestions = ({ displayItem }) => {
       dataArr,
       (item) => item.product_id !== displayItem
     );
-    // console.log(uniqueArr);
+    console.log("suggestions:", uniqueArr);
     if (uniqueArr.length > 4) return uniqueArr.slice(0, 4);
     else return uniqueArr;
   };
 
   return (
     <>
-      <h3 style={{ marginLeft: "50px", marginTop: "80px", color: "#fff" }}>
-        Other {context.userSign}s also liked:
-      </h3>
-      <div className={styles.suggestions}>
-        {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) && (
-          <>
-            <ItemList
-              items={
-                subCat === "tops"
-                  ? tops
-                  : subCat === "bottoms"
-                  ? bottoms
-                  : subCat === "dressSuits"
-                  ? dressSuits
-                  : subCat === "shoes"
-                  ? shoes
-                  : []
-              }
-              suggestions={true}
-            />
-          </>
-        )}
-      </div>
+      {mainCat !== "horoscope" && (
+        <>
+          <h3 style={{ marginLeft: "50px", marginTop: "80px", color: "#fff" }}>
+            Other {context.userSign}s also liked:
+          </h3>
+          <div className={styles.suggestions}>
+            {mainCat !== "horoscope" &&
+              (tops || bottoms || dressSuits || shoes) && (
+                <>
+                  <ItemList
+                    items={
+                      subCat === "tops"
+                        ? tops
+                        : subCat === "bottoms"
+                        ? bottoms
+                        : subCat === "dressSuits"
+                        ? dressSuits
+                        : subCat === "shoes"
+                        ? shoes
+                        : []
+                    }
+                    suggestions={true}
+                  />
+                </>
+              )}
+          </div>
+        </>
+      )}
     </>
   );
 };

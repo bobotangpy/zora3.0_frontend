@@ -207,6 +207,23 @@ button {
   color: #000 !important;
 }
 
+@media only screen and (min-device-width: 1285px),
+  screen and (min-width: 1285px) {
+  // Category Item List
+  .MuiImageList-root {
+    margin: -6px 0px 35px 30px !important;
+  }
+  .MuiGrid-grid-lg-3 {
+    max-width: 24.5% !important;
+  }
+  .MuiCard-root {
+    max-height: 615px !important;
+  }
+  .imgList .MuiGrid-root {
+    height: 100vh !important;
+  }
+}
+
 /* iPad Portrait and Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .bgWrapper {

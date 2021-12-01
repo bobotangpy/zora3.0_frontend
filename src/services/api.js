@@ -12,7 +12,7 @@ export default class API {
     //     ? "http://localhost:8080/"
     //     : "http://zora3.herokuapp.com/";
     this.api = axios.create({
-      baseURL: "https://zora3.herokuapp.com/",
+      baseURL: "http://localhost:80/",
       timeout: 10000,
     });
 
@@ -110,6 +110,7 @@ export default class API {
       cart_items: cartItems,
       total: total,
     };
+    console.log("create order params", params);
     const res = this.api.post(url, params);
     return res;
   }

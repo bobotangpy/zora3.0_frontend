@@ -66,7 +66,8 @@ export const addToBag = (newItem, cartItems) => {
       if (item.id == newItem.id && item.size === newItem.size) {
         duplicate = item;
         let newQty = Number(duplicate.qty) + Number(newItem.qty);
-        let newPrice = Number(duplicate.price.split("$")[1]) * newQty;
+        let newPrice =
+          Number(duplicate.price.split("$")[1].replaceAll(",", "")) * newQty;
 
         items = _.map(cartItems, (elm) =>
           elm.id === duplicate.id && elm.size === duplicate.size
@@ -79,7 +80,8 @@ export const addToBag = (newItem, cartItems) => {
         );
         newArr = items;
       } else {
-        let newPrice = Number(newItem.price.split("$")[1]) * newItem.qty;
+        let price = newItem.price.split("$")[1].replaceAll(",", "");
+        let newPrice = Number(price) * newItem.qty;
         newArr = [
           ...items,
           { ...newItem, price: `HKD$${newPrice.toFixed(2)}` },

@@ -24,14 +24,11 @@ export const BgWrapper = ({ children }) => {
         background: `linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url('/assets/images/backgound/${store.get(
           "horoscope"
         )}_bg.png') center left fixed`,
-        // position: "relative",
-        minHeight: "100vh",
+        // minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        // flexFlow: "column",
-        // alignItems: "center",
-        paddingBottom: "50px",
+        // paddingBottom: "50px",
       };
     }
   };

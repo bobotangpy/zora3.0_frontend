@@ -19,7 +19,7 @@ const wrapperStyle = {
   alignItems: "center",
   color: "#ffffff",
   margin:
-    typeof window !== "undefined" && window.innerWidth == 768
+    typeof window !== "undefined" && window.innerWidth <= 1140
       ? "50px"
       : "50px 120px",
 };

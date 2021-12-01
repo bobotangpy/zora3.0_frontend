@@ -57,9 +57,9 @@ const Category = ({ data }) => {
     console.log("states in store", reduxStore.getState());
   }, []);
 
-  useEffect(() => {
-    if (mainCat) console.log("mainCat in category:::", mainCat);
-  }, [mainCat]);
+  // useEffect(() => {
+  //   if (mainCat) console.log("mainCat in category:::", mainCat);
+  // }, [mainCat]);
 
   useEffect(() => {
     if (mainCat && subCat) {
@@ -222,7 +222,7 @@ const Category = ({ data }) => {
       : "";
 
     if (genderId !== null && userSign) {
-      console.log(mainCat, genderId, subCat_id);
+      // console.log(mainCat, genderId, subCat_id);
       api.querySuggestions(userSign, genderId, subCat_id).then((res) => {
         if (res && Array.isArray(res)) {
           subCat_id == 0

@@ -84,7 +84,7 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
 
-        {!context.fullWidth && (
+        {typeof window !== "undefined" && window.innerWidth <= 1340 && (
           <div className={styles.wrapper}>
             <>
               <Link href="/category" as="/women">

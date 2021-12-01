@@ -26,7 +26,7 @@ const cartSlice = createSlice({
       let prices = [];
       if (state.cartItems.length > 0) {
         _.forEach(state.cartItems, (item) => {
-          prices.push(Number(item.price.split("$")[1]));
+          prices.push(Number(item.price.split("$")[1].replaceAll(",", "")));
         });
 
         let t = _.reduce(

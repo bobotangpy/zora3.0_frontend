@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { AppContext } from "../services/appProvider";
 import Divider from "@material-ui/core/Divider";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -19,6 +20,7 @@ import { deleteItem, updateCart, updateTotal } from "../redux/cartSlice";
 const api = new API();
 
 const Checkout = () => {
+  const context = useContext(AppContext);
   const router = useRouter();
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -51,7 +53,7 @@ const Checkout = () => {
 
     _.map(rows, (item) => {
       if (item.id === id) {
-        let p = Number(item.price.split("$")[1]).toFixed(2);
+        let p = Number(item.price.split("$")[1].replaceAll(",", "")).toFixed(2);
         item = {
           ...item,
           qty: newQty,
@@ -66,22 +68,26 @@ const Checkout = () => {
 
   const handlePlaceOrder = () => {
     setDisabled(true);
+    context.setLoading(true);
     let id = store.get("user_id");
 
     api.createOrder(id, cartItems, total).then((res) => {
       console.log(res);
-      if (res && res[0] === "success") {
+      if (res && res === "Order success") {
         dispatch(updateCart([]));
         router.push("orderHistory");
-      } else setDisabled(false);
+      } else {
+        setDisabled(false);
+        context.setLoading(false);
+      }
     });
   };
 
   return (
     <>
-      {rows && rows.length > 0 ? (
+      {rows?.length > 0 ? (
         <div className={styles.checkout}>
-          <TableContainer>
+          <TableContainer style={{ background: "rgb(255, 255, 255, 0.2)" }}>
             <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
@@ -104,6 +110,7 @@ const Checkout = () => {
                       colSpan={2}
                     >
                       <img src={row.img} alt={row.name} />
+                      <br />
                       {row.name}
                     </TableCell>
                     {/* <TableCell>{row.name}</TableCell> */}
@@ -124,9 +131,11 @@ const Checkout = () => {
                         </p>
                       )}
                     </TableCell>
-                    <TableCell>{`HKD$${Number(row.price.split("$")[1]).toFixed(
-                      2
-                    )}`}</TableCell>
+                    <TableCell>
+                      {`HKD$${Number(
+                        row.price.split("$")[1].replaceAll(",", "")
+                      ).toFixed(2)}`}
+                    </TableCell>
                     <TableCell className={styles.del}>
                       <DeleteForeverOutlinedIcon
                         onClick={() =>
