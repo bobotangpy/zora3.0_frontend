@@ -344,7 +344,7 @@ const NavBar = () => {
             <p
               className={styles.menu}
               onClick={() =>
-                window.location.pathname === "ign_in"
+                window.location.pathname === "sign_in"
                   ? location.reload()
                   : context.setLoading(true)
               }
@@ -365,7 +365,7 @@ const NavBar = () => {
         selected &&
         selected !== "horoscope" && (
           <SubMenu
-            show={true}
+            show={window.location.pathname === "/sign_in" ? false : true}
             // hover={hover}
           />
         )}

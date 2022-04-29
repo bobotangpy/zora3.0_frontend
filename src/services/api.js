@@ -9,7 +9,7 @@ export default class API {
 
     // let url =
     //   process.env.NODE_ENV === "development"
-    //     ? "http://localhost:8080/"
+    //     ? "http://localhost:80/"
     //     : "http://zora3.herokuapp.com/";
     this.api = axios.create({
       baseURL: "https://zora3.herokuapp.com/",
