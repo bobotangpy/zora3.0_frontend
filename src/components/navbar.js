@@ -362,10 +362,11 @@ const NavBar = () => {
         !window.location.pathname.includes("profile") &&
         !window.location.pathname.includes("checkout") &&
         !window.location.pathname.includes("order") &&
+        !window.location.pathname.includes("sign_in") &&
         selected &&
         selected !== "horoscope" && (
           <SubMenu
-            show={window.location.pathname === "/sign_in" ? false : true}
+            show={true}
             // hover={hover}
           />
         )}
