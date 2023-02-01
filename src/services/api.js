@@ -15,7 +15,7 @@ export default class API {
         : "https://zora3-backend.onrender.com/";
     this.api = axios.create({
       baseURL: url,
-      timeout: 100000,
+      // timeout: 100000,
     });
 
     this.api.interceptors.response.use(
