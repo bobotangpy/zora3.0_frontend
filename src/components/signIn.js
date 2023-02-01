@@ -218,9 +218,10 @@ const SignIn = ({ setSuccessSignup }) => {
     e.preventDefault();
 
     if (signinEmail && signinPwd) {
-      console.log("sign in", signinEmail, signinPwd);
+      // console.log("sign in:::", signinEmail, signinPwd);
 
       dispatch(loginUser(signinEmail, signinPwd)).then(() => {
+        // console.log(reduxStore.getState().auth)
         !reduxStore.getState().auth.msg
           ? window.location.replace("/")
           : setErrMsg(reduxStore.getState().auth.msg);

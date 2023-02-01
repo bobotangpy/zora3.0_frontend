@@ -69,10 +69,10 @@ const Checkout = () => {
     let id = store.get("user_id");
 
     api.createOrder(id, cartItems, total).then((res) => {
-      console.log(res);
-      if (res && res[0] === "success") {
+      console.log("res:::", res);
+      if (res && res == "Order success") {
         dispatch(updateCart([]));
-        router.push("orderHistory");
+        router.push("/orderHistory");
       } else setDisabled(false);
     });
   };

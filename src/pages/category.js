@@ -221,7 +221,7 @@ const Category = ({ data }) => {
             : subCat_id == 3
             ? dispatch(updateBottomsData(res))
             : "";
-        }
+        } else console.log("No data from querySuggestions api")
       });
     }
   };
@@ -241,8 +241,11 @@ export const getStaticProps = async () => {
   let data;
 
   await api.queryAllProducts().then((res) => {
+    // console.log(res)
+    // console.log(Array.isArray(res))
     if (res && Array.isArray(res)) {
       data = res;
+      console.log('HAS data')
     } else data = [];
   });
 

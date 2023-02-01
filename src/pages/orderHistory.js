@@ -27,6 +27,7 @@ const OrderHistory = () => {
       api.queryOrderHistory(userId).then((res) => {
         // console.log(res);
         if (res && res.length > 0) {
+          console.log(res)
           setHistory(res);
         } else return;
       });
@@ -52,7 +53,7 @@ const OrderHistory = () => {
               <TableHead>
                 <TableRow>
                   <TableCell className={styles.title}>
-                    Order Date: {moment(order.date).format("YYYY MMM DD hh:mm")}
+                    Order Date: {moment(order.date).format("YYYY MMM DD HH:mm")}
                   </TableCell>
                   <TableCell></TableCell>
                   <TableCell>Size</TableCell>
@@ -70,18 +71,18 @@ const OrderHistory = () => {
                       align="center"
                       style={{ width: "30%" }}
                     >
-                      <img src={item.img} alt={item.name} />
+                      <img src={item.clothes.img} alt={item.clothes.name} />
                     </TableCell>
-                    <TableCell>{item.name}</TableCell>
+                    <TableCell>{item.clothes.name}</TableCell>
                     <TableCell>{item.size.toUpperCase()}</TableCell>
                     <TableCell>{item.quantity}</TableCell>
-                    <TableCell>HKD${item.price}</TableCell>
+                    <TableCell>{item.price}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
             <div className={styles.total}>
-              <h3>Items Total: HKD${order.orderItems[0].totalPrice}</h3>
+              <h3>Items Total: HKD${order.orderItems[0].total}</h3>
             </div>
           </TableContainer>
         ))

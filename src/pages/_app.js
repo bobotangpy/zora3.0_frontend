@@ -6,13 +6,8 @@ import WebHead from "../components/webHead";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 
-// import { PersistGate } from "redux-persist/integration/react";
-// import { persistStore } from "redux-persist";
-// let persistor = persistStore(store);
-
 function MyApp({ Component, pageProps }) {
   return (
-    // <PersistGate loading={null} persistor={persistor}>
     <Provider store={reduxStore}>
       <AppProvider>
         <WebHead />
@@ -21,7 +16,6 @@ function MyApp({ Component, pageProps }) {
         <Footer />
       </AppProvider>
     </Provider>
-    // </PersistGate>
   );
 }
 export default MyApp;

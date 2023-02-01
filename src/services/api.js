@@ -5,10 +5,14 @@ export default class API {
     const headers = {
       "content-type": "application/json",
       Accept: "*/*",
+      apikey: process.env.SUPABASE_ANON_KEY,
+      authorization: `Bearer ${process.env.SUPABASE_ANON_KEY}`,
     };
 
     let url =
-      process.env.NODE_ENV === "development" ? "http://localhost:8080" : "";
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:80/"
+        : "https://zora3-backend.onrender.com/";
     this.api = axios.create({
       baseURL: url,
       timeout: 10000,
@@ -25,7 +29,7 @@ export default class API {
     );
 
     const parseData = (res) => {
-      // console.log("parseData", res);
+      console.log("parseData:::");
       if (res.status === 200) {
         return res.data;
       } else {

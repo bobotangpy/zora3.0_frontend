@@ -1,6 +1,6 @@
 [
   {
-    "clothes_id": 11,
+    "product_id": 11,
     "name": "Head Over Heels Hazen black patent flat shoes",
     "style_id": 1,
     "type_id": 1,
@@ -10,7 +10,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 13,
+    "product_id": 13,
     "name": "adidas Originals Adilette black and white slider",
     "style_id": 1,
     "type_id": 1,
@@ -20,7 +20,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 14,
+    "product_id": 14,
     "name": "Nike Black Kawa Swoosh Slider",
     "style_id": 1,
     "type_id": 1,
@@ -30,7 +30,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 15,
+    "product_id": 15,
     "name": "RAID Wink bright red square toe block heeled sandals",
     "style_id": 1,
     "type_id": 1,
@@ -40,7 +40,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 16,
+    "product_id": 16,
     "name": "RAID Katy grey block heeled shoes",
     "style_id": 1,
     "type_id": 1,
@@ -50,7 +50,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 18,
+    "product_id": 18,
     "name": "New Look lace up flat boots in black",
     "style_id": 1,
     "type_id": 1,
@@ -60,7 +60,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 19,
+    "product_id": 19,
     "name": "Birkenstock Arizona Eva Black Flat Sandals",
     "style_id": 1,
     "type_id": 1,
@@ -70,7 +70,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 20,
+    "product_id": 20,
     "name": "Glamorous clear black jelly two strap flat sandal",
     "style_id": 1,
     "type_id": 1,
@@ -80,7 +80,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 9,
+    "product_id": 9,
     "name": "New Look court shoes in tan",
     "style_id": 2,
     "type_id": 1,
@@ -90,7 +90,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 7,
+    "product_id": 7,
     "name": "New Look faux suede heeled shoes in black",
     "style_id": 2,
     "type_id": 1,
@@ -100,7 +100,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 6,
+    "product_id": 6,
     "name": "Stradivarius faux suede heeled shoe in black",
     "style_id": 2,
     "type_id": 1,
@@ -110,7 +110,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 5,
+    "product_id": 5,
     "name": "Pimkie high heeled shoes in black",
     "style_id": 2,
     "type_id": 1,
@@ -120,7 +120,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 4,
+    "product_id": 4,
     "name": "River Island tassel loafer in burgundy",
     "style_id": 2,
     "type_id": 1,
@@ -130,7 +130,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 3,
+    "product_id": 3,
     "name": "River Island tassel loafer in black",
     "style_id": 2,
     "type_id": 1,
@@ -140,7 +140,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 2,
+    "product_id": 2,
     "name": "New Look chunky patent loafers in black",
     "style_id": 2,
     "type_id": 1,
@@ -150,7 +150,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 1,
+    "product_id": 1,
     "name": "Stradivarius faux suede mid heel shoes in black",
     "style_id": 2,
     "type_id": 1,
@@ -160,7 +160,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 25,
+    "product_id": 25,
     "name": "RAID Adorn black strappy flat shoes",
     "style_id": 3,
     "type_id": 1,
@@ -170,7 +170,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 30,
+    "product_id": 30,
     "name": "RAID Myla black ankle strap flat shoes",
     "style_id": 3,
     "type_id": 1,
@@ -180,7 +180,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 29,
+    "product_id": 29,
     "name": "Public Desire Clarity White clear heel ankle tie court shoes",
     "style_id": 3,
     "type_id": 1,
@@ -190,7 +190,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 28,
+    "product_id": 28,
     "name": "Glamorous silver metallic pointed heeled shoes",
     "style_id": 3,
     "type_id": 1,
@@ -200,7 +200,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 27,
+    "product_id": 27,
     "name": "Public Desire Classy black tie up heeled shoes",
     "style_id": 3,
     "type_id": 1,
@@ -210,7 +210,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 26,
+    "product_id": 26,
     "name": "Public Desire Volt tie up heeled shoes",
     "style_id": 3,
     "type_id": 1,
@@ -220,7 +220,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 12,
+    "product_id": 12,
     "name": "ASOS DESIGN Finland tie leg flat sandals in black",
     "style_id": 1,
     "type_id": 1,
@@ -230,7 +230,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 24,
+    "product_id": 24,
     "name": "Public Desire Clarity blush clear heel ankle tie court shoes",
     "style_id": 3,
     "type_id": 1,
@@ -240,7 +240,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 23,
+    "product_id": 23,
     "name": "Pimkie high heeled shoes in black",
     "style_id": 3,
     "type_id": 1,
@@ -250,7 +250,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 22,
+    "product_id": 22,
     "name": "Public Desire Exclusive Stush studded heeled court shoe in grey",
     "style_id": 3,
     "type_id": 1,
@@ -260,7 +260,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 21,
+    "product_id": 21,
     "name": "Public Desire Compose elasticated detail court shoes in black",
     "style_id": 3,
     "type_id": 1,
@@ -270,7 +270,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 10,
+    "product_id": 10,
     "name": "New Look slingback block heeled shoes in dark yellow croc",
     "style_id": 2,
     "type_id": 1,
@@ -280,7 +280,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 17,
+    "product_id": 17,
     "name": "RAID Harper two part flat sandals in snake",
     "style_id": 1,
     "type_id": 1,
@@ -290,7 +290,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 8,
+    "product_id": 8,
     "name": "Glamorous silver metallic pointed heeled shoes",
     "style_id": 2,
     "type_id": 1,
@@ -300,7 +300,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 51,
+    "product_id": 51,
     "name": "New Look rose heart girlfriend tee in black",
     "style_id": 1,
     "type_id": 2,
@@ -310,7 +310,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 52,
+    "product_id": 52,
     "name": "Weekday Sandy Long Sleeve in Black",
     "style_id": 1,
     "type_id": 2,
@@ -320,7 +320,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 53,
+    "product_id": 53,
     "name": "New Look tie front tee in white",
     "style_id": 1,
     "type_id": 2,
@@ -330,7 +330,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 54,
+    "product_id": 54,
     "name": "Dickies ringer t-shirt with large front logo",
     "style_id": 1,
     "type_id": 2,
@@ -340,7 +340,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 56,
+    "product_id": 56,
     "name": "New Look organic roll sleeve tee in white",
     "style_id": 1,
     "type_id": 2,
@@ -350,7 +350,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 57,
+    "product_id": 57,
     "name": "Puma Essentials Logo t-shirt in white",
     "style_id": 1,
     "type_id": 2,
@@ -360,7 +360,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 60,
+    "product_id": 60,
     "name": "Puma Essentials+ black logo cropped hoodie",
     "style_id": 1,
     "type_id": 2,
@@ -370,7 +370,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 40,
+    "product_id": 40,
     "name": "Missguided barely there heeled sandals with square toe in terracotta",
     "style_id": 0,
     "type_id": 1,
@@ -380,7 +380,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 58,
+    "product_id": 58,
     "name": "Nike high neck vest crop top in black",
     "style_id": 1,
     "type_id": 2,
@@ -390,7 +390,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 38,
+    "product_id": 38,
     "name": "Z_Code_Z Exclusive Boba black toe loop mules with whipstitch detail",
     "style_id": 0,
     "type_id": 1,
@@ -400,7 +400,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 37,
+    "product_id": 37,
     "name": "Z_Code_Z Exclusive Femi red block heeled sandals",
     "style_id": 0,
     "type_id": 1,
@@ -410,7 +410,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 36,
+    "product_id": 36,
     "name": "New Look block heel sock boot in black",
     "style_id": 0,
     "type_id": 1,
@@ -420,7 +420,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 35,
+    "product_id": 35,
     "name": "Pull&Bear faux suede wrap tie sandals in lilac",
     "style_id": 0,
     "type_id": 1,
@@ -430,7 +430,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 34,
+    "product_id": 34,
     "name": "Missguided chunky croc Chelsea ankle boots in black",
     "style_id": 0,
     "type_id": 1,
@@ -440,7 +440,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 33,
+    "product_id": 33,
     "name": "Koi Vegan chunky shoes in black",
     "style_id": 0,
     "type_id": 1,
@@ -450,7 +450,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 49,
+    "product_id": 49,
     "name": "River Island blouse with belt in beige",
     "style_id": 2,
     "type_id": 2,
@@ -460,7 +460,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 48,
+    "product_id": 48,
     "name": "Neon Rose wrap blouse with belted waist",
     "style_id": 2,
     "type_id": 2,
@@ -470,7 +470,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 47,
+    "product_id": 47,
     "name": "Fashion Union button down shirt in satin",
     "style_id": 2,
     "type_id": 2,
@@ -480,7 +480,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 46,
+    "product_id": 46,
     "name": "PrettyLittleThing wrap shirt blouse with belted waist in pink geo print",
     "style_id": 2,
     "type_id": 2,
@@ -490,7 +490,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 45,
+    "product_id": 45,
     "name": "Pimkie longline blazer in black",
     "style_id": 2,
     "type_id": 2,
@@ -500,7 +500,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 44,
+    "product_id": 44,
     "name": "New Look ruched sleeve detail blazer in black",
     "style_id": 2,
     "type_id": 2,
@@ -510,7 +510,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 43,
+    "product_id": 43,
     "name": "COLLUSION check print blazer",
     "style_id": 2,
     "type_id": 2,
@@ -520,7 +520,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 42,
+    "product_id": 42,
     "name": "Stradivarius flowy blazer in checks",
     "style_id": 2,
     "type_id": 2,
@@ -530,7 +530,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 41,
+    "product_id": 41,
     "name": "Stradivarius ruched sleeved blazer in black",
     "style_id": 2,
     "type_id": 2,
@@ -540,7 +540,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 39,
+    "product_id": 39,
     "name": "New Look suedette flat chelsea boots in black",
     "style_id": 0,
     "type_id": 1,
@@ -550,7 +550,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 63,
+    "product_id": 63,
     "name": "PrettyLittleThing leather look blouse with puff sleeves and belted waist in dark green",
     "style_id": 3,
     "type_id": 2,
@@ -560,7 +560,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 62,
+    "product_id": 62,
     "name": "Public Desire structured cami crop top with chain straps in satin",
     "style_id": 3,
     "type_id": 2,
@@ -570,7 +570,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 50,
+    "product_id": 50,
     "name": "Miss Selfridge blouse with collar in check",
     "style_id": 2,
     "type_id": 2,
@@ -580,7 +580,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 59,
+    "product_id": 59,
     "name": "LOOKBOOK DESIGN long sleeve soft shirt in mixed animal scarf print",
     "style_id": 1,
     "type_id": 2,
@@ -590,7 +590,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 61,
+    "product_id": 61,
     "name": "Laced In Love one shoulder frill scuba crop top in yellow",
     "style_id": 3,
     "type_id": 2,
@@ -600,7 +600,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 81,
+    "product_id": 81,
     "name": "Wild Honey knitted tunic dress with pockets",
     "style_id": 1,
     "type_id": 0,
@@ -610,7 +610,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 82,
+    "product_id": 82,
     "name": "New Look tie waist detail shirt dress in black",
     "style_id": 1,
     "type_id": 0,
@@ -620,7 +620,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 83,
+    "product_id": 83,
     "name": "COLLUSION fresha print mesh smock mini dress",
     "style_id": 1,
     "type_id": 0,
@@ -630,7 +630,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 84,
+    "product_id": 84,
     "name": "Lost Ink cami midi dress in ditsy floral",
     "style_id": 1,
     "type_id": 0,
@@ -640,7 +640,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 85,
+    "product_id": 85,
     "name": "Puma Exclusive spaghetti strap washed neon dress",
     "style_id": 1,
     "type_id": 0,
@@ -650,7 +650,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 86,
+    "product_id": 86,
     "name": "adidas Originals three stripe bardot dress in red",
     "style_id": 1,
     "type_id": 0,
@@ -660,7 +660,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 88,
+    "product_id": 88,
     "name": "New Look roll neck rib jumper dress in grey",
     "style_id": 1,
     "type_id": 0,
@@ -670,7 +670,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 89,
+    "product_id": 89,
     "name": "Wednesdays Girl midi dress in smudge spot print",
     "style_id": 1,
     "type_id": 0,
@@ -680,7 +680,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 90,
+    "product_id": 90,
     "name": "COLLUSION check drop armhole smock mini dress",
     "style_id": 1,
     "type_id": 0,
@@ -690,7 +690,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 92,
+    "product_id": 92,
     "name": "Pimkie suedette high ankle boot in camel",
     "style_id": 1,
     "type_id": 1,
@@ -700,7 +700,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 79,
+    "product_id": 79,
     "name": "New Look organza sleeve blouse in red",
     "style_id": 0,
     "type_id": 2,
@@ -710,7 +710,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 78,
+    "product_id": 78,
     "name": "New Look tie front tee in white",
     "style_id": 0,
     "type_id": 2,
@@ -720,7 +720,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 77,
+    "product_id": 77,
     "name": "Boohoo shirred high neck blouse in blue",
     "style_id": 0,
     "type_id": 2,
@@ -730,7 +730,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 76,
+    "product_id": 76,
     "name": "Stradivarius cami with pearl detail in black",
     "style_id": 0,
     "type_id": 2,
@@ -740,7 +740,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 75,
+    "product_id": 75,
     "name": "Stradivarius romantic shirt with pearl detail in white",
     "style_id": 0,
     "type_id": 2,
@@ -750,7 +750,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 74,
+    "product_id": 74,
     "name": "Tommy Jeans organic square logo long sleeve t-shirt",
     "style_id": 0,
     "type_id": 2,
@@ -760,7 +760,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 73,
+    "product_id": 73,
     "name": "Boohoo high neck blouse in black spot print",
     "style_id": 0,
     "type_id": 2,
@@ -770,7 +770,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 72,
+    "product_id": 72,
     "name": "River Island wrap front body with button detail in black and white",
     "style_id": 0,
     "type_id": 2,
@@ -780,7 +780,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 71,
+    "product_id": 71,
     "name": "adidas Originals adicolor three stripe long sleeve t-shirt in white",
     "style_id": 0,
     "type_id": 2,
@@ -790,7 +790,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 70,
+    "product_id": 70,
     "name": "Club L London Tall knot front long sleeve top in red",
     "style_id": 3,
     "type_id": 2,
@@ -800,7 +800,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 69,
+    "product_id": 69,
     "name": "Missguided Sonia x Fyza strappy crop top with seam detail in pink",
     "style_id": 3,
     "type_id": 2,
@@ -810,7 +810,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 68,
+    "product_id": 68,
     "name": "PrettyLittleThing peplum satin cami top with lace trim in navy",
     "style_id": 3,
     "type_id": 2,
@@ -820,7 +820,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 67,
+    "product_id": 67,
     "name": "Saint Genies metallic crop top in green",
     "style_id": 3,
     "type_id": 2,
@@ -830,7 +830,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 66,
+    "product_id": 66,
     "name": "Saint Genies Plus satin square neck crop top in ivory",
     "style_id": 3,
     "type_id": 2,
@@ -840,7 +840,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 65,
+    "product_id": 65,
     "name": "Koco & K frill bra top with tie front in ditsy floral",
     "style_id": 3,
     "type_id": 2,
@@ -850,7 +850,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 64,
+    "product_id": 64,
     "name": "Missguided bandeau satin corset top in white",
     "style_id": 3,
     "type_id": 2,
@@ -860,7 +860,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 91,
+    "product_id": 91,
     "name": "Glamorous espadrille wedge sandal with ankle tie in black",
     "style_id": 1,
     "type_id": 1,
@@ -870,7 +870,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 93,
+    "product_id": 93,
     "name": "Nike Classic Cortez trainers in retro leather",
     "style_id": 1,
     "type_id": 1,
@@ -880,7 +880,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 94,
+    "product_id": 94,
     "name": "adidas Originals Nizza Hi RF trainers in off white",
     "style_id": 1,
     "type_id": 1,
@@ -890,7 +890,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 87,
+    "product_id": 87,
     "name": "River Island full skirt mini dress in black",
     "style_id": 1,
     "type_id": 0,
@@ -900,7 +900,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 96,
+    "product_id": 96,
     "name": "RAID Katy grey block heeled shoes",
     "style_id": 1,
     "type_id": 1,
@@ -910,7 +910,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 97,
+    "product_id": 97,
     "name": "RAID Wink blush patent square toe block heeled sandals",
     "style_id": 1,
     "type_id": 1,
@@ -920,7 +920,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 98,
+    "product_id": 98,
     "name": "New Look lace up flat boots in black",
     "style_id": 1,
     "type_id": 1,
@@ -930,7 +930,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 99,
+    "product_id": 99,
     "name": "Birkenstock Arizona Eva Black Flat Sandals",
     "style_id": 1,
     "type_id": 1,
@@ -940,7 +940,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 100,
+    "product_id": 100,
     "name": "Glamorous clear black jelly two strap flat sandal",
     "style_id": 1,
     "type_id": 1,
@@ -950,7 +950,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 105,
+    "product_id": 105,
     "name": "adidas Originals adicolor three stripe long sleeve t-shirt in white",
     "style_id": 1,
     "type_id": 2,
@@ -960,7 +960,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 108,
+    "product_id": 108,
     "name": "Miss Selfridge milk maid tee in ditsy floral print",
     "style_id": 1,
     "type_id": 2,
@@ -970,7 +970,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 109,
+    "product_id": 109,
     "name": "Santa Cruz Dot t-shirt with Screaming Hand back print in washed neon green",
     "style_id": 1,
     "type_id": 2,
@@ -980,7 +980,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 110,
+    "product_id": 110,
     "name": "Puma Essentials+ black logo cropped hoodie",
     "style_id": 1,
     "type_id": 2,
@@ -990,7 +990,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 113,
+    "product_id": 113,
     "name": "New Girl Order high waisted drawstring trousers in heritage check co-ord",
     "style_id": 1,
     "type_id": 3,
@@ -1000,7 +1000,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 114,
+    "product_id": 114,
     "name": "Miss Selfridge mini skirt with buckle detail in check",
     "style_id": 1,
     "type_id": 3,
@@ -1010,7 +1010,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 115,
+    "product_id": 115,
     "name": "Puma Plus Essentials grey sweat pants",
     "style_id": 1,
     "type_id": 3,
@@ -1020,7 +1020,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 116,
+    "product_id": 116,
     "name": "Miss Selfridge mom jeans in mid wash",
     "style_id": 1,
     "type_id": 3,
@@ -1030,7 +1030,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 117,
+    "product_id": 117,
     "name": "Monki abstract fave print midi skirt in light beige",
     "style_id": 1,
     "type_id": 3,
@@ -1040,7 +1040,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 118,
+    "product_id": 118,
     "name": "Monki floral print frill hem trousers in green",
     "style_id": 1,
     "type_id": 3,
@@ -1050,7 +1050,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 119,
+    "product_id": 119,
     "name": "Monki cord skinny trousers in dark green",
     "style_id": 1,
     "type_id": 3,
@@ -1060,7 +1060,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 120,
+    "product_id": 120,
     "name": "Daisy Street midi wrap skirt in check",
     "style_id": 1,
     "type_id": 3,
@@ -1070,7 +1070,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 102,
+    "product_id": 102,
     "name": "Topshop square neck top in red",
     "style_id": 1,
     "type_id": 2,
@@ -1080,7 +1080,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 103,
+    "product_id": 103,
     "name": "PrettyLittleThing ruched cami crop top in white",
     "style_id": 1,
     "type_id": 2,
@@ -1090,7 +1090,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 106,
+    "product_id": 106,
     "name": "Boohoo puff sleeve ruched bodysuit in red ditsy floral",
     "style_id": 1,
     "type_id": 2,
@@ -1100,7 +1100,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 157,
+    "product_id": 157,
     "name": "PrettyLittleThing cigarette trousers with split hem in black",
     "style_id": 0,
     "type_id": 3,
@@ -1110,7 +1110,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 124,
+    "product_id": 124,
     "name": "Monki floral print tie waist midi skirt in black",
     "style_id": 2,
     "type_id": 3,
@@ -1120,7 +1120,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 123,
+    "product_id": 123,
     "name": "New Look side button down midi skirt in black",
     "style_id": 2,
     "type_id": 3,
@@ -1130,7 +1130,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 122,
+    "product_id": 122,
     "name": "Weekday midi A-line skirt in beige",
     "style_id": 2,
     "type_id": 3,
@@ -1140,7 +1140,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 121,
+    "product_id": 121,
     "name": "Bershka wrap plisse jumpsuit in black",
     "style_id": 2,
     "type_id": 3,
@@ -1150,7 +1150,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 112,
+    "product_id": 112,
     "name": "Noisy May mom denim shorts in light blue",
     "style_id": 1,
     "type_id": 3,
@@ -1160,7 +1160,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 125,
+    "product_id": 125,
     "name": "Vero Moda stripe paperbag belted linen short",
     "style_id": 2,
     "type_id": 3,
@@ -1170,7 +1170,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 95,
+    "product_id": 95,
     "name": "Vans Classic Slip-On Tie Dye trainer in multi",
     "style_id": 1,
     "type_id": 1,
@@ -1180,7 +1180,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 111,
+    "product_id": 111,
     "name": "LOOKBOOK DESIGN oversized jogger",
     "style_id": 1,
     "type_id": 3,
@@ -1190,7 +1190,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 107,
+    "product_id": 107,
     "name": "Laced In Love cut out peplum top with puff sleeve in white",
     "style_id": 1,
     "type_id": 2,
@@ -1200,7 +1200,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 131,
+    "product_id": 131,
     "name": "New Look satin pleated skirt in burgundy",
     "style_id": 1,
     "type_id": 3,
@@ -1210,7 +1210,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 132,
+    "product_id": 132,
     "name": "Boohoo chiffon midaxi skirt with ruffle trims in black",
     "style_id": 1,
     "type_id": 3,
@@ -1220,7 +1220,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 133,
+    "product_id": 133,
     "name": "New Girl Order high waisted drawstring trousers in heritage check co-ord",
     "style_id": 1,
     "type_id": 3,
@@ -1230,7 +1230,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 134,
+    "product_id": 134,
     "name": "Miss Selfridge mini skirt with buckle detail in check",
     "style_id": 1,
     "type_id": 3,
@@ -1240,7 +1240,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 135,
+    "product_id": 135,
     "name": "Puma Plus Essentials grey sweat pants",
     "style_id": 1,
     "type_id": 3,
@@ -1250,7 +1250,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 137,
+    "product_id": 137,
     "name": "Monki abstract fave print midi skirt in light beige",
     "style_id": 1,
     "type_id": 3,
@@ -1260,7 +1260,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 155,
+    "product_id": 155,
     "name": "Stradivarius trouser with button detail in black",
     "style_id": 0,
     "type_id": 3,
@@ -1270,7 +1270,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 154,
+    "product_id": 154,
     "name": "Miss Selfridge utility trousers with belt in khaki",
     "style_id": 0,
     "type_id": 3,
@@ -1280,7 +1280,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 153,
+    "product_id": 153,
     "name": "River Island faux leather zip through midi skirt in black",
     "style_id": 0,
     "type_id": 3,
@@ -1290,7 +1290,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 152,
+    "product_id": 152,
     "name": "Miss Selfridge mini skirt with buckle detail in check",
     "style_id": 0,
     "type_id": 3,
@@ -1300,7 +1300,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 151,
+    "product_id": 151,
     "name": "Puma Plus Essentials grey sweat pants",
     "style_id": 0,
     "type_id": 3,
@@ -1310,7 +1310,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 129,
+    "product_id": 129,
     "name": "Fashion Union pencil skirt with belt and side split in faux leather",
     "style_id": 2,
     "type_id": 3,
@@ -1320,7 +1320,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 128,
+    "product_id": 128,
     "name": "Monki satin polka dot midi skirt in navy",
     "style_id": 2,
     "type_id": 3,
@@ -1330,7 +1330,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 127,
+    "product_id": 127,
     "name": "Fashion Union high waist tailored shorts",
     "style_id": 2,
     "type_id": 3,
@@ -1340,7 +1340,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 126,
+    "product_id": 126,
     "name": "Parallel Lines leather look wrap front mini skirt with bow detail in tan",
     "style_id": 2,
     "type_id": 3,
@@ -1350,7 +1350,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 140,
+    "product_id": 140,
     "name": "LOOKBOOK DESIGN a-line tailored short with pleat front",
     "style_id": 1,
     "type_id": 3,
@@ -1360,7 +1360,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 150,
+    "product_id": 150,
     "name": "Fashionkilla going out midi skirt in rose",
     "style_id": 3,
     "type_id": 3,
@@ -1370,7 +1370,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 149,
+    "product_id": 149,
     "name": "Fashionkilla bodycon skirt with corset detail in black",
     "style_id": 3,
     "type_id": 3,
@@ -1380,7 +1380,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 148,
+    "product_id": 148,
     "name": "Missguided satin wrap midi skirt in green",
     "style_id": 3,
     "type_id": 3,
@@ -1390,7 +1390,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 147,
+    "product_id": 147,
     "name": "PrettyLittleThing maxi skirt with high leg split in black",
     "style_id": 3,
     "type_id": 3,
@@ -1400,7 +1400,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 146,
+    "product_id": 146,
     "name": "Boohoo bardot jumpsuit with leg split in black",
     "style_id": 3,
     "type_id": 3,
@@ -1410,7 +1410,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 145,
+    "product_id": 145,
     "name": "Outrageous Fortune tie waist jumpsuit",
     "style_id": 3,
     "type_id": 3,
@@ -1420,7 +1420,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 144,
+    "product_id": 144,
     "name": "Missguided longline denim shorts in black",
     "style_id": 3,
     "type_id": 3,
@@ -1430,7 +1430,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 143,
+    "product_id": 143,
     "name": "Boohoo mini skirt with side split in black",
     "style_id": 3,
     "type_id": 3,
@@ -1440,7 +1440,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 142,
+    "product_id": 142,
     "name": "PrettyLittleThing high waist trouser with contrast zip in black pinstripe",
     "style_id": 3,
     "type_id": 3,
@@ -1450,7 +1450,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 141,
+    "product_id": 141,
     "name": "PrettyLittleThing basic midaxi skirt in black",
     "style_id": 3,
     "type_id": 3,
@@ -1460,7 +1460,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 130,
+    "product_id": 130,
     "name": "Miss Selfridge skirt with tie side in black",
     "style_id": 2,
     "type_id": 3,
@@ -1470,7 +1470,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 136,
+    "product_id": 136,
     "name": "Pieces belted city shorts in beige",
     "style_id": 1,
     "type_id": 3,
@@ -1480,7 +1480,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 139,
+    "product_id": 139,
     "name": "LOOKBOOK DESIGN PU runner short in black",
     "style_id": 1,
     "type_id": 3,
@@ -1490,7 +1490,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 138,
+    "product_id": 138,
     "name": "COLLUSION oversized joggers co-ord with seam detail in khaki",
     "style_id": 1,
     "type_id": 3,
@@ -1500,7 +1500,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 159,
+    "product_id": 159,
     "name": "Boohoo basic joggers in grey",
     "style_id": 0,
     "type_id": 3,
@@ -1510,7 +1510,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 158,
+    "product_id": 158,
     "name": "New Girl Order super mini flippy skirt in heritage check co-ord",
     "style_id": 0,
     "type_id": 3,
@@ -1520,7 +1520,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 171,
+    "product_id": 171,
     "name": "LookBook Wide Fit Lace Up Plimsolls In White",
     "style_id": 0,
     "type_id": 1,
@@ -1530,7 +1530,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 182,
+    "product_id": 182,
     "name": "LookBook DESIGN oversized drop shoulder longline crinkle grandad collar shirt in pink",
     "style_id": 0,
     "type_id": 2,
@@ -1540,7 +1540,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 187,
+    "product_id": 187,
     "name": "LookBook DESIGN regular fit flannel marl shirt in mustard",
     "style_id": 0,
     "type_id": 2,
@@ -1550,7 +1550,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 184,
+    "product_id": 184,
     "name": "LookBook DESIGN regular fit viscose shirt in khaki",
     "style_id": 0,
     "type_id": 2,
@@ -1560,7 +1560,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 188,
+    "product_id": 188,
     "name": "LookBook DESIGN skinny fit smart shirt with grandad collar & tipping detail in blue",
     "style_id": 0,
     "type_id": 2,
@@ -1570,7 +1570,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 181,
+    "product_id": 181,
     "name": "LookBook DESIGN skinny shirt in black with short sleeves",
     "style_id": 0,
     "type_id": 2,
@@ -1580,7 +1580,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 185,
+    "product_id": 185,
     "name": "LookBook DESIGN skinny stripe shirt in white",
     "style_id": 0,
     "type_id": 2,
@@ -1590,7 +1590,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 186,
+    "product_id": 186,
     "name": "LookBook DESIGN slim check shirt in brown",
     "style_id": 0,
     "type_id": 2,
@@ -1600,7 +1600,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 170,
+    "product_id": 170,
     "name": "LookBook DESIGN Plus super skinny tuxedo suit jacket in burgundy",
     "style_id": 0,
     "type_id": 0,
@@ -1610,7 +1610,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 162,
+    "product_id": 162,
     "name": "LookBook DESIGN denim boilersuit in indigo",
     "style_id": 0,
     "type_id": 0,
@@ -1620,7 +1620,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 161,
+    "product_id": 161,
     "name": "LookBook DESIGN skinny suit jacket in mid grey",
     "style_id": 0,
     "type_id": 0,
@@ -1630,7 +1630,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 166,
+    "product_id": 166,
     "name": "LookBook DESIGN skinny suit jacket in navy",
     "style_id": 0,
     "type_id": 0,
@@ -1640,7 +1640,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 169,
+    "product_id": 169,
     "name": "LookBook DESIGN wedding skinny suit in yellow",
     "style_id": 0,
     "type_id": 0,
@@ -1650,7 +1650,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 163,
+    "product_id": 163,
     "name": "LookBook DESIGN wedding skinny suit jacket in mink",
     "style_id": 0,
     "type_id": 0,
@@ -1660,7 +1660,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 165,
+    "product_id": 165,
     "name": "LookBook DESIGN wedding slim suit in light grey",
     "style_id": 0,
     "type_id": 0,
@@ -1670,7 +1670,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 168,
+    "product_id": 168,
     "name": "LookBook DESIGN wedding slim suit jacket in light grey",
     "style_id": 0,
     "type_id": 0,
@@ -1680,7 +1680,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 164,
+    "product_id": 164,
     "name": "LookBook DESIGN wedding super skinny suit jacket in white",
     "style_id": 0,
     "type_id": 0,
@@ -1690,7 +1690,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 183,
+    "product_id": 183,
     "name": "LookBook DESIGN festival regular fit shirt in neon snake print",
     "style_id": 0,
     "type_id": 0,
@@ -1700,7 +1700,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 172,
+    "product_id": 172,
     "name": "LookBook DESIGN lace up plimsolls in white canvas",
     "style_id": 0,
     "type_id": 1,
@@ -1710,7 +1710,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 173,
+    "product_id": 173,
     "name": "LookBook DESIGN trainers in black canvas",
     "style_id": 0,
     "type_id": 1,
@@ -1720,7 +1720,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 175,
+    "product_id": 175,
     "name": "Vans Authentic recycled plastic plimsolls in white",
     "style_id": 0,
     "type_id": 1,
@@ -1730,7 +1730,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 176,
+    "product_id": 176,
     "name": "LookBook DESIGN Wide Fit slip on plimsolls in black canvas",
     "style_id": 0,
     "type_id": 1,
@@ -1740,7 +1740,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 177,
+    "product_id": 177,
     "name": "LookBook DESIGN Wide Fit slip on trainers in grey canvas",
     "style_id": 0,
     "type_id": 1,
@@ -1750,7 +1750,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 178,
+    "product_id": 178,
     "name": "LookBook DESIGN lace up plimsolls in white",
     "style_id": 0,
     "type_id": 1,
@@ -1760,7 +1760,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 179,
+    "product_id": 179,
     "name": "LookBook DESIGN lace up plimsolls in black",
     "style_id": 0,
     "type_id": 1,
@@ -1770,7 +1770,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 180,
+    "product_id": 180,
     "name": "Converse Renew Chuck Taylor All Star trainers in parchment",
     "style_id": 0,
     "type_id": 1,
@@ -1780,7 +1780,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 174,
+    "product_id": 174,
     "name": "LookBook DESIGN slip on trainers in white with tassel",
     "style_id": 0,
     "type_id": 1,
@@ -1790,7 +1790,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 201,
+    "product_id": 201,
     "name": "LookBook DESIGN denim boilersuit in acid wash black",
     "style_id": 3,
     "type_id": 0,
@@ -1800,7 +1800,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 202,
+    "product_id": 202,
     "name": "LookBook DESIGN regular wrap kimono in paisley",
     "style_id": 3,
     "type_id": 0,
@@ -1810,7 +1810,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 203,
+    "product_id": 203,
     "name": "LookBook DESIGN floral longline kimono",
     "style_id": 3,
     "type_id": 0,
@@ -1820,7 +1820,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 204,
+    "product_id": 204,
     "name": "boohooMAN tracksuit with man logo in neon yellow",
     "style_id": 3,
     "type_id": 0,
@@ -1830,7 +1830,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 205,
+    "product_id": 205,
     "name": "LookBook DESIGN kimono in floral print",
     "style_id": 3,
     "type_id": 0,
@@ -1840,7 +1840,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 206,
+    "product_id": 206,
     "name": "LookBook DESIGN paisley kimono floral wrap in mustard",
     "style_id": 3,
     "type_id": 0,
@@ -1850,7 +1850,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 207,
+    "product_id": 207,
     "name": "LookBook DESIGN regular fit animal spot shirt in black",
     "style_id": 3,
     "type_id": 0,
@@ -1860,7 +1860,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 208,
+    "product_id": 208,
     "name": "LookBook DESIGN relaxed tiger print shirt with deep revere",
     "style_id": 3,
     "type_id": 0,
@@ -1870,7 +1870,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 209,
+    "product_id": 209,
     "name": "LookBook DESIGN Plus kimono in giraffe print",
     "style_id": 3,
     "type_id": 0,
@@ -1880,7 +1880,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 210,
+    "product_id": 210,
     "name": "LookBook DESIGN Plus paisley kimono floral wrap in mustard",
     "style_id": 3,
     "type_id": 0,
@@ -1890,7 +1890,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 211,
+    "product_id": 211,
     "name": "adidas Originals ozweego trainers in black with neon stripes",
     "style_id": 3,
     "type_id": 1,
@@ -1900,7 +1900,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 212,
+    "product_id": 212,
     "name": "Buffalo Classic chunky sole trainers in black",
     "style_id": 3,
     "type_id": 1,
@@ -1910,7 +1910,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 213,
+    "product_id": 213,
     "name": "Buffalo Classic chunky sole trainers in flag print",
     "style_id": 3,
     "type_id": 1,
@@ -1920,7 +1920,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 214,
+    "product_id": 214,
     "name": "Buffalo Classic chunky sole trainers in white",
     "style_id": 3,
     "type_id": 1,
@@ -1930,7 +1930,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 215,
+    "product_id": 215,
     "name": "Buffalo Classic chunky sole trainers in hi shine black",
     "style_id": 3,
     "type_id": 1,
@@ -1940,7 +1940,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 216,
+    "product_id": 216,
     "name": "Buffalo Classic hi top chunky sole trainers in black",
     "style_id": 3,
     "type_id": 1,
@@ -1950,7 +1950,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 217,
+    "product_id": 217,
     "name": "Buffalo Classic hi top chunky sole trainers in white",
     "style_id": 3,
     "type_id": 1,
@@ -1960,7 +1960,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 218,
+    "product_id": 218,
     "name": "Buffalo Classic chunky sole trainers in wheat",
     "style_id": 3,
     "type_id": 1,
@@ -1970,7 +1970,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 189,
+    "product_id": 189,
     "name": "LookBook DESIGN stretch slim denim shirt in grey with grandad collar",
     "style_id": 0,
     "type_id": 2,
@@ -1980,7 +1980,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 200,
+    "product_id": 200,
     "name": "LookBook DESIGN 2 pack super skinny smart trousers in black and grey SAVE",
     "style_id": 0,
     "type_id": 3,
@@ -1990,7 +1990,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 197,
+    "product_id": 197,
     "name": "LookBook DESIGN balloon trousers in black",
     "style_id": 0,
     "type_id": 3,
@@ -2000,7 +2000,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 195,
+    "product_id": 195,
     "name": "LookBook DESIGN heavyweight tapered crop smart trousers in olive green",
     "style_id": 0,
     "type_id": 3,
@@ -2010,7 +2010,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 194,
+    "product_id": 194,
     "name": "LookBook DESIGN skinny smart trousers in black",
     "style_id": 0,
     "type_id": 3,
@@ -2020,7 +2020,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 196,
+    "product_id": 196,
     "name": "LookBook DESIGN super skinny cropped smart trousers in black",
     "style_id": 0,
     "type_id": 3,
@@ -2030,7 +2030,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 192,
+    "product_id": 192,
     "name": "LookBook DESIGN super skinny smart trousers in black",
     "style_id": 0,
     "type_id": 3,
@@ -2040,7 +2040,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 198,
+    "product_id": 198,
     "name": "LookBook DESIGN super skinny smart trousers in grey",
     "style_id": 0,
     "type_id": 3,
@@ -2050,7 +2050,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 193,
+    "product_id": 193,
     "name": "LookBook DESIGN super skinny smart trousers in navy",
     "style_id": 0,
     "type_id": 3,
@@ -2060,7 +2060,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 191,
+    "product_id": 191,
     "name": "LookBook DESIGN tapered cargo trousers in black with toggles",
     "style_id": 0,
     "type_id": 3,
@@ -2070,7 +2070,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 199,
+    "product_id": 199,
     "name": "LookBook DESIGN tapered crop smart trousers in black",
     "style_id": 0,
     "type_id": 3,
@@ -2080,7 +2080,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 219,
+    "product_id": 219,
     "name": "LookBook DESIGN festival co-ord oversized cropped t-shirt with half sleeve in mesh in white",
     "style_id": 3,
     "type_id": 2,
@@ -2090,7 +2090,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 220,
+    "product_id": 220,
     "name": "LookBook DESIGN co-ord oversized t-shirt in pink tie dye wash",
     "style_id": 3,
     "type_id": 2,
@@ -2100,7 +2100,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 221,
+    "product_id": 221,
     "name": "LookBook DESIGN longline long sleeve t-shirt in gold metallic mesh",
     "style_id": 3,
     "type_id": 2,
@@ -2110,7 +2110,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 222,
+    "product_id": 222,
     "name": "LookBook DESIGN oversized long sleeve t-shirt with gold roman numeral print in mesh",
     "style_id": 3,
     "type_id": 2,
@@ -2120,7 +2120,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 223,
+    "product_id": 223,
     "name": "LookBook DESIGN oversized super longline t-shirt with half sleeve in blue velour",
     "style_id": 3,
     "type_id": 2,
@@ -2130,7 +2130,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 224,
+    "product_id": 224,
     "name": "LookBook DESIGN oversized longline t-shirt with notch neck in linen mix",
     "style_id": 3,
     "type_id": 2,
@@ -2140,7 +2140,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 225,
+    "product_id": 225,
     "name": "LookBook DESIGN t-shirt in fine mesh in brown",
     "style_id": 3,
     "type_id": 2,
@@ -2150,7 +2150,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 226,
+    "product_id": 226,
     "name": "LookBook DESIGN relaxed t-shirt in sparkly mesh",
     "style_id": 3,
     "type_id": 2,
@@ -2160,7 +2160,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 227,
+    "product_id": 227,
     "name": "LookBook DESIGN oversized t-shirt with half sleeve and extreme side splits in fine mesh",
     "style_id": 3,
     "type_id": 2,
@@ -2170,7 +2170,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 228,
+    "product_id": 228,
     "name": "LookBook DESIGN organic cotton relaxed t-shirt with tie dye wash roll sleeve and mantra back print",
     "style_id": 3,
     "type_id": 2,
@@ -2180,7 +2180,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 229,
+    "product_id": 229,
     "name": "LookBook DESIGN knitted half zip t-shirt in neon green",
     "style_id": 3,
     "type_id": 2,
@@ -2190,7 +2190,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 230,
+    "product_id": 230,
     "name": "LookBook DESIGN Plus Festival relaxed t-shirt in sheer sparkly mesh",
     "style_id": 3,
     "type_id": 2,
@@ -2200,7 +2200,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 231,
+    "product_id": 231,
     "name": "LookBook DESIGN oversized super longline t-shirt with half sleeve in brown velour",
     "style_id": 3,
     "type_id": 2,
@@ -2210,7 +2210,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 232,
+    "product_id": 232,
     "name": "LookBook DESIGN Plus knitted tie dye t-shirt in blue",
     "style_id": 3,
     "type_id": 2,
@@ -2220,7 +2220,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 233,
+    "product_id": 233,
     "name": "LookBook DESIGN oversized t-shirt with roll sleeve with multicolour vertical tie dye wash",
     "style_id": 3,
     "type_id": 2,
@@ -2230,7 +2230,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 234,
+    "product_id": 234,
     "name": "LookBook DESIGN Festival co-ord oversized t-shirt in transparent fabric in green",
     "style_id": 3,
     "type_id": 2,
@@ -2240,7 +2240,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 235,
+    "product_id": 235,
     "name": "COLLUSION oversized skull print co-ord",
     "style_id": 3,
     "type_id": 3,
@@ -2250,7 +2250,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 236,
+    "product_id": 236,
     "name": "COLLUSION Tall oversized skull print co-ord",
     "style_id": 3,
     "type_id": 3,
@@ -2260,7 +2260,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 238,
+    "product_id": 238,
     "name": "LookBook DESIGN skinny jeans in coloured zebra print",
     "style_id": 3,
     "type_id": 3,
@@ -2270,7 +2270,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 239,
+    "product_id": 239,
     "name": "LookBook DESIGN skinny jeans in tie dye",
     "style_id": 3,
     "type_id": 3,
@@ -2280,7 +2280,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 240,
+    "product_id": 240,
     "name": "LookBook DESIGN Plus super skinny jeans in acid wash pink",
     "style_id": 3,
     "type_id": 3,
@@ -2290,7 +2290,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 242,
+    "product_id": 242,
     "name": "Crooked Tongues Rave all over paint splatter neon swim shorts",
     "style_id": 3,
     "type_id": 3,
@@ -2300,7 +2300,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 243,
+    "product_id": 243,
     "name": "LookBook DESIGN short meggings in black mesh",
     "style_id": 3,
     "type_id": 3,
@@ -2310,7 +2310,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 244,
+    "product_id": 244,
     "name": "COLLUSION oversized skull print short festival co-ord",
     "style_id": 3,
     "type_id": 3,
@@ -2320,7 +2320,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 278,
+    "product_id": 278,
     "name": "LookBook DESIGN jersey skinny shorts with ringer details in pink",
     "style_id": 1,
     "type_id": 3,
@@ -2330,7 +2330,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 237,
+    "product_id": 237,
     "name": "LookBook DESIGN super skinny jeans in tie dye",
     "style_id": 3,
     "type_id": 3,
@@ -2340,7 +2340,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 245,
+    "product_id": 245,
     "name": "AllSaints vest in black",
     "style_id": 1,
     "type_id": 2,
@@ -2350,7 +2350,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 246,
+    "product_id": 246,
     "name": "LookBook DESIGN oversized longline sleeveless t-shirt in blue",
     "style_id": 1,
     "type_id": 2,
@@ -2360,7 +2360,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 255,
+    "product_id": 255,
     "name": "LookBook DESIGN espadrilles in black canvas",
     "style_id": 1,
     "type_id": 1,
@@ -2370,7 +2370,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 256,
+    "product_id": 256,
     "name": "LookBook DESIGN Wide Fit Loafers In Woven Tan Leather With Tassel Detail",
     "style_id": 1,
     "type_id": 1,
@@ -2380,7 +2380,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 257,
+    "product_id": 257,
     "name": "LookBook DESIGN Loafers In Woven Tan Leather With Tassel Detail",
     "style_id": 1,
     "type_id": 1,
@@ -2390,7 +2390,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 258,
+    "product_id": 258,
     "name": "LookBook DESIGN espadrilles in black snake emboss",
     "style_id": 1,
     "type_id": 1,
@@ -2400,7 +2400,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 259,
+    "product_id": 259,
     "name": "LookBook DESIGN Wide Fit lace up espadrilles in white textured canvas",
     "style_id": 1,
     "type_id": 1,
@@ -2410,7 +2410,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 260,
+    "product_id": 260,
     "name": "Burton Menswear boat shoe in Navy",
     "style_id": 1,
     "type_id": 1,
@@ -2420,7 +2420,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 261,
+    "product_id": 261,
     "name": "LookBook DESIGN Wide Fit boat shoes in tan leather with gum sole",
     "style_id": 1,
     "type_id": 1,
@@ -2430,7 +2430,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 262,
+    "product_id": 262,
     "name": "LookBook DESIGN espadrilles in black and white pattern",
     "style_id": 1,
     "type_id": 1,
@@ -2440,7 +2440,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 263,
+    "product_id": 263,
     "name": "LookBook DESIGN espadrilles in striped canvas",
     "style_id": 1,
     "type_id": 1,
@@ -2450,7 +2450,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 264,
+    "product_id": 264,
     "name": "Selected Homme suede spanish espadrilles in navy",
     "style_id": 1,
     "type_id": 1,
@@ -2460,7 +2460,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 275,
+    "product_id": 275,
     "name": "boohooMAN drawstring denim shorts in acid wash",
     "style_id": 1,
     "type_id": 3,
@@ -2470,7 +2470,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 276,
+    "product_id": 276,
     "name": "LookBook DESIGN Tall slim chino shorts in black",
     "style_id": 1,
     "type_id": 3,
@@ -2480,7 +2480,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 277,
+    "product_id": 277,
     "name": "LookBook DESIGN Plus slim chino shorts in black",
     "style_id": 1,
     "type_id": 3,
@@ -2490,7 +2490,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 251,
+    "product_id": 251,
     "name": "boohooMAN savage print longline vest in black",
     "style_id": 1,
     "type_id": 2,
@@ -2500,7 +2500,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 253,
+    "product_id": 253,
     "name": "LookBook DESIGN organic muscle fit vest in coral",
     "style_id": 1,
     "type_id": 2,
@@ -2510,7 +2510,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 247,
+    "product_id": 247,
     "name": "LookBook DESIGN pique oversized longline sleeveless t-shirt with dropped armhole in black",
     "style_id": 1,
     "type_id": 2,
@@ -2520,7 +2520,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 248,
+    "product_id": 248,
     "name": "LookBook DESIGN tank vest in rib with turtle zip neck in white",
     "style_id": 1,
     "type_id": 2,
@@ -2530,7 +2530,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 254,
+    "product_id": 254,
     "name": "Nike Club logo vest in grey",
     "style_id": 1,
     "type_id": 2,
@@ -2540,7 +2540,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 265,
+    "product_id": 265,
     "name": "COLLUSION Unisex tie dye printed shirt",
     "style_id": 1,
     "type_id": 0,
@@ -2550,7 +2550,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 270,
+    "product_id": 270,
     "name": "LookBook DESIGN co-ord oversized shirt in washed wrestler print",
     "style_id": 1,
     "type_id": 0,
@@ -2560,7 +2560,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 271,
+    "product_id": 271,
     "name": "LookBook DESIGN co-ord regular fit floral shirt in black with hand drawn floral print",
     "style_id": 1,
     "type_id": 0,
@@ -2570,7 +2570,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 268,
+    "product_id": 268,
     "name": "LookBook DESIGN regular fit shirt with scribble face print in white",
     "style_id": 1,
     "type_id": 0,
@@ -2580,7 +2580,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 269,
+    "product_id": 269,
     "name": "LookBook DESIGN regular map print shirt",
     "style_id": 1,
     "type_id": 0,
@@ -2590,7 +2590,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 272,
+    "product_id": 272,
     "name": "LookBook DESIGN relaxed fit stripe shirt in white",
     "style_id": 1,
     "type_id": 0,
@@ -2600,7 +2600,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 267,
+    "product_id": 267,
     "name": "LookBook DESIGN relaxed multi stripe shirt",
     "style_id": 1,
     "type_id": 0,
@@ -2610,7 +2610,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 273,
+    "product_id": 273,
     "name": "LookBook DESIGN relaxed shirt with parrot print",
     "style_id": 1,
     "type_id": 0,
@@ -2620,7 +2620,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 274,
+    "product_id": 274,
     "name": "LookBook DESIGN short sleeve shirt in white chevron stripe",
     "style_id": 1,
     "type_id": 0,
@@ -2630,7 +2630,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 266,
+    "product_id": 266,
     "name": "boohooMAN revere collar shirt with leopard print",
     "style_id": 1,
     "type_id": 0,
@@ -2640,7 +2640,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 252,
+    "product_id": 252,
     "name": "LookBook DESIGN boxy cropped tank vest in orange",
     "style_id": 1,
     "type_id": 2,
@@ -2650,7 +2650,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 279,
+    "product_id": 279,
     "name": "LookBook DESIGN jersey yellow shorts in shorter length",
     "style_id": 1,
     "type_id": 3,
@@ -2660,7 +2660,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 280,
+    "product_id": 280,
     "name": "Nike jersey shorts in black 804419-010",
     "style_id": 1,
     "type_id": 3,
@@ -2670,7 +2670,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 281,
+    "product_id": 281,
     "name": "LookBook DESIGN jersey skinny shorts in grey marl",
     "style_id": 1,
     "type_id": 3,
@@ -2680,7 +2680,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 282,
+    "product_id": 282,
     "name": "LookBook DESIGN co-ord jersey shorts with mesh overlay in white",
     "style_id": 1,
     "type_id": 3,
@@ -2690,7 +2690,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 283,
+    "product_id": 283,
     "name": "LookBook DESIGN co-ord slim shorter shorts in orange with border print",
     "style_id": 1,
     "type_id": 3,
@@ -2700,7 +2700,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 284,
+    "product_id": 284,
     "name": "COLLUSION denim shorts with collusion taping",
     "style_id": 1,
     "type_id": 3,
@@ -2710,7 +2710,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 308,
+    "product_id": 308,
     "name": "LookBook DESIGN slim fit grandad collar shirt in grey stripe",
     "style_id": 2,
     "type_id": 2,
@@ -2720,7 +2720,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 305,
+    "product_id": 305,
     "name": "LookBook DESIGN slim fit polka dot grandad shirt in white",
     "style_id": 2,
     "type_id": 2,
@@ -2730,7 +2730,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 309,
+    "product_id": 309,
     "name": "LookBook DESIGN smart stretch slim fit oxford shirt with double cuff",
     "style_id": 2,
     "type_id": 2,
@@ -2740,7 +2740,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 307,
+    "product_id": 307,
     "name": "Only & Sons short sleeve oxford shirt in light blue",
     "style_id": 2,
     "type_id": 2,
@@ -2750,7 +2750,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 292,
+    "product_id": 292,
     "name": "Burton Menswear skinny suit jacket in black",
     "style_id": 2,
     "type_id": 0,
@@ -2760,7 +2760,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 291,
+    "product_id": 291,
     "name": "Jack & Jones Premium Suit In Slim Fit Black",
     "style_id": 2,
     "type_id": 0,
@@ -2770,7 +2770,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 290,
+    "product_id": 290,
     "name": "Moss London suit in blue check",
     "style_id": 2,
     "type_id": 0,
@@ -2780,7 +2780,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 293,
+    "product_id": 293,
     "name": "Moss London suit jacket in copper",
     "style_id": 2,
     "type_id": 0,
@@ -2790,7 +2790,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 286,
+    "product_id": 286,
     "name": "New Look skinny suit jacket in navy",
     "style_id": 2,
     "type_id": 0,
@@ -2800,7 +2800,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 289,
+    "product_id": 289,
     "name": "Selected Homme slim fit stretch suit jacket in navy",
     "style_id": 2,
     "type_id": 0,
@@ -2810,7 +2810,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 288,
+    "product_id": 288,
     "name": "Selected Homme slim suit with patch pockets in blue",
     "style_id": 2,
     "type_id": 0,
@@ -2820,7 +2820,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 287,
+    "product_id": 287,
     "name": "Twisted Tailor super skinny double breasted suit in check",
     "style_id": 2,
     "type_id": 0,
@@ -2830,7 +2830,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 294,
+    "product_id": 294,
     "name": "Twisted Tailor super skinny double breasted suit jacket in check",
     "style_id": 2,
     "type_id": 0,
@@ -2840,7 +2840,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 295,
+    "product_id": 295,
     "name": "LookBook DESIGN brogue loafers in black leather",
     "style_id": 2,
     "type_id": 1,
@@ -2850,7 +2850,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 296,
+    "product_id": 296,
     "name": "House Of Hounds Bardin slip on tassel loafers in black",
     "style_id": 2,
     "type_id": 1,
@@ -2860,7 +2860,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 297,
+    "product_id": 297,
     "name": "LookBook DESIGN monk shoes in faux tan leather",
     "style_id": 2,
     "type_id": 1,
@@ -2870,7 +2870,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 298,
+    "product_id": 298,
     "name": "Ted Baker Peair derby shoes in black leather",
     "style_id": 2,
     "type_id": 1,
@@ -2880,7 +2880,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 299,
+    "product_id": 299,
     "name": "LookBook DESIGN Wide Fit tassel loafers in tan leather with natural sole",
     "style_id": 2,
     "type_id": 1,
@@ -2890,7 +2890,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 300,
+    "product_id": 300,
     "name": "Ted Baker Ollivur brogue shoes in black leather",
     "style_id": 2,
     "type_id": 1,
@@ -2900,7 +2900,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 301,
+    "product_id": 301,
     "name": "LookBook DESIGN Wide Fit oxford brogue shoes in tan leather",
     "style_id": 2,
     "type_id": 1,
@@ -2910,7 +2910,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 302,
+    "product_id": 302,
     "name": "LookBook DESIGN Wide Fit monk shoes in brown leather",
     "style_id": 2,
     "type_id": 1,
@@ -2920,7 +2920,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 303,
+    "product_id": 303,
     "name": "LookBook DESIGN Wide Fit tassel loafers in navy suede with natural sole",
     "style_id": 2,
     "type_id": 1,
@@ -2930,7 +2930,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 304,
+    "product_id": 304,
     "name": "Ted Baker Murain oxford shoes in tan leather",
     "style_id": 2,
     "type_id": 1,
@@ -2940,7 +2940,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 241,
+    "product_id": 241,
     "name": "Crooked Tongues Rave unigender_id short in spliced neon",
     "style_id": 3,
     "type_id": 3,
@@ -2950,7 +2950,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 55,
+    "product_id": 55,
     "name": "adidas Originals adicolor long sleeve satin button up shirt in red",
     "style_id": 1,
     "type_id": 2,
@@ -2960,7 +2960,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 326,
+    "product_id": 326,
     "name": "In The Style x Saffron Barker dotty tulle mesh bodycon dress in black",
     "style_id": 0,
     "type_id": 0,
@@ -2970,7 +2970,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 101,
+    "product_id": 101,
     "name": "In The Style x Shaughna motif t shirt in black",
     "style_id": 1,
     "type_id": 2,
@@ -2980,7 +2980,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 104,
+    "product_id": 104,
     "name": "Boohoo oversized shirt in olive",
     "style_id": 1,
     "type_id": 2,
@@ -2990,7 +2990,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 32,
+    "product_id": 32,
     "name": "Stradivarius zip side heeled boot in snake",
     "style_id": 0,
     "type_id": 1,
@@ -3000,7 +3000,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 31,
+    "product_id": 31,
     "name": "PrettyLittleThing block heeled lace up sandals with pointed toe and clear strap in nude",
     "style_id": 0,
     "type_id": 1,
@@ -3010,7 +3010,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 311,
+    "product_id": 311,
     "name": "LookBook DESIGN skinny fit check shirt in blue",
     "style_id": 2,
     "type_id": 2,
@@ -3020,7 +3020,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 80,
+    "product_id": 80,
     "name": "Stradivarius ribbed jersey top with embellished sleeve detail in grey",
     "style_id": 0,
     "type_id": 2,
@@ -3030,7 +3030,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 160,
+    "product_id": 160,
     "name": "Pull&Bear basic high rise skinny jeans in light blue",
     "style_id": 0,
     "type_id": 3,
@@ -3040,7 +3040,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 156,
+    "product_id": 156,
     "name": "Missguided riot mom jeans in stonewash",
     "style_id": 0,
     "type_id": 3,
@@ -3050,7 +3050,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 327,
+    "product_id": 327,
     "name": "French Connection high neck mini skater dress",
     "style_id": 2,
     "type_id": 0,
@@ -3060,7 +3060,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 328,
+    "product_id": 328,
     "name": "Vero Moda shift dress with tie sleeves in sand",
     "style_id": 2,
     "type_id": 0,
@@ -3070,7 +3070,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 329,
+    "product_id": 329,
     "name": "Missguided tweed shift dress",
     "style_id": 2,
     "type_id": 0,
@@ -3080,7 +3080,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 314,
+    "product_id": 314,
     "name": "LookBook DESIGN skinny fit shirt blue pow check shirt with contrast rib collar",
     "style_id": 2,
     "type_id": 2,
@@ -3090,7 +3090,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 312,
+    "product_id": 312,
     "name": "LookBook DESIGN slim fit smart shirt with ditsy geo print in navy",
     "style_id": 2,
     "type_id": 2,
@@ -3100,7 +3100,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 310,
+    "product_id": 310,
     "name": "LookBook DESIGN smart skinny work stripe shirt in blue",
     "style_id": 2,
     "type_id": 2,
@@ -3110,7 +3110,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 313,
+    "product_id": 313,
     "name": "New Look poplin shirt in regular fit in black",
     "style_id": 2,
     "type_id": 2,
@@ -3120,7 +3120,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 315,
+    "product_id": 315,
     "name": "Heart & Dagger skinny fit suit",
     "style_id": 2,
     "type_id": 3,
@@ -3130,7 +3130,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 316,
+    "product_id": 316,
     "name": "LookBook DESIGN skinny smart jogger in stone crepe",
     "style_id": 2,
     "type_id": 3,
@@ -3140,7 +3140,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 324,
+    "product_id": 324,
     "name": "LookBook DESIGN skinny suit trousers in navy",
     "style_id": 2,
     "type_id": 3,
@@ -3150,7 +3150,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 323,
+    "product_id": 323,
     "name": "Moss London suit in blue check",
     "style_id": 2,
     "type_id": 3,
@@ -3160,7 +3160,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 325,
+    "product_id": 325,
     "name": "Moss London suit trouser in blue check",
     "style_id": 2,
     "type_id": 3,
@@ -3170,7 +3170,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 322,
+    "product_id": 322,
     "name": "New Look skinny suit trousers in black",
     "style_id": 2,
     "type_id": 3,
@@ -3180,7 +3180,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 318,
+    "product_id": 318,
     "name": "Selected Homme slim fit stretch suit trousers in light grey",
     "style_id": 2,
     "type_id": 3,
@@ -3190,7 +3190,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 321,
+    "product_id": 321,
     "name": "Selected Homme slim suit with patch pockets in blue",
     "style_id": 2,
     "type_id": 3,
@@ -3200,7 +3200,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 319,
+    "product_id": 319,
     "name": "Selected Homme suit trousers in green",
     "style_id": 2,
     "type_id": 3,
@@ -3210,7 +3210,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 320,
+    "product_id": 320,
     "name": "Twisted Tailor super skinny double breasted suit in check",
     "style_id": 2,
     "type_id": 3,
@@ -3220,7 +3220,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 317,
+    "product_id": 317,
     "name": "Twisted Tailor super skinny double breasted suit trousers in check",
     "style_id": 2,
     "type_id": 3,
@@ -3230,7 +3230,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 330,
+    "product_id": 330,
     "name": "Warehouse frill hem crepe belted dress in camel",
     "style_id": 2,
     "type_id": 0,
@@ -3240,7 +3240,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 331,
+    "product_id": 331,
     "name": "ASOS DESIGN stripe shirt dress in black and tan stripe",
     "style_id": 2,
     "type_id": 0,
@@ -3250,7 +3250,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 332,
+    "product_id": 332,
     "name": "Y.A.S maxi dress in black abstract spot print",
     "style_id": 2,
     "type_id": 0,
@@ -3260,7 +3260,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 333,
+    "product_id": 333,
     "name": "ASOS DESIGN tux mini dress with natural buckle belt",
     "style_id": 2,
     "type_id": 0,
@@ -3270,7 +3270,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 334,
+    "product_id": 334,
     "name": "River Island wrap mini tux dress in black",
     "style_id": 2,
     "type_id": 0,
@@ -3280,7 +3280,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 335,
+    "product_id": 335,
     "name": "Vero Moda Curve shift dress with tie sleeves in black",
     "style_id": 2,
     "type_id": 0,
@@ -3290,7 +3290,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 336,
+    "product_id": 336,
     "name": "Warehouse check tweed dress in black",
     "style_id": 2,
     "type_id": 0,
@@ -3300,7 +3300,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 337,
+    "product_id": 337,
     "name": "Monki midi belted shirt dress with pockets in rust",
     "style_id": 2,
     "type_id": 0,
@@ -3310,7 +3310,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 338,
+    "product_id": 338,
     "name": "New Look leather look belted mini dress in cream",
     "style_id": 2,
     "type_id": 0,
@@ -3320,7 +3320,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 340,
+    "product_id": 340,
     "name": "For Love and Lemons Azalea strapless mini dress in black",
     "style_id": 3,
     "type_id": 0,
@@ -3330,7 +3330,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 341,
+    "product_id": 341,
     "name": "Boohoo one shoulder puff sleeve dress in blue",
     "style_id": 3,
     "type_id": 0,
@@ -3340,7 +3340,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 342,
+    "product_id": 342,
     "name": "In The Style x Lorna Luxe extreme puff sleeve babydoll dress in white",
     "style_id": 3,
     "type_id": 0,
@@ -3350,7 +3350,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 343,
+    "product_id": 343,
     "name": "Saint Genies ruched floral print mini dress in multi",
     "style_id": 3,
     "type_id": 0,
@@ -3360,7 +3360,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 345,
+    "product_id": 345,
     "name": "C/Meo Collective on the level mini dress with statement sleeve",
     "style_id": 3,
     "type_id": 0,
@@ -3370,7 +3370,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 346,
+    "product_id": 346,
     "name": "Vero Moda textured mini dress with puff sleeves in black",
     "style_id": 3,
     "type_id": 0,
@@ -3380,7 +3380,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 347,
+    "product_id": 347,
     "name": "True Violet exclusive bandeau frill midi dress in orange",
     "style_id": 3,
     "type_id": 0,
@@ -3390,7 +3390,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 348,
+    "product_id": 348,
     "name": "PrettyLittleThing belted blazer dress with wrap front in black",
     "style_id": 3,
     "type_id": 0,
@@ -3400,7 +3400,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 350,
+    "product_id": 350,
     "name": "Vesper bandeau midi dress in cobalt",
     "style_id": 3,
     "type_id": 0,
@@ -3410,7 +3410,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 339,
+    "product_id": 339,
     "name": "Aria Cove long sleeve ruched tie front mini dress in green",
     "style_id": 2,
     "type_id": 0,
@@ -3420,7 +3420,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 351,
+    "product_id": 351,
     "name": "PrettyLittleThing peplum satin cami top with lace trim in navy",
     "style_id": 0,
     "type_id": 2,
@@ -3430,7 +3430,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 352,
+    "product_id": 352,
     "name": "Stradivarius ruched sleeved blazer in black",
     "style_id": 0,
     "type_id": 2,
@@ -3440,7 +3440,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 353,
+    "product_id": 353,
     "name": "Weekday midi A-line skirt in beige",
     "style_id": 0,
     "type_id": 3,
@@ -3450,7 +3450,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 354,
+    "product_id": 354,
     "name": "Boohoo chiffon midaxi skirt with ruffle trims in black",
     "style_id": 0,
     "type_id": 3,
@@ -3460,7 +3460,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 355,
+    "product_id": 355,
     "name": "In The Style x Lorna Luxe extreme puff sleeve babydoll dress in white",
     "style_id": 0,
     "type_id": 0,
@@ -3470,7 +3470,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 356,
+    "product_id": 356,
     "name": "French Connection high neck mini skater dress",
     "style_id": 0,
     "type_id": 0,
@@ -3480,7 +3480,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 357,
+    "product_id": 357,
     "name": "Missguided tweed shift dress",
     "style_id": 0,
     "type_id": 0,
@@ -3490,7 +3490,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 358,
+    "product_id": 358,
     "name": "Vero Moda Curve shift dress with tie sleeves in black",
     "style_id": 0,
     "type_id": 0,
@@ -3500,7 +3500,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 359,
+    "product_id": 359,
     "name": "Monki midi belted shirt dress with pockets in rust",
     "style_id": 0,
     "type_id": 0,
@@ -3510,7 +3510,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 349,
+    "product_id": 349,
     "name": "LOOKBOOK DESIGN Eivissa all over fringe drape halter neck midaxi dress",
     "style_id": 3,
     "type_id": 0,
@@ -3520,7 +3520,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 344,
+    "product_id": 344,
     "name": "LOOKBOOK DESIGN lace midi dress with ladder trim detail",
     "style_id": 3,
     "type_id": 0,
@@ -3530,7 +3530,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 360,
+    "product_id": 360,
     "name": "adidas Originals three stripe bardot dress in red",
     "style_id": 0,
     "type_id": 0,
@@ -3540,7 +3540,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 361,
+    "product_id": 361,
     "name": "Wild Honey knitted tunic dress with pockets",
     "style_id": 0,
     "type_id": 0,
@@ -3550,7 +3550,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 362,
+    "product_id": 362,
     "name": "Boohoo one shoulder puff sleeve dress in blue",
     "style_id": 0,
     "type_id": 0,
@@ -3560,7 +3560,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 363,
+    "product_id": 363,
     "name": "Glamorous silver metallic pointed heeled shoes",
     "style_id": 0,
     "type_id": 1,
@@ -3570,7 +3570,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 364,
+    "product_id": 364,
     "name": "River Island tassel loafer in burgundy",
     "style_id": 0,
     "type_id": 1,
@@ -3580,7 +3580,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 365,
+    "product_id": 365,
     "name": "Tommy Jeans critter print shirt in light blue",
     "style_id": 1,
     "type_id": 2,
@@ -3590,7 +3590,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 366,
+    "product_id": 366,
     "name": "In The Style x Lorna Luxe peplum hem open back top in white",
     "style_id": 1,
     "type_id": 2,
@@ -3600,7 +3600,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 367,
+    "product_id": 367,
     "name": "In The Style x Lorna Luxe extreme puff sleeve top in black",
     "style_id": 1,
     "type_id": 2,
@@ -3610,7 +3610,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 368,
+    "product_id": 368,
     "name": "LOOKBOOK DESIGN sleeveless casual smock top",
     "style_id": 1,
     "type_id": 2,
@@ -3620,7 +3620,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 369,
+    "product_id": 369,
     "name": "LOOKBOOK DESIGN cowl neck all over sequin mini cami dress",
     "style_id": 3,
     "type_id": 0,
@@ -3630,7 +3630,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 370,
+    "product_id": 370,
     "name": "LOOKBOOK DESIGN oversized t-shirt dress in mini leopard",
     "style_id": 1,
     "type_id": 0,
@@ -3640,7 +3640,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 371,
+    "product_id": 371,
     "name": "Missguided shirred textured skater dress in mint",
     "style_id": 1,
     "type_id": 0,
@@ -3650,7 +3650,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 372,
+    "product_id": 372,
     "name": "LOOKBOOK DESIGN smart slim trouser in ponte",
     "style_id": 2,
     "type_id": 3,
@@ -3660,7 +3660,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 373,
+    "product_id": 373,
     "name": "Mango elasticated tailored trouser co-ord in camel",
     "style_id": 2,
     "type_id": 3,
@@ -3670,7 +3670,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 374,
+    "product_id": 374,
     "name": "Morgan textured print short in black",
     "style_id": 3,
     "type_id": 3,
@@ -3680,7 +3680,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 375,
+    "product_id": 375,
     "name": "LOOKBOOK DESIGN purple snake leather look shorts",
     "style_id": 3,
     "type_id": 3,
@@ -3690,7 +3690,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 376,
+    "product_id": 376,
     "name": "RAID Exclusive Harmoni loafers with square toe and gold snaffle in blush",
     "style_id": 2,
     "type_id": 1,
@@ -3700,7 +3700,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 377,
+    "product_id": 377,
     "name": "LOOKBOOK DESIGN Wide Fit Stirrup mid-heeled loafers in orange velvet",
     "style_id": 2,
     "type_id": 1,
@@ -3710,7 +3710,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 378,
+    "product_id": 378,
     "name": "Glamorous barely there heeled sandal in metallic gold snake",
     "style_id": 3,
     "type_id": 1,
@@ -3720,7 +3720,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 379,
+    "product_id": 379,
     "name": "Miss Selfridge heeled sock boots in black",
     "style_id": 3,
     "type_id": 1,
@@ -3730,7 +3730,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 380,
+    "product_id": 380,
     "name": "LOOKBOOK DESIGN suit in camel grid check",
     "style_id": 2,
     "type_id": 2,
@@ -3740,7 +3740,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 381,
+    "product_id": 381,
     "name": "LOOKBOOK DESIGN linen sleeveless suit blazer",
     "style_id": 2,
     "type_id": 2,
@@ -3750,7 +3750,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 382,
+    "product_id": 382,
     "name": "LOOKBOOK DESIGN cross over bardot top with long sleeve",
     "style_id": 3,
     "type_id": 2,
@@ -3760,7 +3760,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 383,
+    "product_id": 383,
     "name": "Lasula gingham bralet co ord in multi",
     "style_id": 3,
     "type_id": 2,
@@ -3770,7 +3770,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 190,
+    "product_id": 190,
     "name": "LookBook DESIGN smart skinny oxford shirt with grandad collar in white",
     "style_id": 0,
     "type_id": 2,
@@ -3780,7 +3780,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 306,
+    "product_id": 306,
     "name": "LookBook DESIGN regular slim pink marl smart shirt in pink",
     "style_id": 2,
     "type_id": 2,
@@ -3790,7 +3790,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 387,
+    "product_id": 387,
     "name": "Mauvais box logo t-shirt in pink",
     "style_id": 1,
     "type_id": 2,
@@ -3800,7 +3800,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 388,
+    "product_id": 388,
     "name": "Avail London skinny fit suit jacket in camel",
     "style_id": 2,
     "type_id": 2,
@@ -3810,7 +3810,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 389,
+    "product_id": 389,
     "name": "Burton Menswear slim suit jacket in grey & pink check",
     "style_id": 2,
     "type_id": 2,
@@ -3820,7 +3820,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 384,
+    "product_id": 384,
     "name": "Mauvais box logo t-shirt in pink",
     "style_id": 0,
     "type_id": 2,
@@ -3830,7 +3830,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 391,
+    "product_id": 391,
     "name": "LookBook DESIGN skinny jeans in coloured zebra print",
     "style_id": 0,
     "type_id": 3,
@@ -3840,7 +3840,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 390,
+    "product_id": 390,
     "name": "LookBook DESIGN super skinny jeans in tie dye",
     "style_id": 0,
     "type_id": 3,
@@ -3850,7 +3850,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 392,
+    "product_id": 392,
     "name": "Nike cuffed Club jogger in grey BV2671-063",
     "style_id": 1,
     "type_id": 3,
@@ -3860,7 +3860,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 393,
+    "product_id": 393,
     "name": "Levi's XX Chino slim fit trousers in olive green",
     "style_id": 1,
     "type_id": 3,
@@ -3870,7 +3870,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 394,
+    "product_id": 394,
     "name": "Burton Menswear slim suit trousers in grey & pink check",
     "style_id": 2,
     "type_id": 3,
@@ -3880,7 +3880,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 395,
+    "product_id": 395,
     "name": "Topman super skinny chinos in sage",
     "style_id": 3,
     "type_id": 3,
@@ -3890,7 +3890,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 396,
+    "product_id": 396,
     "name": "SikSilk slim cropped trousers in navy pinstripe",
     "style_id": 3,
     "type_id": 3,
@@ -3900,7 +3900,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 167,
+    "product_id": 167,
     "name": "LookBook DESIGN wedding skinny suit jacket in stretch cotton in ice grey",
     "style_id": 0,
     "type_id": 0,
@@ -3910,7 +3910,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 285,
+    "product_id": 285,
     "name": "Selected Homme slim suit jacket with patch pockets in blue",
     "style_id": 2,
     "type_id": 0,
@@ -3920,7 +3920,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 250,
+    "product_id": 250,
     "name": "AllSaints tonic vest in light pink",
     "style_id": 1,
     "type_id": 2,
@@ -3930,7 +3930,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 249,
+    "product_id": 249,
     "name": "LookBook DESIGN oversized sleeveless t-shirt with vertical colour block",
     "style_id": 1,
     "type_id": 2,
@@ -3940,7 +3940,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 385,
+    "product_id": 385,
     "name": "LookBook DESIGN tank vest in rib with turtle zip neck in white",
     "style_id": 0,
     "type_id": 2,
@@ -3950,7 +3950,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 397,
+    "product_id": 397,
     "name": "LookBook DESIGN festival regular fit shirt in neon snake print",
     "style_id": 3,
     "type_id": 0,
@@ -3960,7 +3960,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 398,
+    "product_id": 398,
     "name": "ellesse Joli utility overhead reflective jacket in black",
     "style_id": 0,
     "type_id": 2,
@@ -3970,7 +3970,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 386,
+    "product_id": 386,
     "name": "ellesse Joli utility overhead reflective jacket in black",
     "style_id": 1,
     "type_id": 2,
@@ -3980,7 +3980,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 399,
+    "product_id": 399,
     "name": "LookBook DESIGN regular fit shirt with scribble face print in white",
     "style_id": 0,
     "type_id": 0,
@@ -3990,7 +3990,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 400,
+    "product_id": 400,
     "name": "Jack & Jones Core logo tipped pique polo in black",
     "style_id": 1,
     "type_id": 0,
@@ -4000,7 +4000,7 @@
     "horoscope_id": "Leo"
   },
   {
-    "clothes_id": 401,
+    "product_id": 401,
     "name": "New look short sleeve muscle fit poplin shirt in black",
     "style_id": 1,
     "type_id": 0,
@@ -4010,7 +4010,7 @@
     "horoscope_id": "Cancer"
   },
   {
-    "clothes_id": 402,
+    "product_id": 402,
     "name": "Twisted Tailor super skinny fit suit in burgundy check",
     "style_id": 2,
     "type_id": 0,
@@ -4020,7 +4020,7 @@
     "horoscope_id": "Gemini"
   },
   {
-    "clothes_id": 403,
+    "product_id": 403,
     "name": "New Look skinny suit in dark green",
     "style_id": 2,
     "type_id": 0,
@@ -4030,7 +4030,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 404,
+    "product_id": 404,
     "name": "LookBook DESIGN slim fit shirt in abstract paint stroke print",
     "style_id": 3,
     "type_id": 0,
@@ -4040,7 +4040,7 @@
     "horoscope_id": "Taurus"
   },
   {
-    "clothes_id": 407,
+    "product_id": 407,
     "name": "Birkenstock vegan gizah sandals in brown",
     "style_id": 1,
     "type_id": 1,
@@ -4050,7 +4050,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 408,
+    "product_id": 408,
     "name": "The North Face Skeena sandal in black",
     "style_id": 1,
     "type_id": 1,
@@ -4060,7 +4060,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 405,
+    "product_id": 405,
     "name": "LookBook DESIGN Wide Fit boat shoes in tan leather with gum sole",
     "style_id": 2,
     "type_id": 1,
@@ -4070,7 +4070,7 @@
     "horoscope_id": "Aries"
   },
   {
-    "clothes_id": 406,
+    "product_id": 406,
     "name": "Walk London jacob woven loafers in black leather",
     "style_id": 2,
     "type_id": 1,
@@ -4080,7 +4080,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 409,
+    "product_id": 409,
     "name": "Birkenstock vegan gizah sandals in brown",
     "style_id": 0,
     "type_id": 1,
@@ -4090,7 +4090,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 410,
+    "product_id": 410,
     "name": "The North Face Skeena sandal in black",
     "style_id": 0,
     "type_id": 1,
@@ -4100,7 +4100,7 @@
     "horoscope_id": "Virgo"
   },
   {
-    "clothes_id": 411,
+    "product_id": 411,
     "name": "LookBook DESIGN backless mule loafer in black faux leather with fringe and studding detail",
     "style_id": 3,
     "type_id": 1,
@@ -4110,7 +4110,7 @@
     "horoscope_id": "Pisces"
   },
   {
-    "clothes_id": 412,
+    "product_id": 412,
     "name": "LookBook DESIGN loafers in black with baroque print",
     "style_id": 3,
     "type_id": 1,
@@ -4120,7 +4120,7 @@
     "horoscope_id": "Capricorn"
   },
   {
-    "clothes_id": 413,
+    "product_id": 413,
     "name": "LookBook DESIGN cuban heel western chelsea boots in black faux leather with metal hardware",
     "style_id": 3,
     "type_id": 1,
@@ -4130,7 +4130,7 @@
     "horoscope_id": "Scorpio"
   },
   {
-    "clothes_id": 414,
+    "product_id": 414,
     "name": "LookBook DESIGN cuban heel western chelsea boots in black leather with buckle detail",
     "style_id": 3,
     "type_id": 1,
@@ -4140,7 +4140,7 @@
     "horoscope_id": "Sagittarius"
   },
   {
-    "clothes_id": 415,
+    "product_id": 415,
     "name": "New Look tie waist detail shirt dress in black",
     "style_id": 0,
     "type_id": 0,
@@ -4150,7 +4150,7 @@
     "horoscope_id": "Libra"
   },
   {
-    "clothes_id": 416,
+    "product_id": 416,
     "name": "adidas Originals three stripe bardot dress in red",
     "style_id": 0,
     "type_id": 0,
@@ -4160,7 +4160,7 @@
     "horoscope_id": "Aquarius"
   },
   {
-    "clothes_id": 417,
+    "product_id": 417,
     "name": "Puma Classics black bodycon dress",
     "style_id": 0,
     "type_id": 0,

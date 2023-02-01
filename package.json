@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "watch": "watch 'npm run build' ./src"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.2",
@@ -30,7 +31,8 @@
     "redux-reset": "^0.3.0",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
-    "store-js": "^2.0.4"
+    "store-js": "^2.0.4",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.9"
