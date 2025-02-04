@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
 var SRC = path.resolve(__dirname, "src/main/js");
 var DEST = path.resolve(__dirname, "src/main/resources/static/app");
@@ -110,9 +111,10 @@ var config = {
         NODE_ENV: JSON.stringify("production"),
       },
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-    }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
 };
 module.exports = config;
