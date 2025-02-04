@@ -91,28 +91,10 @@ var config = {
           },
         ],
       },
-      // {
-      //   test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   include: SRC,
-      //   use: [
-      //     {
-      //       loader: "url-loader",
-      //       options: {
-      //         limit: 1000,
-      //         mimetype: "application/font-woff",
-      //       },
-      //     },
-      //   ],
-      // },
       {
         test: /\.(woff|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
         loader: "url-loader?limit=100000",
       },
-      // {
-      //   test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      //   include: SRC,
-      //   loader: "file-loader",
-      // },
     ],
   },
   plugins: [
