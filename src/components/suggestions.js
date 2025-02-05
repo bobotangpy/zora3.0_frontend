@@ -21,11 +21,6 @@ const Suggestions = ({ displayItem }) => {
   const [shoes, setShoes] = useState(null);
 
   useEffect(() => {
-    // console.log("tops::", trimData(topsData));
-    // console.log("bottoms::", bottomsData);
-    // console.log("dressSuits::", dressSuitsData);
-    // console.log("shoes::", shoesData);
-
     if (topsData) setTops(trimData(topsData));
     if (bottomsData) setBottoms(trimData(bottomsData));
     if (dressSuitsData) setDressSuits(trimData(dressSuitsData));

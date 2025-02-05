@@ -24,13 +24,9 @@ const Content = ({ item }) => {
 
   return (
     <Link
-      // href={{ pathname: "/productInfo/[item]", query: { item: item.product_id } }}
-      // href="/productInfo/[item]"
-      // as={`/productInfo/${item.product_id}`
       style={{ color: "#404040" }}
       onClick={() =>
         router.push(`/productInfo/${item.product_id}`, undefined, {
-          // shallow: true,
         })
       }
     >

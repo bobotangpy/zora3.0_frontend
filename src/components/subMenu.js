@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
-// import { AppContext } from "../services/appProvider";
 import styles from "../styles/SubMenu.module.scss";
 import Grid from "@material-ui/core/Grid";
 
@@ -11,9 +9,7 @@ import { updateStyle } from "../redux/styleSlice";
 const SubMenu = ({ show, hover }) => {
   const dispatch = useDispatch();
   const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
-  // const subCat = useSelector((state) => state.subCat.selectedSubCat);
 
-  // const context = useContext(AppContext);
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
@@ -22,7 +18,6 @@ const SubMenu = ({ show, hover }) => {
         dispatch(updateStyle(selected));
       } else if (!mainCat && hover) {
         dispatch(updateMainCat(hover));
-        // window.location.replace("/category");
       }
     }
   }, [mainCat, selected]);
@@ -34,7 +29,6 @@ const SubMenu = ({ show, hover }) => {
       style={{ marginLeft: "25px" }}
     >
       <Grid item xs={1}>
-        {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
         <p
           m={{ l: "2rem", r: "1.5rem" }}
           className={styles.submenu}
@@ -42,12 +36,10 @@ const SubMenu = ({ show, hover }) => {
         >
           Trending
         </p>
-        {/* </Link> */}
         <div className={selected === "trending" ? styles.dotTrend : ""}></div>
       </Grid>
 
       <Grid item xs={1}>
-        {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
         <p
           m={{ l: "2rem", r: "1.5rem" }}
           className={styles.submenu}
@@ -55,12 +47,10 @@ const SubMenu = ({ show, hover }) => {
         >
           Casual
         </p>
-        {/* </Link> */}
         <div className={selected === "casual" ? styles.dotCasual : ""}></div>
       </Grid>
 
       <Grid item xs={1}>
-        {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
         <p
           m={{ l: "2rem", r: "1.5rem" }}
           className={styles.submenu}
@@ -68,12 +58,10 @@ const SubMenu = ({ show, hover }) => {
         >
           Formal
         </p>
-        {/* </Link> */}
         <div className={selected === "formal" ? styles.dotFormal : ""}></div>
       </Grid>
 
       <Grid item xs={6}>
-        {/* <Link href={selected && hover ? "/category" : ""} as={`/${hover}`}> */}
         <p
           m={{ l: "2rem", r: "1.5rem" }}
           className={styles.submenu}
@@ -81,7 +69,6 @@ const SubMenu = ({ show, hover }) => {
         >
           Going-out-out
         </p>
-        {/* </Link> */}
         <div className={selected === "goingOut" ? styles.dotOut : ""}></div>
       </Grid>
     </Grid>

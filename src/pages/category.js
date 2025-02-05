@@ -54,8 +54,6 @@ const Category = ({ data }) => {
     if (mainCat && subCat) {
       let filtered = filterItemsForDisplay(data, mainCat);
       setItems(_.sortBy(filtered, "gender_id"));
-      // setItems(_.reverse(_.sortBy(filtered, "gender_id")));
-      // console.log("filter", filtered);
 
       mainCat !== "horoscope"
         ? updateSuggestions(subCat, getGenderId(mainCat))
@@ -241,8 +239,6 @@ export const getStaticProps = async () => {
   let data;
 
   await api.queryAllProducts().then((res) => {
-    // console.log(res)
-    // console.log(Array.isArray(res))
     if (res && Array.isArray(res)) {
       data = res;
       console.log('HAS data')

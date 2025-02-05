@@ -4,8 +4,6 @@ import Suggestions from "../../components/suggestions";
 import SizeQty from "../../components/sizeQty";
 import SignIn from "../../components/signIn";
 import Grid from "@material-ui/core/Grid";
-// import FormControl from "@material-ui/core/FormControl";
-// import NativeSelect from "@material-ui/core/NativeSelect";
 import styles from "../../styles/ProductInfo.module.scss";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -127,38 +125,6 @@ const ProductInfo = ({ data }) => {
                 handleChangeSize={handleChangeSize}
                 handleChangeQty={handleChangeQty}
               />
-              {/* <div className="flexRow" style={{ marginBottom: "20px" }}>
-                <label htmlFor="outlined-size">Size :</label>
-                <FormControl variant="outlined">
-                  <NativeSelect
-                    value={size}
-                    onChange={handleChange}
-                    inputProps={{
-                      name: "size",
-                      id: "outlined-size",
-                    }}
-                    className={styles.select}
-                  >
-                    <option value="xs">XS</option>
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
-                  </NativeSelect>
-                </FormControl>
-              </div>
-
-              <div className="flexRow">
-                <label>Quantity :</label>
-                <input
-                  type="number"
-                  min={1}
-                  max={10}
-                  className={styles.qty}
-                  value={quantity}
-                  onChange={handleChangeQty}
-                />
-              </div> */}
 
               <div style={{ marginTop: "50px" }}>
                 <button

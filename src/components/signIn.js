@@ -36,19 +36,15 @@ const SigninTab = ({ value, index, handleSignin, props }) => {
     <div
       role="tabpanel"
       hidden={value !== index}
-      //   id={`simple-tabpanel-${index}`}
-      //   aria-labelledby={`simple-tab-${index}`}
     >
       <form className={styles.form}>
         <TextField
-          // id="standard-basic"
           label="Email"
           type="email"
           className={styles.input}
           onChange={(e) => props.setSigninEmail(e.currentTarget.value)}
         />
         <TextField
-          // id="standard-basic"
           label="Password"
           type="password"
           className={styles.input}

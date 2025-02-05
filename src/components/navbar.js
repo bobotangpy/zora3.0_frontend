@@ -1,6 +1,5 @@
 // TODO: REsponsiveness!!!
 
-// import { useRouter } from "next/router";
 import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import SubMenu from "./subMenu";
@@ -12,7 +11,6 @@ import Badge from "@material-ui/core/Badge";
 import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import store from "store-js";
-// import MenuIcon from "@material-ui/icons/Menu";
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateMainCat } from "../redux/mainCatSlice";
@@ -78,7 +76,6 @@ const SignedInNav = ({
 };
 
 const NavBar = () => {
-  // const router = useRouter();
   const dispatch = useDispatch();
   const selected = useSelector((state) => state.mainCat.selectedMainCat);
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -229,7 +226,6 @@ const NavBar = () => {
             cartItems={cartItems}
             openCartPreview={openCartPreview}
             toggleDrawer={toggleDrawer}
-            // router={router}
           />
         ) : (
           <Link href="/sign_in">

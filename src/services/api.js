@@ -15,7 +15,6 @@ export default class API {
         : "https://zora3-backend.onrender.com/";
     this.api = axios.create({
       baseURL: url,
-      // timeout: 100000,
     });
 
     this.api.interceptors.response.use(
@@ -45,7 +44,6 @@ export default class API {
       password: pwd,
     };
     const res = this.api.post(url, params);
-    // console.log(res);
     return res;
   }
 
@@ -70,7 +68,6 @@ export default class API {
 
   queryProductInfo(id) {
     const url = `api/productInfo/${id}`;
-    // const param = JSON.stringify({ id: id });
     const res = this.api.get(url);
     return res;
   }
