@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="bg">
-      <p>&#169; 2021 Zora</p>
+      <p>&#169; 2025 Zora</p>
 
       <style jsx>
         {`

@@ -72,6 +72,7 @@ const Category = ({ data }) => {
         dispatch(updateStyle("trending"));
       } else {
         let filtered = filterSubCatItems(items, subCat);
+        console.log("Filtered items by subCat:", filtered);
         return setFilteredItems(filtered);
       }
     }
@@ -79,6 +80,7 @@ const Category = ({ data }) => {
     if (items && subCat && style) {
       let d = filterSubCatItems(items, subCat);
       let d2 = filterStyleItems(d, style);
+      console.log("Filtered items by subCat and style:", d2);
       return setFilteredItems(d2);
     }
 
@@ -241,7 +243,7 @@ export const getStaticProps = async () => {
   await api.queryAllProducts().then((res) => {
     if (res && Array.isArray(res)) {
       data = res;
-      console.log('HAS data')
+      console.log('HAS data', data);
     } else data = [];
   });
 
