@@ -237,6 +237,8 @@ const Category = ({ data }) => {
 
 export default Category;
 
+export const revalidate = 0;
+
 export const getStaticProps = async () => {
   let data;
 
@@ -247,5 +249,5 @@ export const getStaticProps = async () => {
     } else data = [];
   });
 
-  return { props: { data: data }, revalidate: 30 };
+  return { props: { data: data }, revalidate: 0 };
 };
