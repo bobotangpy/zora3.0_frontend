@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { AppContext } from "../services/appProvider";
 import CategoryMenu from "../components/categoryMenu";
 import ItemList from "../components/itemList";
@@ -21,6 +22,8 @@ import { reduxStore } from "../redux/_index";
 const api = new API();
 
 const Category = ({ data }) => {
+  const router = useRouter();
+  const { cat } = router.query;
   const dispatch = useDispatch();
   const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
   const subCat = useSelector((state) => state.subCat.selectedSubCat);
@@ -30,6 +33,12 @@ const Category = ({ data }) => {
   const context = useContext(AppContext);
   const [items, setItems] = useState(null);
   const [filteredItems, setFilteredItems] = useState(null);
+
+  useEffect(() => {
+    if (cat) {
+      dispatch(updateMainCat(cat));
+    }
+  }, [cat]);
 
   useEffect(() => {
     /* mainCat lost after page refresh => updateMainCat */
@@ -237,10 +246,6 @@ const Category = ({ data }) => {
 
 export default Category;
 
-export const revalidate = 60
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store' 
-
 export const getServerSideProps = async () => {
   let data;
 
@@ -251,5 +256,5 @@ export const getServerSideProps = async () => {
     } else data = [];
   });
 
-  return { props: { data: data }, revalidate: 60 };
+  return { props: { data: data } };
 };

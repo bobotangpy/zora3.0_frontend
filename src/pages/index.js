@@ -28,7 +28,7 @@ export default function Home() {
       <div className={styles.container}>
         <Slider {...sliderSetting}>
           <div>
-            <Link href="/category" as="/horoscope">
+            <Link href={{ pathname: "/category", query: { cat: "horoscope" } }}>
               <img
                 src="/assets/images/landing/slide_1.jpg"
                 alt="1"
@@ -40,7 +40,7 @@ export default function Home() {
             </Link>
           </div>
           <div>
-            <Link href="/category" as="/women">
+            <Link href={{ pathname: "/category", query: { cat: "women" } }}>
               <img
                 src="/assets/images/landing/slide_2.jpg"
                 alt="2"
@@ -50,7 +50,7 @@ export default function Home() {
             </Link>
           </div>
           <div>
-            <Link href="/category" as="/men">
+            <Link href={{ pathname: "/category", query: { cat: "men" } }}>
               <img
                 src="/assets/images/landing/slide_3.jpg"
                 alt="3"
