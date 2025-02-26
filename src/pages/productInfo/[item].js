@@ -181,24 +181,3 @@ export const getServerSideProps = async ({ params }) => {
     props: { data: details },
   };
 };
-
-export const getStaticPaths = async () => {
-  let data;
-
-  await api.queryAllProducts().then((res) => {
-    if (res && Array.isArray(res)) {
-      // console.log(res);
-      data = res;
-    } else data = [];
-  });
-
-  const paths = _.map(data, (item) => ({
-    //        vvvv Must be SAME name as [<name>].js
-    params: { item: item.product_id.toString() },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
