@@ -162,7 +162,7 @@ const ProductInfo = ({ data }) => {
 
 export default ProductInfo;
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   let data;
 
   await api.queryAllProducts().then((res) => {

@@ -239,7 +239,7 @@ export default Category;
 
 export const revalidate = 0;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   let data;
 
   await api.queryAllProducts().then((res) => {
