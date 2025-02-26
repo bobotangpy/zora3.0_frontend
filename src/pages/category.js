@@ -237,7 +237,9 @@ const Category = ({ data }) => {
 
 export default Category;
 
-export const revalidate = 0;
+export const revalidate = 60
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store' 
 
 export const getServerSideProps = async () => {
   let data;
@@ -249,5 +251,5 @@ export const getServerSideProps = async () => {
     } else data = [];
   });
 
-  return { props: { data: data }, revalidate: 0 };
+  return { props: { data: data }, revalidate: 60 };
 };
