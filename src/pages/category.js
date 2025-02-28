@@ -62,7 +62,8 @@ const Category = ({ data }) => {
   useEffect(() => {
     if (mainCat && subCat) {
       let filtered = filterItemsForDisplay(data, mainCat);
-      setItems(_.sortBy(filtered, "gender_id"));
+      let ordered = _.sortBy(filtered, "gender_id");
+      setItems(ordered);
 
       mainCat !== "horoscope"
         ? updateSuggestions(subCat, getGenderId(mainCat))
