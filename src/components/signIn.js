@@ -41,12 +41,14 @@ const SigninTab = ({ value, index, handleSignin, props }) => {
         <TextField
           label="Email"
           type="email"
+          placeholder="admin@example.com"
           className={styles.input}
           onChange={(e) => props.setSigninEmail(e.currentTarget.value)}
         />
         <TextField
           label="Password"
           type="password"
+          placeholder="admin"
           className={styles.input}
           onChange={(e) => props.setSigninPwd(e.currentTarget.value)}
         />
