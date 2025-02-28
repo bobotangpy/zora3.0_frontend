@@ -162,10 +162,6 @@ const ProductInfo = ({ data }) => {
 
 export default ProductInfo;
 
-export const revalidate = 60
-export const dynamic = 'force-dynamic'
-export const fetchCache = 'force-no-store' 
-
 export const getServerSideProps = async ({ params }) => {
   let data;
 
@@ -182,6 +178,6 @@ export const getServerSideProps = async ({ params }) => {
   );
 
   return {
-    props: { data: details },
+    props: { data: details }
   };
 };
