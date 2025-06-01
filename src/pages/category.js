@@ -221,15 +221,15 @@ const Category = ({ data }) => {
     if (genderId !== null && userSign) {
       console.log(mainCat, genderId, subCat_id);
       api.querySuggestions(userSign, genderId, subCat_id).then((res) => {
-        if (res && Array.isArray(res)) {
+        if (res && Array.isArray(res.data)) {
           subCat_id == 0
-            ? dispatch(updateDressSuitsData(res))
+            ? dispatch(updateDressSuitsData(res.data))
             : subCat_id == 1
-            ? dispatch(updateShoesData(res))
+            ? dispatch(updateShoesData(res.data))
             : subCat_id == 2
-            ? dispatch(updateTopsData(res))
+            ? dispatch(updateTopsData(res.data))
             : subCat_id == 3
-            ? dispatch(updateBottomsData(res))
+            ? dispatch(updateBottomsData(res.data))
             : "";
         } else console.log("No data from querySuggestions api")
       });

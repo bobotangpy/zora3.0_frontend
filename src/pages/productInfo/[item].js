@@ -27,7 +27,9 @@ const SigninModal = ({ openModal, setOpenModal }) => {
       aria-describedby="simple-modal-description"
       className="signinModal"
     >
-      <SignIn />
+      <div>
+        <SignIn />
+      </div>
     </Modal>
   );
 };
@@ -37,7 +39,6 @@ const ProductInfo = ({ data }) => {
   const dispatch = useDispatch();
   const mainCat = useSelector((state) => state.mainCat.selectedMainCat);
   const cartItems = useSelector((state) => state.cart.cartItems);
-  // const [cartItems, setCartItems] = useState([]);
   const [size, setSize] = useState("");
   const [quantity, setQuantity] = useState("");
   const [loading, setLoading] = useState(false);
@@ -102,7 +103,10 @@ const ProductInfo = ({ data }) => {
             <p
               style={{ paddingTop: "5px" }}
               onClick={() =>
-                router.push("/category", `/${mainCat}`, {
+                router.push({
+                  pathname: "/category",
+                  query: { mainCat },
+                }, undefined, {
                   shallow: true,
                 })
               }
@@ -159,6 +163,8 @@ const ProductInfo = ({ data }) => {
     </>
   );
 };
+
+// TODO: No suggestions for showing * place order no redirection
 
 export default ProductInfo;
 

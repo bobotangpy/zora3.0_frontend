@@ -51,11 +51,11 @@ const Checkout = () => {
 
     _.map(rows, (item) => {
       if (item.id === id) {
-        let p = Number(item.price.split("$")[1]).toFixed(2);
+        let p = Number(item.price.split("$")[1].replace(/,/g, "")).toFixed(2);
         item = {
           ...item,
           qty: newQty,
-          price: `HKD$${(p / item.qty) * newQty}`,
+          price: `HKD$${((p / item.qty) * newQty).toFixed(2)}`,
         };
         newArr.push(item);
       } else newArr.push(item);
@@ -64,17 +64,17 @@ const Checkout = () => {
     dispatch(updateCart(newArr));
   };
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     setDisabled(true);
     let id = store.get("user_id");
 
-    api.createOrder(id, cartItems, total).then((res) => {
-      console.log("res:::", res);
-      if (res && res == "Order success") {
-        dispatch(updateCart([]));
-        router.push("/orderHistory");
-      } else setDisabled(false);
-    });
+    const res = await api.createOrder(id, cartItems, total);
+    if (res && res.message == "Order success") {
+      await dispatch(updateCart([]));
+      await window.location.replace("/order_history");
+    } else {
+      setDisabled(false);
+    }
   };
 
   return (
@@ -117,7 +117,7 @@ const Checkout = () => {
                         </p>
                       ) : null}
                     </TableCell>
-                    <TableCell>{`HKD$${Number(row.price.split("$")[1]).toFixed(
+                    <TableCell>{`HKD$${Number(row.price.split("$")[1].replace(/,/g, "")).toFixed(
                       2
                     )}`}</TableCell>
                     <TableCell className={styles.del}>

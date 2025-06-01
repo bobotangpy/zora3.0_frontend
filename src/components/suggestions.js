@@ -43,7 +43,6 @@ const Suggestions = ({ displayItem }) => {
       {mainCat !== "horoscope" && (tops || bottoms || dressSuits || shoes) ? (
         <>
           <h3>Other {context.userSign}s also liked:</h3>
-
           <ItemList
             items={
               subCat === "tops"

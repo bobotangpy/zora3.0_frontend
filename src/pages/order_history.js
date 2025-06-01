@@ -25,7 +25,7 @@ const OrderHistory = () => {
   useEffect(() => {
     if (userId) {
       api.queryOrderHistory(userId).then((res) => {
-        // console.log(res);
+        console.log(res);
         if (res && res.length > 0) {
           console.log(res)
           setHistory(res);
@@ -71,9 +71,9 @@ const OrderHistory = () => {
                       align="center"
                       style={{ width: "30%" }}
                     >
-                      <img src={item.clothes.img} alt={item.clothes.name} />
+                      <img src={item.products.img} alt={item.products.name} />
                     </TableCell>
-                    <TableCell>{item.clothes.name}</TableCell>
+                    <TableCell>{item.products.name}</TableCell>
                     <TableCell>{item.size.toUpperCase()}</TableCell>
                     <TableCell>{item.quantity}</TableCell>
                     <TableCell>{item.price}</TableCell>

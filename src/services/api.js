@@ -28,7 +28,7 @@ export default class API {
     );
 
     const parseData = (res) => {
-      console.log("parseData:::");
+      // console.log("parseData:::");
       if (res.status === 200) {
         return res.data;
       } else {
